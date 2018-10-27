@@ -60,7 +60,7 @@ public class SongManager : MonoBehaviour {
         
         nextBarIndex = 0;
         nextNoteIndex = 0;
-        audioSource = GetComponent<AudioSource>();
+        
         
     }
 
@@ -131,6 +131,7 @@ public class SongManager : MonoBehaviour {
 
         this.song = song;
         bpm = song.bpm;
+        audioSource = GetComponent<AudioSource>();
         audioSource.clip = song.track;
         secondsPerBeat = 60f / bpm;
 
