@@ -25,6 +25,7 @@ public class BossController : MonoBehaviour {
         pr.Move(startPos, endPos, duration);
     }
 
+    //asdasd
     IEnumerator AttackCoroutine(float duration) {
         Debug.Log(SongManager.Instance.SongPositionInSeconds);
         float tLerp = 0;
