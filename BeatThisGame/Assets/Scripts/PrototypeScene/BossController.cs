@@ -19,15 +19,14 @@ public class BossController : MonoBehaviour {
     }
 
     public void Attack2(Vector3 startPos, Vector3 endPos, float duration) {
-        Debug.Log(SongManager.Instance.SongPositionInSeconds);
+        //Debug.Log(SongManager.Instance.SongPositionInSeconds);
         Projectile pr; 
         pr = Instantiate(projectile, startPos, Quaternion.identity);
         pr.Move(startPos, endPos, duration);
     }
 
-    //asdasd
     IEnumerator AttackCoroutine(float duration) {
-        Debug.Log(SongManager.Instance.SongPositionInSeconds);
+        //Debug.Log(SongManager.Instance.SongPositionInSeconds);
         float tLerp = 0;
         float time = 0;
         Vector3 startScale = tr.localScale;
