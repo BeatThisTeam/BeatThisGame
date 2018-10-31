@@ -17,8 +17,6 @@ public class Song : ScriptableObject {
         public float durationInBeats;
     }
 
-    
-
     public AudioClip track;
     public float bpm;
 
