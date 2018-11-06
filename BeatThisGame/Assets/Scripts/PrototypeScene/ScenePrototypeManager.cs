@@ -28,6 +28,7 @@ public class ScenePrototypeManager : MonoBehaviour {
 
     public Attack1 att1;
     public Attack2 att2;
+    public TilesAttack att3;
 
     private void Awake() {
         if (instance != null && instance != this) {
@@ -48,6 +49,11 @@ public class ScenePrototypeManager : MonoBehaviour {
             
             att1.StartAttack(noteToPlayInSeconds, notesInSecondsIndex);
             att2.StartAttack(noteToPlayInSeconds);
+            att3.StartAttack(noteToPlayInSeconds);
+
+            if(noteToPlayInSeconds <= SongManager.Instance.SongPositionInSeconds) {
+                IncrementNoteToPlayInSeconds();
+            }
         }
     }
 

@@ -29,7 +29,7 @@ public class Attack2 : MonoBehaviour {
             Projectile pr;
             pr = Instantiate(projectile, spawnPos, Quaternion.identity);
             pr.Move(spawnPos, player.position, projectileTime);
-            ScenePrototypeManager.Instance.IncrementNoteToPlayInSeconds();
+            //ScenePrototypeManager.Instance.IncrementNoteToPlayInSeconds();
         }
     }
 }
