@@ -58,7 +58,7 @@ public class GroundColorChanger : MonoBehaviour {
     /// </summary>
     /// <param name="x">index of the ring</param>
     /// <param name="z">index of the face</param>
-    void ChangeColor(int ringIndex, int faceIndex) {
+    public void ChangeColor(int ringIndex, int faceIndex) {
 
         if (ringIndex > groundSections.rings.Count) {
 
@@ -79,5 +79,15 @@ public class GroundColorChanger : MonoBehaviour {
         } else {
             rendererFaces.material = blue;
         }
+    }
+
+
+    public void ChangeColorSlice(int faceIndex)
+    {
+
+        ChangeColor(0, faceIndex);
+        ChangeColor(1, faceIndex);
+        ChangeColor(2, faceIndex);
+
     }
 }
