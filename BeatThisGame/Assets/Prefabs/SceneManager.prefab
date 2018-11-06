@@ -20,7 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4677635241471804}
   - component: {fileID: 114108610698085476}
-  - component: {fileID: 114107044189804368}
+  - component: {fileID: 114428322344123104}
+  - component: {fileID: 114781553830641888}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -41,18 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114107044189804368
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1551490693511480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df61dcc49a704aa45a78b8dc0e2bf965, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossTr: {fileID: 0}
 --- !u!114 &114108610698085476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72,4 +61,33 @@ MonoBehaviour:
   notesInSecondsIndex: 0
   projectileSpeed: 10
   spawnHeight: 12
-  att1: {fileID: 114107044189804368}
+  att1: {fileID: 114428322344123104}
+  att2: {fileID: 114781553830641888}
+--- !u!114 &114428322344123104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1551490693511480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df61dcc49a704aa45a78b8dc0e2bf965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossTr: {fileID: 0}
+--- !u!114 &114781553830641888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1551490693511480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afff0711a6d203a4eb84dcd23c4679df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 114762175548465486, guid: 7f2154190c1b3984ea61b13dd2dd01da,
+    type: 2}
+  player: {fileID: 0}
+  spawnHeight: 12
+  projectileSpeed: 10

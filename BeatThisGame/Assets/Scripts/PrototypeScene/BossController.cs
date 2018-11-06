@@ -13,10 +13,5 @@ public class BossController : MonoBehaviour {
         tr = GetComponent<Transform>();
     }
 
-    public void Attack2(Vector3 startPos, Vector3 endPos, float duration) {
-        //Debug.Log(SongManager.Instance.SongPositionInSeconds);
-        Projectile pr; 
-        pr = Instantiate(projectile, startPos, Quaternion.identity);
-        pr.Move(startPos, endPos, duration);
-    }
+    
 }

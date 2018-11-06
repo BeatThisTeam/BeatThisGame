@@ -27,6 +27,7 @@ public class ScenePrototypeManager : MonoBehaviour {
     public float spawnHeight = 12f;
 
     public Attack1 att1;
+    public Attack2 att2;
 
     private void Awake() {
         if (instance != null && instance != this) {
@@ -46,7 +47,7 @@ public class ScenePrototypeManager : MonoBehaviour {
             }
             
             att1.StartAttack(noteToPlayInSeconds, notesInSecondsIndex);
-            Att2();
+            att2.StartAttack(noteToPlayInSeconds);
         }
     }
 
@@ -62,16 +63,16 @@ public class ScenePrototypeManager : MonoBehaviour {
     //    }
     //}
 
-    private void Att2() {
+    //private void Att2() {
 
-        Vector3 spawnPos = new Vector3(player.position.x, spawnHeight, player.position.z);
-        float projectileTime = Vector3.Distance(spawnPos, player.position) / projectileSpeed;
+    //    Vector3 spawnPos = new Vector3(player.position.x, spawnHeight, player.position.z);
+    //    float projectileTime = Vector3.Distance(spawnPos, player.position) / projectileSpeed;
 
-        if (noteToPlayInSeconds - SongManager.Instance.SongPositionInSeconds <= projectileTime && noteToPlayInSeconds % 2 != 0 && SongManager.Instance.SongPositionInSeconds >= noteToPlayInSeconds) {
-            boss.Attack2(spawnPos, player.position, projectileTime);
-            IncrementNoteToPlayInSeconds();
-        }
-    }
+    //    if (noteToPlayInSeconds - SongManager.Instance.SongPositionInSeconds <= projectileTime && noteToPlayInSeconds % 2 != 0 && SongManager.Instance.SongPositionInSeconds >= noteToPlayInSeconds) {
+    //        boss.Attack2(spawnPos, player.position, projectileTime);
+    //        IncrementNoteToPlayInSeconds();
+    //    }
+    //}
 
     public void IncrementNoteToPlayInSeconds() {
 
