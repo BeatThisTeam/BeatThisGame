@@ -28,8 +28,8 @@ public class ScenePrototypeManager : MonoBehaviour {
 
     public Attack1 att1;
     public Attack2 att2;
-    //public TilesAttack att3;
-    public SliceAttack att4;
+    public TilesAttack att3;
+    //public SliceAttack att4;
 
     private void Awake() {
         if (instance != null && instance != this) {
@@ -50,36 +50,14 @@ public class ScenePrototypeManager : MonoBehaviour {
             
             att1.StartAttack(noteToPlayInSeconds, notesInSecondsIndex);
             att2.StartAttack(noteToPlayInSeconds);
-            att4.StartAttack(noteToPlayInSeconds);
+            att3.StartAttack(noteToPlayInSeconds);
+            //att4.StartAttack(noteToPlayInSeconds);
 
             if(noteToPlayInSeconds <= SongManager.Instance.SongPositionInSeconds) {
                 IncrementNoteToPlayInSeconds();
             }
         }
     }
-
-    //private void Att1() {
-
-    //    if (noteToPlayInSeconds - SongManager.Instance.SongPositionInSeconds <= 0 && noteToPlayInSeconds % 2 == 0) {
-
-    //        float startAttack = noteToPlayInSeconds;
-    //        float endAttack = song.notesInSeconds[notesInSecondsIndex + 1];
-
-    //        boss.Attack(endAttack - startAttack);
-    //        IncrementNoteToPlayInSeconds();
-    //    }
-    //}
-
-    //private void Att2() {
-
-    //    Vector3 spawnPos = new Vector3(player.position.x, spawnHeight, player.position.z);
-    //    float projectileTime = Vector3.Distance(spawnPos, player.position) / projectileSpeed;
-
-    //    if (noteToPlayInSeconds - SongManager.Instance.SongPositionInSeconds <= projectileTime && noteToPlayInSeconds % 2 != 0 && SongManager.Instance.SongPositionInSeconds >= noteToPlayInSeconds) {
-    //        boss.Attack2(spawnPos, player.position, projectileTime);
-    //        IncrementNoteToPlayInSeconds();
-    //    }
-    //}
 
     public void IncrementNoteToPlayInSeconds() {
 
