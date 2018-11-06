@@ -33,7 +33,7 @@ public class GroundColorChanger : MonoBehaviour {
     /// Changes the color of an entire ring
     /// </summary>
     /// <param name="ringIndex">index of the ring, 0 is the inner one</param>
-    void ChangeColor(int ringIndex) {
+    public void ChangeColor(int ringIndex) {
 
         if (ringIndex < groundSections.rings.Count) {
 
