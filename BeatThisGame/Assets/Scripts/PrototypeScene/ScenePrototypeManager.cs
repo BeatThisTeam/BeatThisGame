@@ -26,6 +26,8 @@ public class ScenePrototypeManager : MonoBehaviour {
     public float projectileSpeed = 10f;
     public float spawnHeight = 12f;
 
+    public Attack1 att1;
+
     private void Awake() {
         if (instance != null && instance != this) {
             Destroy(this.gameObject);
@@ -43,22 +45,22 @@ public class ScenePrototypeManager : MonoBehaviour {
                 noteToPlayInSeconds = song.notesInSeconds[notesInSecondsIndex];
             }
             
-            Att1();
+            att1.StartAttack(noteToPlayInSeconds, notesInSecondsIndex);
             Att2();
         }
     }
 
-    private void Att1() {
+    //private void Att1() {
 
-        if (noteToPlayInSeconds - SongManager.Instance.SongPositionInSeconds <= 0 && noteToPlayInSeconds % 2 == 0) {
+    //    if (noteToPlayInSeconds - SongManager.Instance.SongPositionInSeconds <= 0 && noteToPlayInSeconds % 2 == 0) {
 
-            float startAttack = noteToPlayInSeconds;
-            float endAttack = song.notesInSeconds[notesInSecondsIndex + 1];
+    //        float startAttack = noteToPlayInSeconds;
+    //        float endAttack = song.notesInSeconds[notesInSecondsIndex + 1];
 
-            boss.Attack(endAttack - startAttack);
-            IncrementNoteToPlayInSeconds();
-        }
-    }
+    //        boss.Attack(endAttack - startAttack);
+    //        IncrementNoteToPlayInSeconds();
+    //    }
+    //}
 
     private void Att2() {
 
@@ -71,7 +73,7 @@ public class ScenePrototypeManager : MonoBehaviour {
         }
     }
 
-    private void IncrementNoteToPlayInSeconds() {
+    public void IncrementNoteToPlayInSeconds() {
 
         notesInSecondsIndex++;
         if (notesInSecondsIndex < song.notesInSeconds.Count) {
