@@ -26,6 +26,7 @@ public class Projectile : MonoBehaviour {
             yield return null;
         }
 
+        Debug.Log(SongManager.Instance.SongPositionInBeats);
         Destroy(this.gameObject);
     }
 }

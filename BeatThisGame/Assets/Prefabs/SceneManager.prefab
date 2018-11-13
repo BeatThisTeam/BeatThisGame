@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114428322344123104}
   - component: {fileID: 114781553830641888}
   - component: {fileID: 114074351824534810}
+  - component: {fileID: 114088616031757786}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -58,6 +59,18 @@ MonoBehaviour:
   ground: {fileID: 0}
   player: {fileID: 0}
   percentage: 0.35
+--- !u!114 &114088616031757786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1551490693511480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df61dcc49a704aa45a78b8dc0e2bf965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossTr: {fileID: 0}
 --- !u!114 &114108610698085476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,13 +83,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sm: {fileID: 0}
-  song: {fileID: 11400000, guid: 74a5b336bb025b14fbe41eda7460cfee, type: 2}
+  song: {fileID: 11400000, guid: 7f04bc3d16a219241ab2a6feadab3ef6, type: 2}
   boss: {fileID: 0}
   player: {fileID: 0}
   noteToPlayInSeconds: 0
   notesInSecondsIndex: 0
   projectileSpeed: 10
   spawnHeight: 12
+  metronome: {fileID: 0}
   att1: {fileID: 114428322344123104}
   att2: {fileID: 114781553830641888}
   att3: {fileID: 114074351824534810}
@@ -106,5 +120,6 @@ MonoBehaviour:
   projectile: {fileID: 114762175548465486, guid: 7f2154190c1b3984ea61b13dd2dd01da,
     type: 2}
   player: {fileID: 0}
-  spawnHeight: 12
-  projectileSpeed: 10
+  boss: {fileID: 0}
+  spawnHeight: 4
+  projectileSpeed: 40

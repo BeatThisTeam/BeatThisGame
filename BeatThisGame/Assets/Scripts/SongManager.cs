@@ -70,7 +70,7 @@ public class SongManager : MonoBehaviour {
     }
 
     //Not sure yet if it should be better to use FixedUpdate instead 
-    void FixedUpdate() {
+    public void UpdateSongValues() {
 
         if (playing) {
             //We update all our song position variables
@@ -147,7 +147,6 @@ public class SongManager : MonoBehaviour {
         //song object (might be redundant, we'll see)
         song.currentBar = song.bars[nextBarIndex];
         songPositionInBars = 0;
-        song.setNotesInSeconds();
     }
 
     //Just a simple function to get the exact time position of a note given its bar and its position in the bar
