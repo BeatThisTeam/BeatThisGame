@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 //Scriptable object that represents a song
 [CreateAssetMenu]
@@ -27,28 +28,4 @@ public class Song : ScriptableObject {
     public List<float> notesInSeconds = new List<float>();
 
     public Bar currentBar;  
-
-    /// <summary>
-    /// Calculates the position of every beat in seconds and adds it to the list
-    /// </summary>
-    public void setNotesInSeconds() {
-
-        float secondsPerBeat = 60 / bpm;
-        float barStartTime = 0;
-
-        notesInSeconds.Clear();
-
-        for (int i = 0; i < bars.Count; i++) {
-
-            if(i != 0) {
-                barStartTime += bars[i - 1].durationInBeats * secondsPerBeat;
-            }
-
-            for(int j = 0; j < bars[i].notes.Count; j++) {
-                notesInSeconds.Add(barStartTime + bars[i].notes[j] * secondsPerBeat);
-            }
-          
-        }
-    }
-
 }
