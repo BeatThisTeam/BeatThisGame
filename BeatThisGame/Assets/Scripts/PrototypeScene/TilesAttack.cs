@@ -62,5 +62,6 @@ public class TilesAttack : MonoBehaviour {
                 sections[i] = section;
             }
         }
+        sections.Clear();
     }
 }

@@ -399,7 +399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4369740333930404}
-  - component: {fileID: 114597781167827892}
+  - component: {fileID: 114505804171119926}
   - component: {fileID: 114425666096445510}
   m_Layer: 0
   m_Name: Ground
@@ -4410,9 +4410,17 @@ MonoBehaviour:
     angleError: 8
     areaError: 15
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 
-  m_SelectedEdges: []
-  m_selectedTriangles: 
+  m_selectedFaces: 00000000
+  m_SelectedEdges:
+  - x: 0
+    y: 1
+  - x: 2
+    y: 0
+  - x: 1
+    y: 3
+  - x: 3
+    y: 2
+  m_selectedTriangles: 00000000010000000200000003000000
 --- !u!114 &114069837413464584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25210,6 +25218,23 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114505804171119926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1611146321563364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b11b44fc58e1945b49d110b98ca0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundSections: {fileID: 114425666096445510}
+  col1: {r: 0, g: 0, b: 0, a: 0}
+  col2: {r: 0, g: 0, b: 0, a: 0}
+  red: {fileID: 2100000, guid: 68b953d5b501f1a4ba369d0949b25a18, type: 2}
+  blue: {fileID: 2100000, guid: 24749554b76469d498a3a7218af80563, type: 2}
+  defaultMat: {fileID: 2100000, guid: 2f1ba25700c306e448d4294e2974244b, type: 2}
 --- !u!114 &114506161113579778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31198,22 +31223,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!114 &114597781167827892
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1611146321563364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67b11b44fc58e1945b49d110b98ca0c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundSections: {fileID: 114425666096445510}
-  col1: {r: 0.11037884, g: 0.4393248, b: 1.756863, a: 0}
-  col2: {r: 1.7568628, g: 0.10980392, b: 0.10980392, a: 0}
-  red: {fileID: 2100000, guid: 68b953d5b501f1a4ba369d0949b25a18, type: 2}
-  blue: {fileID: 2100000, guid: 24749554b76469d498a3a7218af80563, type: 2}
 --- !u!114 &114658785114994496
 MonoBehaviour:
   m_ObjectHideFlags: 1
