@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: 49fd082eff49f496dbafb9803524be05
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: belly
+    100004: body
+    100006: //RootNode
+    100008: ciuffo_corto
+    100010: ciuffo_lungo
+    100012: clevicle_L
+    100014: clevicle_R
+    100016: codino
+    100018: Cube
+    100020: Cube_001
+    100022: Cube_002
+    100024: Cube_003
+    100026: Empty
+    100028: hand_L
+    100030: hand_R
+    100032: head
+    100034: lowerArm_L
+    100036: lowerArm_R
+    100038: lowerfoot_L
+    100040: lowerfoot_R
+    100042: lowerleg_L
+    100044: lowerleg_R
+    100046: lowerPonytail
+    100048: middlePonytail
+    100050: neck
+    100052: ponytail
+    100054: torso
+    100056: upperArm_L
+    100058: upperArm_R
+    100060: upperbooty
+    100062: upperfoot_L
+    100064: upperfoot_R
+    100066: upperleg_L
+    100068: upperleg_R
+    100070: upperPonytail
+    400000: Armature
+    400002: belly
+    400004: body
+    400006: //RootNode
+    400008: ciuffo_corto
+    400010: ciuffo_lungo
+    400012: clevicle_L
+    400014: clevicle_R
+    400016: codino
+    400018: Cube
+    400020: Cube_001
+    400022: Cube_002
+    400024: Cube_003
+    400026: Empty
+    400028: hand_L
+    400030: hand_R
+    400032: head
+    400034: lowerArm_L
+    400036: lowerArm_R
+    400038: lowerfoot_L
+    400040: lowerfoot_R
+    400042: lowerleg_L
+    400044: lowerleg_R
+    400046: lowerPonytail
+    400048: middlePonytail
+    400050: neck
+    400052: ponytail
+    400054: torso
+    400056: upperArm_L
+    400058: upperArm_R
+    400060: upperbooty
+    400062: upperfoot_L
+    400064: upperfoot_R
+    400066: upperleg_L
+    400068: upperleg_R
+    400070: upperPonytail
+    2100000: Material_004
+    2100002: Material_001
+    2100004: Material_003
+    4300000: Cube_003
+    4300002: Cube
+    4300004: codino
+    4300006: ponytail
+    4300008: ciuffo_corto
+    4300010: ciuffo_lungo
+    4300012: body
+    4300014: Cube_001
+    4300016: Cube_002
+    7400000: Default Take
+    7400002: empty
+    7400004: idle
+    7400006: idle_02
+    7400008: walking
+    9500000: //RootNode
+    13700000: body
+    13700002: ciuffo_corto
+    13700004: ciuffo_lungo
+    13700006: codino
+    13700008: Cube
+    13700010: Cube_001
+    13700012: Cube_002
+    13700014: Cube_003
+    13700016: ponytail
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
