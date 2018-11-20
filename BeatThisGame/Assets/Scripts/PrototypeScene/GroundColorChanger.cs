@@ -15,6 +15,7 @@ public class GroundColorChanger : MonoBehaviour
 
     public Material red;
     public Material blue;
+    public Material defaultMat;
 
     void Update()
     {
@@ -59,6 +60,21 @@ public class GroundColorChanger : MonoBehaviour
         }
         else
         {
+            Debug.LogError("ERROR: ringIndex out of bound");
+        }
+    }
+
+    public void ChangeColor(int ringIndex, Material col) {
+
+        if (ringIndex < groundSections.rings.Count) {
+
+            for (int i = 0; i < groundSections.rings[ringIndex].faces.Count; i++) {
+                Renderer rendererFaces;
+                rendererFaces = groundSections.rings[ringIndex].faces[i].GetComponent<Renderer>();
+                rendererFaces.material = col;
+            }
+
+        } else {
             Debug.LogError("ERROR: ringIndex out of bound");
         }
     }

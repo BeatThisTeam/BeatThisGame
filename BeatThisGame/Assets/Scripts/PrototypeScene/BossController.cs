@@ -13,5 +13,8 @@ public class BossController : MonoBehaviour {
         tr = GetComponent<Transform>();
     }
 
-    
+    private void OnTriggerEnter(Collider other) {
+        ScenePrototypeManager.Instance.GetComponent<SpecialAttack>().BossHit();
+    }
+
 }

@@ -24,8 +24,5 @@ public class Song : ScriptableObject {
     //Here we store all the bars of the song
     public List<Bar> bars = new List<Bar>();
 
-    //List of every beat in seconds
-    public List<float> notesInSeconds = new List<float>();
-
     public Bar currentBar;  
 }
