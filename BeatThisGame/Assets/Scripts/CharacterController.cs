@@ -26,22 +26,22 @@ public class CharacterController : MonoBehaviour {
     private void Update() {
 
         if (Input.GetKeyDown(KeyCode.D)) {
-
+            ScoreManager.Instance.HitNote();
             StartCoroutine("FadeOut");
-            faceIndex = (faceIndex + 1) % ground.rings[ringIndex].faces.Count;
+            faceIndex = (faceIndex + 1) % ground.rings[ringIndex].sections.Count;
         }
 
         if (Input.GetKeyDown(KeyCode.A)) {
-
+            ScoreManager.Instance.HitNote();
             StartCoroutine("FadeOut");
             faceIndex --;
             if(faceIndex < 0){
-                faceIndex = ground.rings[ringIndex].faces.Count - 1;
+                faceIndex = ground.rings[ringIndex].sections.Count - 1;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.W)) {
-
+            ScoreManager.Instance.HitNote();
             StartCoroutine("FadeOut");
             ringIndex --;
             if(ringIndex < 0) {
@@ -50,12 +50,13 @@ public class CharacterController : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(KeyCode.S)) {
-
+            ScoreManager.Instance.HitNote();
             StartCoroutine("FadeOut");
             ringIndex = (ringIndex + 1) % ground.rings.Count;
         }
 
-        tr.position = ground.rings[ringIndex].faces[faceIndex].position;
+        
+        tr.position = ground.rings[ringIndex].sections[faceIndex].tr.position;
         Vector3 lookAtPos = Vector3.zero - tr.position;
         lookAtPos.y = 0;
         transform.rotation = Quaternion.LookRotation(lookAtPos);

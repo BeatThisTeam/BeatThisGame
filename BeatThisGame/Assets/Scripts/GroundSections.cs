@@ -10,7 +10,8 @@ public class GroundSections : MonoBehaviour {
     [System.Serializable]
     public class Ring {
 
-        public List<Transform> faces;
+        //public List<Transform> faces;
+        public List<Section> sections;
     }
 
     public List<Ring> rings = new List<Ring>();
