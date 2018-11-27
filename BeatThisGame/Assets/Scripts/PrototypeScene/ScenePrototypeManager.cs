@@ -17,6 +17,7 @@ public class ScenePrototypeManager : MonoBehaviour {
     public BossController boss;
 
     public Transform player;
+    CharacterController playerCharContr;
 
     public float noteToPlayInSeconds = 0;
 
@@ -35,6 +36,7 @@ public class ScenePrototypeManager : MonoBehaviour {
     public class Note {
 
         public float notePosInSeconds;
+        public bool playerShouldPlay;
         public UnityEvent noteFunction;
 
         [HideInInspector]
@@ -52,18 +54,20 @@ public class ScenePrototypeManager : MonoBehaviour {
         } else {
             instance = this;
         }
-
         sm.SetSong(song);
         metronome.StartMetronome();
+        playerCharContr = player.GetComponent<CharacterController>();
     }
 
     private void FixedUpdate() {
 
         sm.UpdateSongValues();
+        ScoreManager.Instance.UpdateNoteToHit();
 
         if (playing) {
             if (noteToPlayInSeconds == 0) {
                 noteToPlayInSeconds = notesInSeconds[notesInSecondsIndex].notePosInSeconds;
+                ScoreManager.Instance.nextNoteToHit(notesInSecondsIndex);
             }
 
             if(noteToPlayInSeconds <= SongManager.Instance.SongPositionInSeconds) {
@@ -136,4 +140,13 @@ public class ScenePrototypeManager : MonoBehaviour {
         //Finally the list is sorted 
         notesInSeconds.Sort((n1, n2) => n1.notePosInSeconds.CompareTo(n2.notePosInSeconds));
     } 
+
+    //public void copia() {
+    //    notesInSeconds.Clear();
+    //    for(int i = 0; i < notesInSec.Count; i++) {
+    //        Note n = new Note(notesInSec[i].notePosInSeconds);
+    //        n.noteFunction = notesInSec[i].noteFunction;
+    //        notesInSeconds.Add(n);
+    //    }
+    //}
 }
