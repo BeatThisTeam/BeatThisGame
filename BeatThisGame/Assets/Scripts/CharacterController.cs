@@ -13,6 +13,8 @@ public class CharacterController : MonoBehaviour {
     private Transform tr;
     public Renderer rend;
 
+    public string teleportShader;
+
 
 
     private void Awake() {
@@ -20,7 +22,7 @@ public class CharacterController : MonoBehaviour {
         tr = GetComponent<Transform>();
         anim = GetComponent<Animator>();
         rend = GetComponentInChildren<Renderer>();
-        rend.material.shader = Shader.Find("Dissolve");
+        rend.material.shader = Shader.Find(teleportShader);
     }
 
     private void Update() {
@@ -64,18 +66,18 @@ public class CharacterController : MonoBehaviour {
 
     private IEnumerator FadeOut() {
 
-        float start = 0f;
-        float finish = 1f;
+        float start = -2f;
+        float finish = 10f;
 
         float tLerp = 0f;
         float duration = 0.2f;
 
         while (tLerp <= duration) {
-            rend.material.SetFloat("_Dissolve", Mathf.Lerp(start, finish, tLerp/duration));
+            rend.material.SetFloat("_TransitionLevel", Mathf.Lerp(start, finish, tLerp/duration));
             tLerp += Time.deltaTime;
 
             yield return null;
         }
-        rend.material.SetFloat("_Dissolve", 0);
+        rend.material.SetFloat("_TransitionLevel", 0);
     }
 }

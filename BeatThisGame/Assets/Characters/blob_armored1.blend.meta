@@ -1,107 +1,70 @@
 fileFormatVersion: 2
-guid: b910762a2e76f4e10b4bcaa9729195c9
+guid: 501b571e622c34914b820cd93315f527
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Armature
-    100002: belly
-    100004: body
-    100006: //RootNode
-    100008: ciuffo_corto
-    100010: ciuffo_lungo
-    100012: clevicle_L
-    100014: clevicle_R
-    100016: codino
+    100002: Armature_001
+    100004: //RootNode
+    100006: Bone
+    100008: Bone_0
+    100010: Bone_001
+    100012: Bone_002
+    100014: Bone_003
+    100016: Bone_004
     100018: Cube
     100020: Cube_001
     100022: Cube_002
     100024: Cube_003
-    100026: Empty
-    100028: hand_L
-    100030: hand_R
-    100032: head
-    100034: lowerArm_L
-    100036: lowerArm_R
-    100038: lowerfoot_L
-    100040: lowerfoot_R
-    100042: lowerleg_L
-    100044: lowerleg_R
-    100046: lowerPonytail
-    100048: middlePonytail
-    100050: neck
-    100052: ponytail
-    100054: torso
-    100056: upperArm_L
-    100058: upperArm_R
-    100060: upperbooty
-    100062: upperfoot_L
-    100064: upperfoot_R
-    100066: upperleg_L
-    100068: upperleg_R
-    100070: upperPonytail
+    100026: Cube_004
+    100028: Cube_005
+    100030: Cylinder
+    100032: Empty
     400000: Armature
-    400002: belly
-    400004: body
-    400006: //RootNode
-    400008: ciuffo_corto
-    400010: ciuffo_lungo
-    400012: clevicle_L
-    400014: clevicle_R
-    400016: codino
+    400002: Armature_001
+    400004: //RootNode
+    400006: Bone
+    400008: Bone_0
+    400010: Bone_001
+    400012: Bone_002
+    400014: Bone_003
+    400016: Bone_004
     400018: Cube
     400020: Cube_001
     400022: Cube_002
     400024: Cube_003
-    400026: Empty
-    400028: hand_L
-    400030: hand_R
-    400032: head
-    400034: lowerArm_L
-    400036: lowerArm_R
-    400038: lowerfoot_L
-    400040: lowerfoot_R
-    400042: lowerleg_L
-    400044: lowerleg_R
-    400046: lowerPonytail
-    400048: middlePonytail
-    400050: neck
-    400052: ponytail
-    400054: torso
-    400056: upperArm_L
-    400058: upperArm_R
-    400060: upperbooty
-    400062: upperfoot_L
-    400064: upperfoot_R
-    400066: upperleg_L
-    400068: upperleg_R
-    400070: upperPonytail
-    2100000: Material_004
-    2100002: Material_001
-    2100004: Material_003
-    4300000: Cube_003
-    4300002: Cube
-    4300004: codino
-    4300006: ponytail
-    4300008: ciuffo_corto
-    4300010: ciuffo_lungo
-    4300012: body
-    4300014: Cube_001
-    4300016: Cube_002
+    400026: Cube_004
+    400028: Cube_005
+    400030: Cylinder
+    400032: Empty
+    2100000: unnamed
+    2300000: Cube
+    2300002: Cube_001
+    2300004: Cube_002
+    2300006: Cube_003
+    2300008: Cube_004
+    2300010: Cube_005
+    3300000: Cube
+    3300002: Cube_001
+    3300004: Cube_002
+    3300006: Cube_003
+    3300008: Cube_004
+    3300010: Cube_005
+    4300000: Cylinder
+    4300002: Cube_005
+    4300004: Cube_004
+    4300006: Cube_003
+    4300008: Cube_002
+    4300010: Cube_001
+    4300012: Cube
     7400000: Default Take
-    7400002: empty
-    7400004: idle
-    7400006: idle_02
-    7400008: walking
+    7400002: Action
+    7400004: Armature_001Action
+    7400006: slam
+    7400008: return
+    7400010: idle2
     9500000: //RootNode
-    13700000: body
-    13700002: ciuffo_corto
-    13700004: ciuffo_lungo
-    13700006: codino
-    13700008: Cube
-    13700010: Cube_001
-    13700012: Cube_002
-    13700014: Cube_003
-    13700016: ponytail
+    13700000: Cylinder
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -131,10 +94,66 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Default Take
-      takeName: Default Take
+      name: slam
+      takeName: slam
       firstFrame: 0
-      lastFrame: 23
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: return
+      takeName: return
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle2
+      takeName: idle2
+      firstFrame: 0
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -142,118 +161,6 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: empty
-      takeName: empty
-      firstFrame: 2
-      lastFrame: 3
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: idle
-      takeName: idle
-      firstFrame: 0
-      lastFrame: 23
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: idle_02
-      takeName: idle_02
-      firstFrame: 0
-      lastFrame: 23
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: walking
-      takeName: walking
-      firstFrame: 0
-      lastFrame: 26
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

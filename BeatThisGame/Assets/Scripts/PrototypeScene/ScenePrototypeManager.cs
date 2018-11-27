@@ -54,6 +54,7 @@ public class ScenePrototypeManager : MonoBehaviour {
         } else {
             instance = this;
         }
+
         sm.SetSong(song);
         metronome.StartMetronome();
         playerCharContr = player.GetComponent<CharacterController>();

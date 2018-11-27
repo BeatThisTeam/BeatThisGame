@@ -12,11 +12,13 @@ public class IntroSection : MonoBehaviour {
 
 	public void StartFadeIn(float duration) {
 
+        Debug.Log("call");
         StartCoroutine(FadeInCoroutine(duration));
     }
 
     public IEnumerator FadeInCoroutine(float duration) {
 
+        Debug.Log("cor");
         float tLerp = 0;
         
         while (tLerp <= duration) {
