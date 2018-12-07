@@ -16,15 +16,17 @@ public class SpecialAttack : MonoBehaviour {
     private float lastNotePlayedInSeconds;
     private IEnumerator cr;
     private bool enlarge = false;
+    bool played = false;
 
-    public void StartAttack(float noteToPlayInSeconds) {
+    public void StartAttack(float duration) {
 
         Vector3 spawnPos = new Vector3(player.position.x, spawnHeight, player.position.z);
-        float duration = ScenePrototypeManager.Instance.notesInSeconds[ScenePrototypeManager.Instance.notesInSecondsIndex + 1].notePosInSeconds - noteToPlayInSeconds;
+        //float duration = ScenePrototypeManager.Instance.notesInSeconds[ScenePrototypeManager.Instance.notesInSecondsIndex + 1].notePosInSeconds - noteToPlayInSeconds;
 
-        if (noteToPlayInSeconds - SongManager.Instance.SongPositionInSeconds <= duration && noteToPlayInSeconds != 0 && lastNotePlayedInSeconds != noteToPlayInSeconds) {
-            lastNotePlayedInSeconds = noteToPlayInSeconds;
-            Projectile pr;
+        // if (noteToPlayInSeconds != 0 && lastNotePlayedInSeconds != noteToPlayInSeconds) {
+        if (!played) {
+            //lastNotePlayedInSeconds = noteToPlayInSeconds;
+            played = true;
             tr = Instantiate(circle, spawnPos, Quaternion.identity);
             tr.localScale = startScale;
             tr.rotation = Quaternion.Euler(new Vector3(-90f, 0f, 0f));
@@ -39,12 +41,21 @@ public class SpecialAttack : MonoBehaviour {
         float tLerp = 0f;
 
         while (tLerp <= duration) {
+            tr.position = player.position;
             tr.localScale = Vector3.Lerp(startScale, endScale, tLerp / duration);
             tLerp += Time.deltaTime;
+
             if (Input.GetKeyDown(KeyCode.Space)) {
+                ScoreManager.Instance.HitSpecialAttack();
                 enlarge = true;
                 StartCoroutine(EnlargeCoroutine());
                 StopCoroutine(cr);
+            }
+
+            if(tLerp >= duration) {
+                played = false;
+                Destroy(tr.gameObject);
+                ScoreManager.Instance.SpecialAttackMiss();
             }
             yield return null;
         }
@@ -52,9 +63,13 @@ public class SpecialAttack : MonoBehaviour {
 
     public void BossHit() {
         enlarge = false;
+        played = false;
+        Destroy(tr.gameObject);
     }
 
     private IEnumerator EnlargeCoroutine() {
+
+        tr.GetComponent<SphereCollider>().enabled = true;
 
         while (enlarge) {
             float scaleX = tr.localScale.x;
