@@ -16,6 +16,8 @@ public class ScenePrototypeManager : MonoBehaviour {
 
     public BossController boss;
 
+    public GroundSections ground;
+
     public Transform player;
     CharacterController playerCharContr;
 
@@ -32,11 +34,14 @@ public class ScenePrototypeManager : MonoBehaviour {
     public List<Note> notesInSeconds = new List<Note>();
     public int notesInSecondsIndex = 0;
 
+    private Animator bossAnim;
+
     [System.Serializable]
     public class Note {
 
         public float notePosInSeconds;
         public bool playerShouldPlay;
+        public bool specialAttack;
         public UnityEvent noteFunction;
 
         [HideInInspector]
@@ -55,9 +60,17 @@ public class ScenePrototypeManager : MonoBehaviour {
             instance = this;
         }
 
-        sm.SetSong(song);
-        metronome.StartMetronome();
+        bossAnim = boss.GetComponent<Animator>();
         playerCharContr = player.GetComponent<CharacterController>();
+    }
+
+    private void Start() {
+
+        sm.SetSong(song);
+        boss.StartIdle();
+        ScoreManager.Instance.Setup();
+        metronome.StartMetronome();
+        StartCoroutine(CheckIfTileHurts(0.5f));
     }
 
     private void FixedUpdate() {
@@ -75,6 +88,22 @@ public class ScenePrototypeManager : MonoBehaviour {
                 notesInSeconds[notesInSecondsIndex].noteFunction.Invoke();
                 IncrementNoteToPlayInSeconds();
             }
+        }
+    }
+
+    IEnumerator CheckIfTileHurts(float interval) {
+
+        while (playing) {
+
+            for(int i = 0; i< ground.rings.Count; i++) {
+                for (int j = 0; j < ground.rings[i].sections.Count; j++) {
+                    if (ground.rings[i].sections[j].hurts) {
+                        ground.Hurts(i, j);
+                    }
+                }
+            }
+
+            yield return new WaitForSeconds(interval);
         }
     }
 
@@ -140,14 +169,14 @@ public class ScenePrototypeManager : MonoBehaviour {
 
         //Finally the list is sorted 
         notesInSeconds.Sort((n1, n2) => n1.notePosInSeconds.CompareTo(n2.notePosInSeconds));
-    } 
+    }
 
     //public void copia() {
     //    notesInSeconds.Clear();
-    //    for(int i = 0; i < notesInSec.Count; i++) {
-    //        Note n = new Note(notesInSec[i].notePosInSeconds);
-    //        n.noteFunction = notesInSec[i].noteFunction;
-    //        notesInSeconds.Add(n);
+    //    for (int i = 0; i < n.Count; i++) {
+    //        Note note = new Note(n[i].notePosInSeconds);
+    //        note.noteFunction = n[i].noteFunction;
+    //        notesInSeconds.Add(note);
     //    }
     //}
 }
