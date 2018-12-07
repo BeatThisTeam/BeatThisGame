@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TilesAttack : MonoBehaviour {
 
@@ -25,7 +23,7 @@ public class TilesAttack : MonoBehaviour {
 
                         if ((i != player.ringIndex || j != player.faceIndex) && Random.Range(0f, 1f) >= percentage) {
                             groundControl.ChangeColor(i, j);
-                            ground.rings[i].sections[j].hurts = true;
+                            ground.SwitchFace(i, j);
                         }
                     }
                 }
@@ -35,9 +33,9 @@ public class TilesAttack : MonoBehaviour {
             } else {
                 for(int i = 0; i < ground.rings.Count; i++) {
                     for (int j = 0; j < ground.rings[i].sections.Count; j++) {
-
-                        ground.rings[i].sections[j].hurts = !ground.rings[i].sections[j].hurts;
+                        
                         groundControl.ChangeColor(i, j);
+                        ground.SwitchFace(i, j);
                     }
                 }
             }
