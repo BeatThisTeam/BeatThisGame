@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour {
 
+    public float maxHealth;
+    public float health;
+
     public GroundSections ground;
 
     public int faceIndex;
@@ -19,6 +22,7 @@ public class CharacterController : MonoBehaviour {
 
     private void Awake() {
 
+        health = maxHealth;
         tr = GetComponent<Transform>();
         anim = GetComponent<Animator>();
         rend = GetComponentInChildren<Renderer>();
@@ -62,6 +66,11 @@ public class CharacterController : MonoBehaviour {
         Vector3 lookAtPos = Vector3.zero - tr.position;
         lookAtPos.y = 0;
         transform.rotation = Quaternion.LookRotation(lookAtPos);
+    }
+
+    public void Damage(float damage) {
+
+        health -= damage;
     }
 
     private IEnumerator FadeOut() {
