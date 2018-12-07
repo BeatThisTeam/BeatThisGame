@@ -51,5 +51,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ef818fa1143dd4e8d5077c3fe308cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteToHit: 0
-  deltaAccuracy: 0.1
+  deltaAccuracy: 0.2
+  perfectAccuracy: 1
+  goodAccuracy: 0.75
+  okAccuracy: 0.5
+  specialAttackTotalDamage: 0.9
+  specialAttackMaxPower: 100
+  specialAttackPower: 0
+  specialAttackAccuracy: 0
+  maxBossHealth: 100
+  currentBossHealth: 0
+  numNotesInSection: 0
+  numSpecialAttacks: 0
+  numOtherAttacks: 0

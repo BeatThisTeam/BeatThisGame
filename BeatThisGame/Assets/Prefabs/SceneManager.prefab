@@ -61,7 +61,7 @@ MonoBehaviour:
   ground: {fileID: 0}
   player: {fileID: 0}
   percentage: 0.35
-  mat: {fileID: 2100000, guid: 24749554b76469d498a3a7218af80563, type: 2}
+  mat: {fileID: 2100000, guid: b0c55650812e249fb896906e9cbf6e95, type: 2}
 --- !u!114 &114108610698085476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76,6 +76,7 @@ MonoBehaviour:
   sm: {fileID: 0}
   song: {fileID: 11400000, guid: 7f04bc3d16a219241ab2a6feadab3ef6, type: 2}
   boss: {fileID: 0}
+  ground: {fileID: 0}
   player: {fileID: 0}
   noteToPlayInSeconds: 0
   projectileSpeed: 10
@@ -84,6 +85,7 @@ MonoBehaviour:
   notesInSeconds:
   - notePosInSeconds: 0
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -114,6 +116,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 6
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -133,6 +136,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 6.5
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -152,6 +156,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 7
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -171,6 +176,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 10
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls: []
@@ -179,6 +185,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 10.5
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls: []
@@ -187,6 +194,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 11
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls: []
@@ -195,6 +203,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 14
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -214,6 +223,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 16
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -233,6 +243,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 18
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -252,6 +263,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 19
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -262,7 +274,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 19
+            m_FloatArgument: 0.5
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -271,6 +283,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 19.5
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls: []
@@ -279,6 +292,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 20
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -298,6 +312,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 22
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -317,6 +332,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 24
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -336,6 +352,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 26
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -355,17 +372,18 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 27
     playerShouldPlay: 0
+    specialAttack: 1
     noteFunction:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114781553830641888}
+        - m_Target: {fileID: 114528849843711432}
           m_MethodName: StartAttack
           m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 27
+            m_FloatArgument: 1
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -373,7 +391,8 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     removable: 0
   - notePosInSeconds: 27.5
-    playerShouldPlay: 1
+    playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls: []
@@ -381,7 +400,8 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     removable: 0
   - notePosInSeconds: 28
-    playerShouldPlay: 0
+    playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -401,6 +421,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 29
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls: []
@@ -409,6 +430,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 30
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -428,6 +450,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 30.75
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -447,6 +470,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 31.5
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -461,11 +485,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 114145815488191332}
+          m_MethodName: Return
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     removable: 0
   - notePosInSeconds: 32
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -496,6 +532,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 33
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls: []
@@ -504,6 +541,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 34
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -523,6 +561,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 34.75
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -542,6 +581,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 35.5
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -556,11 +596,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 114145815488191332}
+          m_MethodName: Return
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     removable: 0
   - notePosInSeconds: 36
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -580,6 +632,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 36.5
     playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -590,7 +643,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 37.5
+            m_FloatArgument: 1
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -599,6 +652,16 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 36.75
     playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 37
+    playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -609,7 +672,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 37.75
+            m_FloatArgument: 1
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -618,6 +681,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 37.5
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls: []
@@ -625,7 +689,8 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     removable: 0
   - notePosInSeconds: 37.75
-    playerShouldPlay: 1
+    playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls: []
@@ -634,6 +699,7 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 38
     playerShouldPlay: 1
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls: []
@@ -642,6 +708,149 @@ MonoBehaviour:
     removable: 0
   - notePosInSeconds: 40
     playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114781553830641888}
+          m_MethodName: StartAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 2
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 41
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114074351824534810}
+          m_MethodName: StartAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 41
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 42
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114074351824534810}
+          m_MethodName: StartAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 42
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114781553830641888}
+          m_MethodName: ContinueAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 43
+    playerShouldPlay: 1
+    specialAttack: 1
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114074351824534810}
+          m_MethodName: StartAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 43
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114528849843711432}
+          m_MethodName: StartAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 44
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114074351824534810}
+          m_MethodName: ClearSections
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 46
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 48
+    playerShouldPlay: 0
+    specialAttack: 0
     noteFunction:
       m_PersistentCalls:
         m_Calls:
@@ -679,10 +888,11 @@ MonoBehaviour:
   spawnHeight: 17
   wallPrefab: {fileID: 114456995190030228, guid: 22743f9db21624243ba0ab23a2b878b3,
     type: 2}
+  bossContr: {fileID: 0}
   ground: {fileID: 0}
   player: {fileID: 0}
   groundSections: {fileID: 0}
-  mat1: {fileID: 2100000, guid: 24749554b76469d498a3a7218af80563, type: 2}
+  mat1: {fileID: 2100000, guid: b0c55650812e249fb896906e9cbf6e95, type: 2}
   mat2: {fileID: 2100000, guid: 68b953d5b501f1a4ba369d0949b25a18, type: 2}
 --- !u!114 &114428322344123104
 MonoBehaviour:
@@ -711,7 +921,7 @@ MonoBehaviour:
   player: {fileID: 0}
   startScale: {x: 10, y: 10, z: 0}
   endScale: {x: 1.5, y: 1.5, z: 0}
-  spawnHeight: 2.1
+  spawnHeight: 2.5
   enlargeVelocity: 100
 --- !u!114 &114781553830641888
 MonoBehaviour:
@@ -724,6 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afff0711a6d203a4eb84dcd23c4679df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 20
   projectile: {fileID: 114762175548465486, guid: 7f2154190c1b3984ea61b13dd2dd01da,
     type: 2}
   player: {fileID: 0}
@@ -743,5 +954,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackScreen: {fileID: 0}
   mat1: {fileID: 2100000, guid: 2f1ba25700c306e448d4294e2974244b, type: 2}
-  mat2: {fileID: 2100000, guid: 24749554b76469d498a3a7218af80563, type: 2}
+  mat2: {fileID: 2100000, guid: b0c55650812e249fb896906e9cbf6e95, type: 2}
   gcc: {fileID: 0}

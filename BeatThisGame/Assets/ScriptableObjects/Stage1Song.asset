@@ -82,8 +82,23 @@ MonoBehaviour:
     - 0
     - 1
     - 1.5
+    - 2
     - 3
     - 3.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
     durationInBeats: 4
   - notes:
     - 0
