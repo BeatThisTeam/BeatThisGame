@@ -21,11 +21,7 @@ public class SpecialAttack : MonoBehaviour {
     public void StartAttack(float duration) {
 
         Vector3 spawnPos = new Vector3(player.position.x, spawnHeight, player.position.z);
-        //float duration = ScenePrototypeManager.Instance.notesInSeconds[ScenePrototypeManager.Instance.notesInSecondsIndex + 1].notePosInSeconds - noteToPlayInSeconds;
-
-        // if (noteToPlayInSeconds != 0 && lastNotePlayedInSeconds != noteToPlayInSeconds) {
         if (!played) {
-            //lastNotePlayedInSeconds = noteToPlayInSeconds;
             played = true;
             tr = Instantiate(circle, spawnPos, Quaternion.identity);
             tr.localScale = startScale;
@@ -40,7 +36,7 @@ public class SpecialAttack : MonoBehaviour {
         Vector3 startScale = tr.localScale;
         float tLerp = 0f;
 
-        while (tLerp <= duration) {
+        while (tLerp <= duration + 0.1) {
             tr.position = player.position;
             tr.localScale = Vector3.Lerp(startScale, endScale, tLerp / duration);
             tLerp += Time.deltaTime;
@@ -52,8 +48,9 @@ public class SpecialAttack : MonoBehaviour {
                 StopCoroutine(cr);
             }
 
-            if(tLerp >= duration) {
+            if(tLerp >= duration + 0.1) {
                 played = false;
+                StopAllCoroutines();
                 Destroy(tr.gameObject);
                 ScoreManager.Instance.SpecialAttackMiss();
             }
