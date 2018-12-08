@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour {
 
+    public enum Direction { Up, Down, Left, Right };
+
     public float maxHealth;
     public float health;
 
@@ -11,6 +13,8 @@ public class CharacterController : MonoBehaviour {
 
     public int faceIndex;
     public int ringIndex;
+    Direction dir;
+    public Direction Dir { get { return dir; } }
 
     private Animator anim;
     private Transform tr;
@@ -35,12 +39,14 @@ public class CharacterController : MonoBehaviour {
             ScoreManager.Instance.HitNote();
             StartCoroutine("FadeOut");
             faceIndex = (faceIndex + 1) % ground.rings[ringIndex].sections.Count;
+            dir = Direction.Right;
         }
 
         if (Input.GetKeyDown(KeyCode.A)) {
             ScoreManager.Instance.HitNote();
             StartCoroutine("FadeOut");
             faceIndex --;
+            dir = Direction.Left;
             if(faceIndex < 0){
                 faceIndex = ground.rings[ringIndex].sections.Count - 1;
             }
@@ -50,6 +56,7 @@ public class CharacterController : MonoBehaviour {
             ScoreManager.Instance.HitNote();
             StartCoroutine("FadeOut");
             ringIndex --;
+            dir = Direction.Up;
             if(ringIndex < 0) {
                 ringIndex = ground.rings.Count - 1;
             }
@@ -59,6 +66,7 @@ public class CharacterController : MonoBehaviour {
             ScoreManager.Instance.HitNote();
             StartCoroutine("FadeOut");
             ringIndex = (ringIndex + 1) % ground.rings.Count;
+            dir = Direction.Down;
         }
 
         
