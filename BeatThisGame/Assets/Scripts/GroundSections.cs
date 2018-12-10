@@ -29,6 +29,7 @@ public class GroundSections : MonoBehaviour {
 
         if(rings[ringIndex].sections[faceIndex].hurts == true) {
             ResetHurt(ringIndex, faceIndex);
+            rings[ringIndex].sections[faceIndex].isTarget = true;
         } else {
             StartCoroutine(SetHurt(ringIndex, faceIndex, 0.1f));
         }
@@ -38,6 +39,7 @@ public class GroundSections : MonoBehaviour {
 
         if (val == false) {
             ResetHurt(ringIndex, faceIndex);
+            rings[ringIndex].sections[faceIndex].isTarget = true;
         } else {
             StartCoroutine(SetHurt(ringIndex, faceIndex, 0.1f));
         }

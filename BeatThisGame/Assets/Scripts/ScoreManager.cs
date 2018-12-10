@@ -29,6 +29,7 @@ public class ScoreManager : MonoBehaviour {
     public float currentBossHealth;
 
     [Space]
+    public GroundSections ground;
     public int numNotesInSection;
     public int numSpecialAttacks;
     public int numOtherAttacks;
@@ -85,14 +86,14 @@ public class ScoreManager : MonoBehaviour {
         return counter;
     }
 
-    public void HitNote() {
+    public void HitNote(int facePos, int ringPos) {
         //Debug.Log("delta: " + Mathf.Abs(noteToHit - SongManager.Instance.SongPositionInSeconds));
         //Debug.Log("songpos: " + SongManager.Instance.SongPositionInSeconds);
         //Debug.Log("targetpos: " + noteToHit);
 
         float diff = Mathf.Abs(noteToHit - SongManager.Instance.SongPositionInSeconds);
 
-        if (diff < deltaAccuracy) {
+        if (diff < deltaAccuracy && ground.rings[ringPos].sections[facePos].isTarget) {
 
             if(diff < deltaAccuracy && diff > deltaAccuracy / 2) {
                 //Debug.Log("ok");

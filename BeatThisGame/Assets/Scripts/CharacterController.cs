@@ -36,14 +36,16 @@ public class CharacterController : MonoBehaviour {
     private void Update() {
 
         if (Input.GetKeyDown(KeyCode.D)) {
-            ScoreManager.Instance.HitNote();
+            ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+            SoundManager.Instance.PlayMoveSound();
             StartCoroutine("FadeOut");
             faceIndex = (faceIndex + 1) % ground.rings[ringIndex].sections.Count;
             dir = Direction.Right;
         }
 
         if (Input.GetKeyDown(KeyCode.A)) {
-            ScoreManager.Instance.HitNote();
+            ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+            SoundManager.Instance.PlayMoveSound();
             StartCoroutine("FadeOut");
             faceIndex --;
             dir = Direction.Left;
@@ -53,7 +55,8 @@ public class CharacterController : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(KeyCode.W)) {
-            ScoreManager.Instance.HitNote();
+            ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+            SoundManager.Instance.PlayMoveSound();
             StartCoroutine("FadeOut");
             ringIndex --;
             dir = Direction.Up;
@@ -63,7 +66,8 @@ public class CharacterController : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(KeyCode.S)) {
-            ScoreManager.Instance.HitNote();
+            ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+            SoundManager.Instance.PlayMoveSound();
             StartCoroutine("FadeOut");
             ringIndex = (ringIndex + 1) % ground.rings.Count;
             dir = Direction.Down;

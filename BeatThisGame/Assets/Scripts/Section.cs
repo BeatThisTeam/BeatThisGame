@@ -6,4 +6,5 @@ public class Section : MonoBehaviour {
 
     public Transform tr;
     public bool hurts;
+    public bool isTarget = false;
 }

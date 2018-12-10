@@ -50,6 +50,10 @@ public class SliceAttack : MonoBehaviour
         bossContr.transform.Rotate(0, 90, 0);
         bossContr.StartSlam(WallTime);
 
+        groundSections.rings[0].sections[faceIndex].isTarget = true;
+        groundSections.rings[1].sections[faceIndex].isTarget = true;
+        groundSections.rings[2].sections[faceIndex].isTarget = true;
+
         ground.ChangeColorSlice((storeFaceIndex + 2) % sliceCount, mat2);
         groundSections.SwitchFace(0, (storeFaceIndex + 2) % sliceCount, true);
         groundSections.SwitchFace(1, (storeFaceIndex + 2) % sliceCount, true);
@@ -66,9 +70,14 @@ public class SliceAttack : MonoBehaviour
     public void AttackPhase2(float noteToPlayInSeconds){
 
         if (!set) {
-            faceIndex = (player.faceIndex + sliceCount);
 
-            if(player.Dir == CharacterController.Direction.Left) {
+            faceIndex = player.faceIndex;
+
+            groundSections.rings[0].sections[faceIndex].isTarget = true;
+            groundSections.rings[1].sections[faceIndex].isTarget = true;
+            groundSections.rings[2].sections[faceIndex].isTarget = true;
+
+            if (player.Dir == CharacterController.Direction.Left) {
                 direction = -1;
             }else if(player.Dir == CharacterController.Direction.Right) {
                 direction = 1;
@@ -79,7 +88,7 @@ public class SliceAttack : MonoBehaviour
             }
 
             Debug.Log("dir" + direction);
-            index = (faceIndex + direction) % sliceCount;                
+            index = (storeFaceIndex + 2 * direction) % sliceCount;                
             set = true;
         } else {
             index = (index + sliceCount + direction) % sliceCount;
@@ -111,6 +120,7 @@ public class SliceAttack : MonoBehaviour
         for (int i = 0; i < groundSections.rings.Count; i++) {
             for (int j = 0; j < groundSections.rings[i].sections.Count; j++) {
                 groundSections.rings[i].sections[j].hurts = false;
+                groundSections.rings[i].sections[j].isTarget = false;
                 ground.ChangeColor(i, j, mat1);
             }
         }

@@ -29,8 +29,10 @@ public class Attack2 : MonoBehaviour {
         Vector3 targetPos = new Vector3(player.position.x, spawnHeight, player.position.z);
         nAttacks = 0;
         Projectile pr;
+        groundSections.rings[playerContr.ringIndex].sections[playerContr.faceIndex].isTarget = true;
         pr = Instantiate(projectile, spawnPos, Quaternion.identity);
         pr.player = player;
+        pr.att = this;
         pr.playerFacePos = playerContr.faceIndex;
         pr.playerRingPos = playerContr.ringIndex;
         pr.damage = damage;
@@ -49,11 +51,18 @@ public class Attack2 : MonoBehaviour {
 
             int targetSection = (initialTargetSection + numberOfSections + targetModifier) % numberOfSections;
             Vector3 targetPos = new Vector3(groundSections.rings[ringIndex].sections[targetSection].tr.position.x, spawnHeight, groundSections.rings[ringIndex].sections[targetSection].tr.position.z);
+            groundSections.rings[playerContr.ringIndex].sections[targetSection].isTarget = true;
             pr = Instantiate(projectile, spawnPos, Quaternion.identity);
             pr.player = player;
+            pr.att = this;
             pr.damage = damage;
             pr.Move(spawnPos, targetPos, duration);
             targetModifier += 2;
         }
+    }
+
+    public void ResetTargetSections(int faceIndex, int ringIndex) {
+
+        groundSections.rings[ringIndex].sections[faceIndex].isTarget = false;
     }
 }

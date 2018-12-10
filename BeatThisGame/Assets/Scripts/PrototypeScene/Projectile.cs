@@ -11,6 +11,8 @@ public class Projectile : MonoBehaviour {
     public int playerRingPos;
     public int playerFacePos;
 
+    public Attack2 att;
+
     private void Awake() {
         tr = GetComponent<Transform>();
     }
@@ -28,7 +30,8 @@ public class Projectile : MonoBehaviour {
             tr.position = Vector3.Lerp(startPos, endPos, tLerp / duration);
             tLerp += Time.deltaTime;
             yield return null;
-        } 
+        }
+        att.ResetTargetSections(playerFacePos, playerRingPos);
         Destroy(this.gameObject);
     }
 
@@ -36,6 +39,7 @@ public class Projectile : MonoBehaviour {
         if (other.CompareTag("Player")) {
             Debug.Log("colpito");
             player.GetComponent<CharacterController>().Damage(damage);
+            att.ResetTargetSections(playerFacePos, playerRingPos);
             Destroy(this.gameObject);
         }
     }
