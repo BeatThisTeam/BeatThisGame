@@ -32,4 +32,6 @@ public class Attack2 : MonoBehaviour {
             //ScenePrototypeManager.Instance.IncrementNoteToPlayInSeconds();
         }
     }
+
+    
 }
