@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 33478444663442302}
   - component: {fileID: 64024885068023096}
   - component: {fileID: 114639063038159862}
+  - component: {fileID: 114153706872768246}
   m_Layer: 0
   m_Name: Ring3Faces1
   m_TagString: Untagged
@@ -42,6 +43,7 @@ GameObject:
   - component: {fileID: 33900655255972838}
   - component: {fileID: 64586472364575646}
   - component: {fileID: 114414846655109072}
+  - component: {fileID: 114916755993840566}
   m_Layer: 0
   m_Name: Ring3Faces7
   m_TagString: Untagged
@@ -61,6 +63,7 @@ GameObject:
   - component: {fileID: 33769748365702810}
   - component: {fileID: 64303141145508958}
   - component: {fileID: 114260291730651014}
+  - component: {fileID: 114680301021920884}
   m_Layer: 0
   m_Name: Ring3Faces9
   m_TagString: Untagged
@@ -80,6 +83,7 @@ GameObject:
   - component: {fileID: 33063700841862546}
   - component: {fileID: 64831728456249896}
   - component: {fileID: 114513763719360996}
+  - component: {fileID: 114139359751795738}
   m_Layer: 0
   m_Name: Ring3Faces6
   m_TagString: Untagged
@@ -99,6 +103,7 @@ GameObject:
   - component: {fileID: 33402978482211754}
   - component: {fileID: 64356491572598092}
   - component: {fileID: 114701204488655946}
+  - component: {fileID: 114743506116208654}
   m_Layer: 0
   m_Name: Ring3Faces3
   m_TagString: Untagged
@@ -118,6 +123,7 @@ GameObject:
   - component: {fileID: 33390459917196340}
   - component: {fileID: 64591763536883724}
   - component: {fileID: 114663586319313200}
+  - component: {fileID: 114143147459723732}
   m_Layer: 0
   m_Name: Ring3Faces5
   m_TagString: Untagged
@@ -137,13 +143,14 @@ GameObject:
   - component: {fileID: 33035393594110256}
   - component: {fileID: 64084160995607528}
   - component: {fileID: 114469843483362640}
+  - component: {fileID: 114686372407977072}
   m_Layer: 0
   m_Name: CamRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1786948333312362
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +163,7 @@ GameObject:
   - component: {fileID: 33838733134211966}
   - component: {fileID: 64155216205267716}
   - component: {fileID: 114229334499139216}
+  - component: {fileID: 114562683430662968}
   m_Layer: 0
   m_Name: Ring3Faces4
   m_TagString: Untagged
@@ -175,6 +183,7 @@ GameObject:
   - component: {fileID: 33671162062724706}
   - component: {fileID: 64792340652520708}
   - component: {fileID: 114249707240781664}
+  - component: {fileID: 114603638535537998}
   m_Layer: 0
   m_Name: Ring3Faces2
   m_TagString: Untagged
@@ -194,6 +203,7 @@ GameObject:
   - component: {fileID: 33090729880440126}
   - component: {fileID: 64951024832692264}
   - component: {fileID: 114560795649252246}
+  - component: {fileID: 114447472279097708}
   m_Layer: 0
   m_Name: Ring3Faces8
   m_TagString: Untagged
@@ -312,8 +322,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1738860119618886}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 17, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4082527554180240}
   - {fileID: 4245775113922026}
@@ -900,6 +910,48 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!114 &114139359751795738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324911959971758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7725f627e35be7b4ba6966846a523955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr: {fileID: 4645962293583326}
+  hurts: 0
+  isTarget: 0
+--- !u!114 &114143147459723732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691160999787780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7725f627e35be7b4ba6966846a523955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr: {fileID: 4484166366719420}
+  hurts: 0
+  isTarget: 0
+--- !u!114 &114153706872768246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1001475832480926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7725f627e35be7b4ba6966846a523955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr: {fileID: 4082527554180240}
+  hurts: 0
+  isTarget: 0
 --- !u!114 &114229334499139216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1720,6 +1772,20 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114447472279097708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962923754608788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7725f627e35be7b4ba6966846a523955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr: {fileID: 4198408576149546}
+  hurts: 0
+  isTarget: 0
 --- !u!114 &114469843483362640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7707,6 +7773,34 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114562683430662968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1786948333312362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7725f627e35be7b4ba6966846a523955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr: {fileID: 4375916606593838}
+  hurts: 0
+  isTarget: 0
+--- !u!114 &114603638535537998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1915964294725210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7725f627e35be7b4ba6966846a523955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr: {fileID: 4245775113922026}
+  hurts: 0
+  isTarget: 0
 --- !u!114 &114639063038159862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8125,6 +8219,42 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114680301021920884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287149115508838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7725f627e35be7b4ba6966846a523955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr: {fileID: 4383378108336914}
+  hurts: 0
+  isTarget: 0
+--- !u!114 &114686372407977072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738860119618886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9acab7de894b3b54dbe581b5bf4fb5c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rings:
+  - sections:
+    - {fileID: 114153706872768246}
+    - {fileID: 114603638535537998}
+    - {fileID: 114743506116208654}
+    - {fileID: 114562683430662968}
+    - {fileID: 114143147459723732}
+    - {fileID: 114139359751795738}
+    - {fileID: 114916755993840566}
+    - {fileID: 114447472279097708}
+    - {fileID: 114680301021920884}
 --- !u!114 &114701204488655946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8330,3 +8460,31 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114743506116208654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1460682672777082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7725f627e35be7b4ba6966846a523955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr: {fileID: 4433662454742470}
+  hurts: 0
+  isTarget: 0
+--- !u!114 &114916755993840566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1253610374855102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7725f627e35be7b4ba6966846a523955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr: {fileID: 4524784618208494}
+  hurts: 0
+  isTarget: 0

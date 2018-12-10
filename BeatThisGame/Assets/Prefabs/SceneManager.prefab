@@ -73,14 +73,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d565ed1db8b0e34296505b8aa0fa5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sm: {fileID: 0}
   song: {fileID: 11400000, guid: 7f04bc3d16a219241ab2a6feadab3ef6, type: 2}
   boss: {fileID: 0}
   ground: {fileID: 0}
   player: {fileID: 0}
   noteToPlayInSeconds: 0
-  projectileSpeed: 10
-  spawnHeight: 12
   metronome: {fileID: 0}
   notesInSeconds:
   - notePosInSeconds: 0
@@ -886,8 +883,6 @@ MonoBehaviour:
   LimitTime: 0
   endHeight: 7
   spawnHeight: 17
-  wallPrefab: {fileID: 114456995190030228, guid: 22743f9db21624243ba0ab23a2b878b3,
-    type: 2}
   bossContr: {fileID: 0}
   ground: {fileID: 0}
   player: {fileID: 0}

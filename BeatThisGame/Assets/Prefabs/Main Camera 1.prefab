@@ -22,11 +22,8 @@ GameObject:
   - component: {fileID: 20642268961554754}
   - component: {fileID: 81425175621335448}
   - component: {fileID: 114050554046126460}
-  - component: {fileID: 114792625539160256}
   - component: {fileID: 114602513138965012}
-  - component: {fileID: 114510555861127750}
-  - component: {fileID: 114843785583840258}
-  - component: {fileID: 114304623784439158}
+  - component: {fileID: 114521688279063486}
   m_Layer: 0
   m_Name: Main Camera 1
   m_TagString: MainCamera
@@ -40,13 +37,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1474177037310260}
-  m_LocalRotation: {x: 0.13571554, y: 0, z: 0, w: 0.99074787}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.2499576, y: 0, z: 0, w: 0.96825683}
+  m_LocalPosition: {x: 0, y: 26.6, z: -46.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 15.6, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 28.95, y: 0, z: 0}
 --- !u!20 &20642268961554754
 Camera:
   m_ObjectHideFlags: 1
@@ -69,7 +66,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 31
+  field of view: 34.757057
   orthographic: 0
   orthographic size: 23.9
   m_Depth: -1
@@ -151,7 +148,7 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &114304623784439158
+--- !u!114 &114521688279063486
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,30 +170,6 @@ MonoBehaviour:
   Height: 0
   angle: 0
   radiusOffset: 0
---- !u!114 &114510555861127750
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1474177037310260}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7aa4255e3c040a4daf29dbd871c213d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  ground: {fileID: 0}
-  target: {fileID: 0}
-  monster: {fileID: 0}
-  SmoothSpeed: 10
-  offset: {x: 0, y: 17, z: -40}
-  offseta: {x: 0, y: 0, z: 0}
-  Pos0: {fileID: 0}
-  Pos3: {fileID: 0}
-  Pos6: {fileID: 0}
-  Face0: {fileID: 0}
-  Face3: {fileID: 0}
-  Face6: {fileID: 0}
 --- !u!114 &114602513138965012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,50 +181,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b47168d64b57fe4ab07ff335f608c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114792625539160256
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1474177037310260}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a31a3a31f30d4495890f005bb8fcba3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  ground: {fileID: 0}
-  target: {fileID: 0}
-  monster: {fileID: 0}
-  SmoothSpeed: 10
-  offset0: {x: 0, y: 17, z: -35}
-  offset3: {x: 30, y: 17, z: -35}
-  offset6: {x: -30, y: 17, z: -35}
-  offset4: {x: 0, y: 0, z: 0}
-  Pos0: {fileID: 0}
-  Pos3: {fileID: 0}
-  Pos6: {fileID: 0}
-  Face0: {fileID: 0}
-  Face3: {fileID: 0}
-  Face6: {fileID: 0}
---- !u!114 &114843785583840258
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1474177037310260}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c74f36ce3799974b8aa289c80b1181a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  ground: {fileID: 0}
-  target: {fileID: 0}
-  monster: {fileID: 0}
-  emptycam: {fileID: 0}
-  SmoothSpeed: 10
-  offset: {x: 0, y: 0, z: 0}
-  Height: 17
-  angle: 40
-  radiusOffset: 30
