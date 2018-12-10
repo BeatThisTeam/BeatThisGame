@@ -40,7 +40,7 @@ public class FollowCam5 : MonoBehaviour {
         //{ DesiredPosition = CamRing.rings[0].faces[6].position; }
 
         int FaceIndex = player.faceIndex;
-        DesiredPosition = CamRing.rings[0].faces[FaceIndex].position;
+        DesiredPosition = CamRing.rings[0].sections[FaceIndex].tr.position;
 
         Vector3 SmoothedPosition = Vector3.Lerp(transform.position, DesiredPosition, SmoothSpeed * Time.deltaTime);
 

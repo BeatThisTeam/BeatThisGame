@@ -30,7 +30,7 @@ public class Shield : MonoBehaviour {
     void FixedUpdate () {
         /*rend = GetComponent<Renderer>()*/;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             StartCoroutine(ShieldActive(WaitingTime));
             
