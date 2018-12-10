@@ -10,10 +10,9 @@ public class ScenePrototypeManager : MonoBehaviour {
 
     public static ScenePrototypeManager Instance { get { return instance; } }
 
-    public SongManager sm;
-
     public Song song;
 
+    //TODO: use an abstract boss class instead
     public BossController boss;
 
     public GroundSections ground;
@@ -24,10 +23,6 @@ public class ScenePrototypeManager : MonoBehaviour {
     public float noteToPlayInSeconds = 0;
 
     private bool playing = true;
-
-
-    public float projectileSpeed = 10f;
-    public float spawnHeight = 12f;
 
     public CircleMetronome metronome;
 
@@ -66,7 +61,7 @@ public class ScenePrototypeManager : MonoBehaviour {
 
     private void Start() {
 
-        sm.SetSong(song);
+        SongManager.Instance.SetSong(song);
         boss.StartIdle();
         ScoreManager.Instance.Setup();
         metronome.StartMetronome();
@@ -75,7 +70,7 @@ public class ScenePrototypeManager : MonoBehaviour {
 
     private void FixedUpdate() {
 
-        sm.UpdateSongValues();
+        SongManager.Instance.UpdateSongValues();
         ScoreManager.Instance.UpdateNoteToHit();
 
         if (playing) {

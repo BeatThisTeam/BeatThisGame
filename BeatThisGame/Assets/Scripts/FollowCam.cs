@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using UnityEditor.ShaderGraph;
+﻿
 using UnityEngine;
 
 public class FollowCam : MonoBehaviour

@@ -61,6 +61,7 @@ MonoBehaviour:
   specialAttackAccuracy: 0
   maxBossHealth: 100
   currentBossHealth: 0
+  ground: {fileID: 0}
   numNotesInSection: 0
   numSpecialAttacks: 0
   numOtherAttacks: 0

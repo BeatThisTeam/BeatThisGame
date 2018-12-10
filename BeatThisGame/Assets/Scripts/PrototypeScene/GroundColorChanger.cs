@@ -1,9 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using ProBuilder.Addons;
-using ProBuilder.Core;
-using ProBuilder.MeshOperations;
 
 public class GroundColorChanger : MonoBehaviour
 {
