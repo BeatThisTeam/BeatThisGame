@@ -22,11 +22,12 @@ public class CharacterController : MonoBehaviour {
 
     public string teleportShader;
 
+    public PlayerHealth characterHealthBarUI;
 
-
-    private void Awake() {
+    public void Setup() {
 
         health = maxHealth;
+        characterHealthBarUI.Setup(maxHealth);
         tr = GetComponent<Transform>();
         anim = GetComponent<Animator>();
         rend = GetComponentInChildren<Renderer>();
@@ -83,6 +84,7 @@ public class CharacterController : MonoBehaviour {
     public void Damage(float damage) {
 
         health -= damage;
+        characterHealthBarUI.UpdateBar(health);
     }
 
     private IEnumerator FadeOut() {

@@ -34,6 +34,9 @@ public class ScoreManager : MonoBehaviour {
     public int numSpecialAttacks;
     public int numOtherAttacks;
 
+    public PowerAttack specialAttackUI;
+    public BossHealth bossHealthBarUI;
+
     private int lastSpecialAttackIndex;
 
     private void Awake() {
@@ -46,20 +49,26 @@ public class ScoreManager : MonoBehaviour {
 
     public void Setup() {
 
-        numNotesInSection = CalcNumNotesInSection(0);
         numSpecialAttacks = CalcNumSpecialAttacks();
-        //CalcNumOtherAttacks();
 
         currentBossHealth = maxBossHealth;
 
         specialAttackMaxPower = maxBossHealth * specialAttackTotalDamage / numSpecialAttacks;
 
-        specialAttackPower = 0;       
+        specialAttackPower = 0;
+
+        specialAttackUI.Setup(specialAttackMaxPower);
+        bossHealthBarUI.Setup(maxBossHealth);
+
+        numNotesInSection = CalcNumNotesInSection(0);
+        
+        //CalcNumOtherAttacks();
     }
 
     private int CalcNumNotesInSection(int index) {
 
         specialAttackPower = 0;
+        specialAttackUI.UpdateBar(specialAttackPower);
         int counter = 0;
         for (int i = index; i < ScenePrototypeManager.Instance.notesInSeconds.Count; i++) {
            
@@ -105,6 +114,8 @@ public class ScoreManager : MonoBehaviour {
                 //Debug.Log("perfect");
                 specialAttackPower += specialAttackMaxPower * perfectAccuracy / numNotesInSection;
             }
+
+            specialAttackUI.UpdateBar(specialAttackPower);
 
             if (SongManager.Instance.SongPositionInSeconds > noteToHit) {
                 nextNoteToHit(ScenePrototypeManager.Instance.notesInSecondsIndex);
@@ -172,5 +183,6 @@ public class ScoreManager : MonoBehaviour {
         float damage = specialAttackPower * specialAttackAccuracy;
         Debug.Log(damage);
         currentBossHealth -= damage;
+        bossHealthBarUI.UpdateBar(currentBossHealth);
     }
 }

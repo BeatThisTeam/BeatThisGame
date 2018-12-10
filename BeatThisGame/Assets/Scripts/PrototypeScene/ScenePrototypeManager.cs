@@ -61,6 +61,7 @@ public class ScenePrototypeManager : MonoBehaviour {
 
     private void Start() {
 
+        playerCharContr.Setup();
         SongManager.Instance.SetSong(song);
         boss.StartIdle();
         ScoreManager.Instance.Setup();

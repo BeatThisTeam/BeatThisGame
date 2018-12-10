@@ -91,7 +91,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000002, guid: c28441004d8ec0645b6907fba26f4629,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -405,6 +405,16 @@ Prefab:
       propertyPath: ground
       value: 
       objectReference: {fileID: 656650613}
+    - target: {fileID: 114737505298344768, guid: 8b9fbb5da3c745648831fb2f120bdb21,
+        type: 2}
+      propertyPath: specialAttackUI
+      value: 
+      objectReference: {fileID: 908708644}
+    - target: {fileID: 114737505298344768, guid: 8b9fbb5da3c745648831fb2f120bdb21,
+        type: 2}
+      propertyPath: bossHealthBarUI
+      value: 
+      objectReference: {fileID: 780925685}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b9fbb5da3c745648831fb2f120bdb21, type: 2}
   m_IsPrefabAsset: 0
@@ -668,6 +678,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1853954688}
   m_Script: {fileID: 11500000, guid: d49cf7d27750c164fa01a08b77fcb3c8, type: 3}
+--- !u!114 &212482851 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114170790191634286, guid: 95593438e15b43749b72c3f491121cba,
+    type: 2}
+  m_PrefabInternal: {fileID: 329962154}
+  m_Script: {fileID: 11500000, guid: b6916a9f9248e374fa5b16a6cb1ffc39, type: 3}
 --- !u!43 &229503320
 Mesh:
   m_ObjectHideFlags: 0
@@ -2565,6 +2581,12 @@ Mesh:
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimized: 0
+--- !u!114 &780925685 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114679040400887020, guid: 6ddc66c7fcd449946b711ba788f1d0af,
+    type: 2}
+  m_PrefabInternal: {fileID: 1626773172}
+  m_Script: {fileID: 11500000, guid: 237d38c8b7b876244a400aeced065778, type: 3}
 --- !u!1 &808521766
 GameObject:
   m_ObjectHideFlags: 0
@@ -3331,6 +3353,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88c5ee8a33aaf81498e5fde0fe150941, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &908708644 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114714065131467200, guid: b49447bd58513ea4caa62f9f84ad3ee6,
+    type: 2}
+  m_PrefabInternal: {fileID: 2103905047}
+  m_Script: {fileID: 11500000, guid: 1607cfb4a17ea064fab318149a484b36, type: 3}
 --- !u!1 &928703095
 GameObject:
   m_ObjectHideFlags: 0
@@ -6214,6 +6242,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114932792962158564, guid: 3c654488f95e35f458e816a9fd1bc2e9,
+        type: 2}
+      propertyPath: characterHealthBarUI
+      value: 
+      objectReference: {fileID: 212482851}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c654488f95e35f458e816a9fd1bc2e9, type: 2}
   m_IsPrefabAsset: 0
@@ -6317,6 +6350,16 @@ Prefab:
     - target: {fileID: 224452626154646274, guid: 6ddc66c7fcd449946b711ba788f1d0af,
         type: 2}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224588600545258126, guid: 6ddc66c7fcd449946b711ba788f1d0af,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224588600545258126, guid: 6ddc66c7fcd449946b711ba788f1d0af,
+        type: 2}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
