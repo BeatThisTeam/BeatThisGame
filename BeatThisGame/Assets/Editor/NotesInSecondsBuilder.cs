@@ -13,17 +13,11 @@ public class NotesInSecondsBuilder : Editor {
         if(GUILayout.Button("Create Array of Notes in Seconds")) {
             script.setNotesInSeconds();
         }
+
+        //if (GUILayout.Button("Copia")) {
+        //    script.copia();
+        //}
     }
+
+
 }
-
-//[CustomEditor(typeof(ObjectBuilderScript))]
-//public class ObjectBuilderEditor : Editor {
-//    public override void OnInspectorGUI() {
-//        DrawDefaultInspector();
-
-//        ObjectBuilderScript myScript = (ObjectBuilderScript)target;
-//        if (GUILayout.Button("Build Object")) {
-//            myScript.BuildObject();
-//        }
-//    }
-//}

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TilesAttack : MonoBehaviour {
 
@@ -8,44 +6,39 @@ public class TilesAttack : MonoBehaviour {
     public GroundSections ground;
     public CharacterController player;
     public float percentage;
-    private List<Section> sections = new List<Section>();
+    public Material mat;
 
-    private struct Section {
-
-        public int ring;
-        public int sector;
-        public bool hurts;
-    }
+    private bool firstAtt = true;
 
 	public void StartAttack(float noteToPlayInSeconds) {
             
         if (noteToPlayInSeconds - SongManager.Instance.SongPositionInSeconds <= 0) {
-            if (sections.Count == 0) {
+            if (firstAtt) {
 
                 int playerRingPosCorrected = player.ringIndex + ground.rings.Count;
-                int playerSectPosCorrected = player.faceIndex + ground.rings[0].faces.Count;
+                int playerSectPosCorrected = player.faceIndex + ground.rings[0].sections.Count;
 
-                for (int i = playerRingPosCorrected - 1; i <= playerRingPosCorrected + 1; i++) {
-                    for (int j = playerSectPosCorrected - 2; j <= playerSectPosCorrected + 2; j++) {
-                        Section section = new Section();
-                        section.ring = (i%3);
-                        section.sector = (j%9);
-                        section.hurts = false;
-                        if ((section.ring != player.ringIndex || section.sector != player.faceIndex) && Random.Range(0f, 1f) >= percentage) {
-                            groundControl.ChangeColor(section.ring, section.sector);
-                            section.hurts = true;
+                for (int i = 0; i < ground.rings.Count; i++) {
+                    for (int j = 0; j < ground.rings[i].sections.Count; j++) {
+
+                        if ((i != player.ringIndex || j != player.faceIndex) && Random.Range(0f, 1f) >= percentage) {
+                            groundControl.ChangeColor(i, j);
+                            ground.SwitchFace(i, j);
+                        } else {
+                            ground.rings[i].sections[j].isTarget = true;
                         }
-                        sections.Add(section);
                     }
                 }
-                    
+
+                firstAtt = false;
+                
             } else {
-                for (int i = 0; i < sections.Count; i++) {
-                    groundControl.ChangeColor(sections[i].ring, sections[i].sector);
-                    Section section = new Section();
-                    section = sections[i];
-                    section.hurts = !section.hurts;
-                    sections[i] = section;
+                for(int i = 0; i < ground.rings.Count; i++) {
+                    for (int j = 0; j < ground.rings[i].sections.Count; j++) {
+                        
+                        groundControl.ChangeColor(i, j);
+                        ground.SwitchFace(i, j);
+                    }
                 }
             }
         }
@@ -53,14 +46,13 @@ public class TilesAttack : MonoBehaviour {
 
     public void ClearSections() {
 
-        for (int i = 0; i < sections.Count; i++) {
-            if (sections[i].hurts) {
-                groundControl.ChangeColor(sections[i].ring, sections[i].sector);
-                Section section = new Section();
-                section = sections[i];
-                section.hurts = !section.hurts;
-                sections[i] = section;
+        for (int i = 0; i < ground.rings.Count; i++) {
+            for (int j = 0; j < ground.rings[i].sections.Count; j++) {
+                ground.rings[i].sections[j].hurts = false;
+                ground.rings[i].sections[j].isTarget = false;
+                groundControl.ChangeColor(i, j, mat);
             }
         }
+        firstAtt = true;
     }
 }

@@ -1,39 +1,139 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SliceAttack : MonoBehaviour {
+public class SliceAttack : MonoBehaviour
+{
+    public Transform _player;
+    public Transform _ground;
+    public Transform _wall;
 
-    int ringIndex;
+    public int LimitTime;
+    
     int faceIndex;
+    int storeFaceIndex;
+    int allredFaceIndex;
+    private bool set = false;
+
+    //-1 left +1 right
+    private int direction = 0;
+    private int index;
+
+    public float endHeight = 7f;
+    public float spawnHeight = 7f;
+    int sliceCount;
+
+    public BossController bossContr;
 
     public GroundColorChanger ground;
     public CharacterController player;
-    //public GroundSections groundSections;
+    public GroundSections groundSections;
 
+    public Material mat1;
+    public Material mat2;
 
-    public void StartAttack(float noteToPlayInSeconds) {
-        ringIndex = player.ringIndex;
-        faceIndex = player.faceIndex +1;
+    public void StartAttack(float noteToPlayInSeconds){
 
-        ground.ChangeColorSlice(faceIndex);
+        sliceCount = groundSections.rings[0].sections.Count;
 
-          
-        }
+        faceIndex = player.faceIndex;
+        storeFaceIndex = player.faceIndex + sliceCount;
+        Debug.Log("sfi" + storeFaceIndex);
+        allredFaceIndex = player.faceIndex + sliceCount;
 
+        Vector3 spawnPos = new Vector3(groundSections.rings[2].sections[faceIndex].tr.position.x, spawnHeight, groundSections.rings[2].sections[faceIndex].tr.position.z);
+        Vector3 endPos = new Vector3(groundSections.rings[2].sections[faceIndex].tr.position.x, endHeight, groundSections.rings[2].sections[faceIndex].tr.position.z);
 
-        //public void StartAttack(float noteToPlayInSeconds)
-        //{
+        float WallTime = ScenePrototypeManager.Instance.notesInSeconds[ScenePrototypeManager.Instance.notesInSecondsIndex + 1].notePosInSeconds - noteToPlayInSeconds;
 
-        //    Vector3 spawnPos = new Vector3(player.position.x, spawnHeight, player.position.z);
-        //    float projectileTime = Vector3.Distance(spawnPos, player.position) / projectileSpeed;
+        Vector3 lookAtPos = _player.position - bossContr.transform.position;
+        lookAtPos.y = 0;
+        bossContr.transform.rotation = Quaternion.LookRotation(lookAtPos);
+        bossContr.transform.Rotate(0, 90, 0);
+        bossContr.StartSlam(WallTime);
 
-        //    if (noteToPlayInSeconds - SongManager.Instance.SongPositionInSeconds <= 0 && noteToPlayInSeconds % 2 == 0)
+        groundSections.rings[0].sections[faceIndex].isTarget = true;
+        groundSections.rings[1].sections[faceIndex].isTarget = true;
+        groundSections.rings[2].sections[faceIndex].isTarget = true;
 
-        //    //if (noteToPlayInSeconds - SongManager.Instance.SongPositionInSeconds <= projectileTime && noteToPlayInSeconds % 2 != 0 && SongManager.Instance.SongPositionInSeconds >= noteToPlayInSeconds)
-        //{
-        //    Projectile pr;
-        //    pr = Instantiate(projectile, spawnPos, Quaternion.identity);
-        //    pr.Move(spawnPos, player.position, projectileTime);
-        //    ScenePrototypeManager.Instance.IncrementNoteToPlayInSeconds();
+        ground.ChangeColorSlice((storeFaceIndex + 2) % sliceCount, mat2);
+        groundSections.SwitchFace(0, (storeFaceIndex + 2) % sliceCount, true);
+        groundSections.SwitchFace(1, (storeFaceIndex + 2) % sliceCount, true);
+        groundSections.SwitchFace(2, (storeFaceIndex + 2) % sliceCount, true);
+
+        ground.ChangeColorSlice((storeFaceIndex - 2) % sliceCount, mat2);
+        groundSections.SwitchFace(0, (storeFaceIndex - 2) % sliceCount, true);
+        groundSections.SwitchFace(1, (storeFaceIndex - 2) % sliceCount, true);
+        groundSections.SwitchFace(2, (storeFaceIndex - 2) % sliceCount, true);
+
+        faceIndex += sliceCount;
     }
+
+    public void AttackPhase2(float noteToPlayInSeconds){
+
+        if (!set) {
+
+            faceIndex = player.faceIndex;
+
+            groundSections.rings[0].sections[faceIndex].isTarget = true;
+            groundSections.rings[1].sections[faceIndex].isTarget = true;
+            groundSections.rings[2].sections[faceIndex].isTarget = true;
+
+            if (player.Dir == CharacterController.Direction.Left) {
+                direction = -1;
+            }else if(player.Dir == CharacterController.Direction.Right) {
+                direction = 1;
+            } else if(Random.value > 0.5){
+                direction = -1;
+            } else {
+                direction = 1;
+            }
+
+            Debug.Log("dir" + direction);
+            index = (storeFaceIndex + 2 * direction) % sliceCount;                
+            set = true;
+        } else {
+            index = (index + sliceCount + direction) % sliceCount;
+        }
+        Debug.Log(index);
+        ground.ChangeColorSlice(index, mat1);
+        groundSections.SwitchFace(0, index, false);
+        groundSections.SwitchFace(1, index, false);
+        groundSections.SwitchFace(2, index, false);
+
+        ground.ChangeColorSlice((index + sliceCount + 1) % sliceCount, mat2);
+        groundSections.SwitchFace(0, (index + sliceCount + 1) % sliceCount, true);
+        groundSections.SwitchFace(1, (index + sliceCount + 1) % sliceCount, true);
+        groundSections.SwitchFace(2, (index + sliceCount + 1) % sliceCount, true);
+
+        ground.ChangeColorSlice((index + sliceCount - 1) % sliceCount, mat2);
+        groundSections.SwitchFace(0, (index + sliceCount - 1) % sliceCount, true);
+        groundSections.SwitchFace(1, (index + sliceCount - 1) % sliceCount, true);
+        groundSections.SwitchFace(2, (index + sliceCount - 1) % sliceCount, true);
+    }
+
+    public void Return() {
+
+        bossContr.StartReturn();
+    }
+
+    public void ClearSections() {
+
+        for (int i = 0; i < groundSections.rings.Count; i++) {
+            for (int j = 0; j < groundSections.rings[i].sections.Count; j++) {
+                groundSections.rings[i].sections[j].hurts = false;
+                groundSections.rings[i].sections[j].isTarget = false;
+                ground.ChangeColor(i, j, mat1);
+            }
+        }
+        set = false;
+    }
+}
+
+
+
+
+
+
+
+
+
+

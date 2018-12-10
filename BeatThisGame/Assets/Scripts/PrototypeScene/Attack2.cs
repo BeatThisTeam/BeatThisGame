@@ -1,34 +1,68 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Attack2 : MonoBehaviour {
 
     Transform tr;
 
+    public float damage;
+
     public Projectile projectile;
 
     public Transform player;
     public Transform boss;
+    public GroundSections groundSections;
 
     public float spawnHeight = 12f;
-    public float projectileSpeed = 20f;
     private float lastNotePlayedInSeconds;
 
-    public void StartAttack(float noteToPlayInSeconds )
-    {
+    private int initialTargetSection;
+    private int nAttacks = 0;
 
-        Vector3 spawnPos = new Vector3(boss.position.x, spawnHeight, boss.position.z);
+    private Vector3 spawnPos;
+    private CharacterController playerContr;
+
+    public void StartAttack(float duration){
+        
+        playerContr = player.GetComponent<CharacterController>();
+        initialTargetSection = playerContr.faceIndex;
+        spawnPos = new Vector3(boss.position.x, spawnHeight, boss.position.z);
         Vector3 targetPos = new Vector3(player.position.x, spawnHeight, player.position.z);
-        float projectileTime = Vector3.Distance(spawnPos, new Vector3(player.position.x, spawnHeight, player.position.z)) / projectileSpeed;
+        nAttacks = 0;
+        Projectile pr;
+        groundSections.rings[playerContr.ringIndex].sections[playerContr.faceIndex].isTarget = true;
+        pr = Instantiate(projectile, spawnPos, Quaternion.identity);
+        pr.player = player;
+        pr.att = this;
+        pr.playerFacePos = playerContr.faceIndex;
+        pr.playerRingPos = playerContr.ringIndex;
+        pr.damage = damage;
+        pr.Move(spawnPos, targetPos, duration);
+    }
 
-        if (noteToPlayInSeconds - SongManager.Instance.SongPositionInSeconds <= projectileTime && noteToPlayInSeconds != 0 && lastNotePlayedInSeconds != noteToPlayInSeconds)
-        {
-            lastNotePlayedInSeconds = noteToPlayInSeconds;
-            Projectile pr;
+    public void ContinueAttack(float duration) {
+      
+        int ringIndex = playerContr.ringIndex;
+        int numberOfSections = groundSections.rings[0].sections.Count;
+        nAttacks++;
+        int targetModifier = -(nAttacks);
+        Debug.Log(targetModifier);
+        Projectile pr;
+        for(int i = 0; i< nAttacks + 1; i++) {
+
+            int targetSection = (initialTargetSection + numberOfSections + targetModifier) % numberOfSections;
+            Vector3 targetPos = new Vector3(groundSections.rings[ringIndex].sections[targetSection].tr.position.x, spawnHeight, groundSections.rings[ringIndex].sections[targetSection].tr.position.z);
+            groundSections.rings[playerContr.ringIndex].sections[targetSection].isTarget = true;
             pr = Instantiate(projectile, spawnPos, Quaternion.identity);
-            pr.Move(spawnPos, targetPos, projectileTime);
-            //ScenePrototypeManager.Instance.IncrementNoteToPlayInSeconds();
+            pr.player = player;
+            pr.att = this;
+            pr.damage = damage;
+            pr.Move(spawnPos, targetPos, duration);
+            targetModifier += 2;
         }
+    }
+
+    public void ResetTargetSections(int faceIndex, int ringIndex) {
+
+        groundSections.rings[ringIndex].sections[faceIndex].isTarget = false;
     }
 }

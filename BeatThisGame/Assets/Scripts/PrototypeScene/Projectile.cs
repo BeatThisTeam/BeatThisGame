@@ -1,15 +1,21 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
 
+    public float damage;
+
     Transform tr;
+    public Transform player;
+
+    public int playerRingPos;
+    public int playerFacePos;
+
+    public Attack2 att;
 
     private void Awake() {
         tr = GetComponent<Transform>();
     }
-
 
     public void Move(Vector3 startPos, Vector3 endPos, float duration) {
         
@@ -19,14 +25,22 @@ public class Projectile : MonoBehaviour {
     IEnumerator MoveCoroutine(Vector3 startPos, Vector3 endPos, float duration) {
 
         float tLerp = 0;
-        
+
         while (tLerp <= duration) {
             tr.position = Vector3.Lerp(startPos, endPos, tLerp / duration);
             tLerp += Time.deltaTime;
             yield return null;
         }
-
-        Debug.Log(SongManager.Instance.SongPositionInBeats);
+        att.ResetTargetSections(playerFacePos, playerRingPos);
         Destroy(this.gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
+            Debug.Log("colpito");
+            player.GetComponent<CharacterController>().Damage(damage);
+            att.ResetTargetSections(playerFacePos, playerRingPos);
+            Destroy(this.gameObject);
+        }
     }
 }

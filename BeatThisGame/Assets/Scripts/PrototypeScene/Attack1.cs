@@ -13,7 +13,7 @@ public class Attack1 : MonoBehaviour {
         if (noteToPlayInSeconds - SongManager.Instance.SongPositionInSeconds <= 0 && noteToPlayInSeconds % 2 == 0) {
 
             float startAttack = noteToPlayInSeconds;
-            float endAttack = song.notesInSeconds[notesInSecondsIndex + 1];
+            float endAttack = ScenePrototypeManager.Instance.notesInSeconds[notesInSecondsIndex + 1].notePosInSeconds;
 
             StartCoroutine(AttackCoroutine(endAttack - startAttack));
             //ScenePrototypeManager.Instance.IncrementNoteToPlayInSeconds();
