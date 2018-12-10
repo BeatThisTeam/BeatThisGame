@@ -13,5 +13,11 @@ public class NotesInSecondsBuilder : Editor {
         if(GUILayout.Button("Create Array of Notes in Seconds")) {
             script.setNotesInSeconds();
         }
+
+        //if (GUILayout.Button("Copia")) {
+        //    script.copia();
+        //}
     }
+
+
 }
