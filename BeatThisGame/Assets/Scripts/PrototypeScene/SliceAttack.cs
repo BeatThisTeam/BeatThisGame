@@ -54,12 +54,12 @@ public class SliceAttack : MonoBehaviour
         groundSections.rings[1].sections[faceIndex].isTarget = true;
         groundSections.rings[2].sections[faceIndex].isTarget = true;
 
-        ground.ChangeColorSlice((storeFaceIndex + 2) % sliceCount, mat2);
+        ground.ChangeColorSlice((storeFaceIndex + 2) % sliceCount, 0f);
         groundSections.SwitchFace(0, (storeFaceIndex + 2) % sliceCount, true);
         groundSections.SwitchFace(1, (storeFaceIndex + 2) % sliceCount, true);
         groundSections.SwitchFace(2, (storeFaceIndex + 2) % sliceCount, true);
 
-        ground.ChangeColorSlice((storeFaceIndex - 2) % sliceCount, mat2);
+        ground.ChangeColorSlice((storeFaceIndex - 2) % sliceCount, 0f);
         groundSections.SwitchFace(0, (storeFaceIndex - 2) % sliceCount, true);
         groundSections.SwitchFace(1, (storeFaceIndex - 2) % sliceCount, true);
         groundSections.SwitchFace(2, (storeFaceIndex - 2) % sliceCount, true);
@@ -67,7 +67,7 @@ public class SliceAttack : MonoBehaviour
         faceIndex += sliceCount;
     }
 
-    public void AttackPhase2(float noteToPlayInSeconds){
+    public void AttackPhase2(float duration){
 
         if (!set) {
 
@@ -94,20 +94,20 @@ public class SliceAttack : MonoBehaviour
             index = (index + sliceCount + direction) % sliceCount;
         }
         Debug.Log(index);
-        ground.ChangeColorSlice(index, mat1);
-        groundSections.SwitchFace(0, index, false);
-        groundSections.SwitchFace(1, index, false);
-        groundSections.SwitchFace(2, index, false);
+        ground.ChangeColorSlice(index, duration);
+        //groundSections.SwitchFace(0, index, false);
+        //groundSections.SwitchFace(1, index, false);
+        //groundSections.SwitchFace(2, index, false);
 
-        ground.ChangeColorSlice((index + sliceCount + 1) % sliceCount, mat2);
-        groundSections.SwitchFace(0, (index + sliceCount + 1) % sliceCount, true);
-        groundSections.SwitchFace(1, (index + sliceCount + 1) % sliceCount, true);
-        groundSections.SwitchFace(2, (index + sliceCount + 1) % sliceCount, true);
+        ground.ChangeColorSlice((index + sliceCount + 1) % sliceCount, duration);
+        //groundSections.SwitchFace(0, (index + sliceCount + 1) % sliceCount, true);
+        //groundSections.SwitchFace(1, (index + sliceCount + 1) % sliceCount, true);
+        //groundSections.SwitchFace(2, (index + sliceCount + 1) % sliceCount, true);
 
-        ground.ChangeColorSlice((index + sliceCount - 1) % sliceCount, mat2);
-        groundSections.SwitchFace(0, (index + sliceCount - 1) % sliceCount, true);
-        groundSections.SwitchFace(1, (index + sliceCount - 1) % sliceCount, true);
-        groundSections.SwitchFace(2, (index + sliceCount - 1) % sliceCount, true);
+        ground.ChangeColorSlice((index + sliceCount - 1) % sliceCount, duration);
+        //groundSections.SwitchFace(0, (index + sliceCount - 1) % sliceCount, true);
+        //groundSections.SwitchFace(1, (index + sliceCount - 1) % sliceCount, true);
+        //groundSections.SwitchFace(2, (index + sliceCount - 1) % sliceCount, true);
     }
 
     public void Return() {
@@ -115,13 +115,13 @@ public class SliceAttack : MonoBehaviour
         bossContr.StartReturn();
     }
 
-    public void ClearSections() {
+    public void ClearSections(float duration) {
 
         for (int i = 0; i < groundSections.rings.Count; i++) {
             for (int j = 0; j < groundSections.rings[i].sections.Count; j++) {
-                groundSections.rings[i].sections[j].hurts = false;
-                groundSections.rings[i].sections[j].isTarget = false;
-                ground.ChangeColor(i, j, mat1);
+                //groundSections.rings[i].sections[j].hurts = false;
+                //groundSections.rings[i].sections[j].isTarget = false;
+                ground.ResetGround(i, j, duration);
             }
         }
         set = false;
