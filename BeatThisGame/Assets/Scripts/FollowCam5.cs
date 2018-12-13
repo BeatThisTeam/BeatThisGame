@@ -6,7 +6,7 @@ public class FollowCam5 : MonoBehaviour {
 
     public GroundSections CamRing;
 
-    public CharacterController player;
+    public PlayerController player;
     public GroundSections ground;
 
     public Transform target;

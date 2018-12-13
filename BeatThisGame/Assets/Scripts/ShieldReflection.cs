@@ -13,22 +13,25 @@ public class ShieldReflection : MonoBehaviour {
     public float ReflectiveDuration;
 
 
-    private void OnTriggerEnter(Collider collider)
-    {
-            if (collider.gameObject.tag == "Projectile")
-            {
+    private void OnTriggerEnter(Collider collider) {
+
+        if (collider.gameObject.tag == "Projectile") {
+
+            if (collider.GetComponent<Projectile>().rejectable) {
+
                 Destroy(collider.gameObject);
-            
                 Debug.Log("HIT");
 
-                Vector3 StartPos = ReflectivePoint.position;
+                Vector3 StartPos = collider.transform.position;
                 Vector3 EndPos = boss.position;
 
                 Projectile proj;
                 proj = Instantiate(projectile, StartPos, Quaternion.identity);
+                proj.rejectable = false;
+                proj.rejected = true;
                 proj.Move(StartPos, EndPos, ReflectiveDuration);
 
             }
-
+        }
     }
 }

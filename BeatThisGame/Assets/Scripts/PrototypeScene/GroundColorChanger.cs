@@ -13,22 +13,6 @@ public class GroundColorChanger : MonoBehaviour
     public Material mat2;
     public Material defaultMat;
 
-    void Update()
-    {
-
-        //test
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-
-            //ChangeColor(0);
-            //ChangeColor(1);
-            //ChangeColor(2);
-
-            CharacterController player = FindObjectOfType<CharacterController>();
-            ChangeColor(player.ringIndex, player.faceIndex);
-        }
-    }
-
     /// <summary>
     /// Changes the color of an entire ring
     /// </summary>
@@ -44,12 +28,23 @@ public class GroundColorChanger : MonoBehaviour
         }
     }
 
+    public void ChangeColor(int ringIndex, Material mat) {
+
+        if (ringIndex >= groundSections.rings.Count) {
+            Debug.LogError("ERROR: ringIndex out of bound");
+        }
+
+        for (int i = 0; i < groundSections.rings[ringIndex].sections.Count; i++) {
+            ChangeColor(ringIndex, i, mat);
+        }
+    }
+
     /// <summary>
     /// Changes the material of a ring
     /// </summary>
     /// <param name="ringIndex">index of the ring</param>
     /// <param name="mat">material to use</param>
-    public void ChangeColor(int ringIndex, Material mat) {
+    public void ChangeColor(int ringIndex, float duration) {
 
         if (ringIndex >= groundSections.rings.Count) {
             Debug.LogError("ERROR: ringIndex out of bound");
@@ -57,7 +52,7 @@ public class GroundColorChanger : MonoBehaviour
         }
 
         for (int i = 0; i < groundSections.rings[ringIndex].sections.Count; i++) {
-            ChangeColor(ringIndex, i, mat);
+            StartCoroutine(ChangeColorCoroutine(ringIndex, i, duration));
         }
     }
 

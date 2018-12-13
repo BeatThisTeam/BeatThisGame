@@ -4,7 +4,7 @@ public class TilesAttack : MonoBehaviour {
 
     public GroundColorChanger groundControl;
     public GroundSections ground;
-    public CharacterController player;
+    public PlayerController player;
     public float percentage;
     public Material mat;
 

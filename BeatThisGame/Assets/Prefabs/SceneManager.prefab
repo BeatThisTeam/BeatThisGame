@@ -1069,6 +1069,8 @@ MonoBehaviour:
   damage: 20
   projectile: {fileID: 114762175548465486, guid: 7f2154190c1b3984ea61b13dd2dd01da,
     type: 2}
+  rejectableProjectile: {fileID: 114762175548465486, guid: b7b243f572c83bd44873a84b9bd4782b,
+    type: 2}
   player: {fileID: 0}
   boss: {fileID: 0}
   groundSections: {fileID: 0}
