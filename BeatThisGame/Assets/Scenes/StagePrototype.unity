@@ -91,7 +91,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000002, guid: c28441004d8ec0645b6907fba26f4629,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1818,6 +1818,27 @@ Mesh:
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimized: 0
+--- !u!1 &341090091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1370894554122052, guid: d56fc31cf46a7344db9c50de92807633,
+    type: 2}
+  m_PrefabInternal: {fileID: 1726657842}
+--- !u!114 &341090093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341090091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52c88b511678d44d9512b3998dd37d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 114762175548465486, guid: b7b243f572c83bd44873a84b9bd4782b,
+    type: 2}
+  ReflectivePoint: {fileID: 232573000}
+  boss: {fileID: 1565120365}
+  ReflectiveDuration: 0.5
 --- !u!43 &379654652
 Mesh:
   m_ObjectHideFlags: 0
@@ -4283,7 +4304,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1474177037310260, guid: 88c5ee8a33aaf81498e5fde0fe150941, type: 2}
       propertyPath: m_Name
-      value: Main Camera
+      value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 4214072798188174, guid: 88c5ee8a33aaf81498e5fde0fe150941, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5005,192 +5026,7 @@ Prefab:
     - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
         type: 2}
       propertyPath: notesInSeconds.Array.size
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[21].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[22].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[23].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[24].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[26].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[31].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[32].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[35].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[39].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[41].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[17].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[18].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[19].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[20].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[25].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[27].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[30].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[33].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[40].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[42].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[53].noteFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
         type: 2}
@@ -5200,6 +5036,26 @@ Prefab:
     - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
         type: 2}
       propertyPath: notesInSeconds.Array.data[55].noteFunction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[56].noteFunction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[57].noteFunction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[59].noteFunction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[61].noteFunction.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4677635241471804, guid: 8e24aca7b1c125e43adf56bb0428b495, type: 2}
@@ -5234,6 +5090,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114788783581680932, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: blackScreen
+      value: 
+      objectReference: {fileID: 1081529131}
+    - target: {fileID: 114788783581680932, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: gcc
+      value: 
+      objectReference: {fileID: 657596808}
     - target: {fileID: 114428322344123104, guid: 8e24aca7b1c125e43adf56bb0428b495,
         type: 2}
       propertyPath: bossTr
@@ -5324,2070 +5190,289 @@ Prefab:
       propertyPath: groundSections
       value: 
       objectReference: {fileID: 656650613}
-    - target: {fileID: 114788783581680932, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: blackScreen
-      value: 
-      objectReference: {fileID: 1081529131}
-    - target: {fileID: 114788783581680932, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: gcc
-      value: 
-      objectReference: {fileID: 657596808}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[16].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[17].notePosInSeconds
-      value: 21.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[17].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[17].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470358}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[17].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[17].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[17].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[17].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[18].notePosInSeconds
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[18].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[19].notePosInSeconds
-      value: 23.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[19].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[19].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[19].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[19].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[20].notePosInSeconds
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[20].specialAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[20].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470358}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[20].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[20].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[20].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[21].notePosInSeconds
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[21].specialAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[21].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470358}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[21].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClearSections
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[21].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[21].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[21].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[21].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[22].notePosInSeconds
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[22].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[23].notePosInSeconds
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[23].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[23].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[23].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[23].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[23].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[23].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[24].notePosInSeconds
-      value: 29
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[25].notePosInSeconds
-      value: 29.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[25].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[26].notePosInSeconds
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[26].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[27].notePosInSeconds
-      value: 30.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[27].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[27].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AttackPhase2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[27].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[27].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[27].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[27].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[27].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].notePosInSeconds
-      value: 30.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AttackPhase2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 30.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[28].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].notePosInSeconds
-      value: 31.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[30].notePosInSeconds
-      value: 31.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[30].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[31].notePosInSeconds
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[31].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[32].notePosInSeconds
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[32].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[32].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AttackPhase2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[32].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[32].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[32].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[32].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[32].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[32].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[32].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[33].notePosInSeconds
-      value: 33.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[33].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[33].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AttackPhase2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[33].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[33].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].notePosInSeconds
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AttackPhase2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[35].notePosInSeconds
-      value: 34.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].notePosInSeconds
-      value: 34.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AttackPhase2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 34.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].notePosInSeconds
-      value: 35.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].notePosInSeconds
-      value: 35.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[39].notePosInSeconds
-      value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[39].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[40].notePosInSeconds
-      value: 36.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[40].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[40].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[41].notePosInSeconds
-      value: 36.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[41].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[41].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[42].notePosInSeconds
-      value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[42].specialAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[42].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[42].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[42].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ContinueAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].notePosInSeconds
-      value: 37.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].specialAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ContinueAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].notePosInSeconds
-      value: 37.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].notePosInSeconds
-      value: 38
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].notePosInSeconds
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_TypeName
-      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[18].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470358}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[18].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[18].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[18].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[18].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[20].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[22].specialAttack
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[22].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470356}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[22].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[23].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[24].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[24].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AttackPhase2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[33].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[33].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[33].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[33].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[33].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[33].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[35].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AttackPhase2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AttackPhase2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[40].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[41].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[42].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].specialAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ContinueAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[44].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].notePosInSeconds
-      value: 40.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_TypeName
-      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[20].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[20].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[19].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470358}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[19].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[26].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[30].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[30].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[30].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[30].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[30].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[30].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[30].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[30].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[30].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[34].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[35].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[35].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[35].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[42].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].specialAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ContinueAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[45].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].notePosInSeconds
-      value: 41
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_TypeName
-      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[24].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[24].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[24].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[24].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[25].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[26].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[26].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AttackPhase2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[26].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[26].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[26].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[25].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[25].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AttackPhase2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[25].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[25].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[27].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[27].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[31].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[31].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClearSections
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[31].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[31].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[31].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[31].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[35].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[35].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[35].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[35].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[35].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[35].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[39].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClearSections
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[39].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[43].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].specialAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ContinueAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[46].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470358}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].notePosInSeconds
-      value: 41.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_TypeName
-      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[29].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[36].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[40].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].specialAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ContinueAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[47].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470358}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].notePosInSeconds
-      value: 42
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_TypeName
-      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[33].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[37].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[41].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ContinueAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].specialAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 41
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ContinueAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[48].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470358}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].notePosInSeconds
-      value: 42.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_TypeName
-      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[35].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[39].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[39].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[42].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ContinueAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].specialAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ContinueAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[49].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ContinueAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[52].notePosInSeconds
-      value: 43
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_TypeName
-      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470355}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[38].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].specialAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470359}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ContinueAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[50].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].playerShouldPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470358}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[53].notePosInSeconds
-      value: 44
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[53].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[53].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[53].noteFunction.m_TypeName
-      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].specialAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470356}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[51].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[52].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470356}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
         type: 2}
       propertyPath: notesInSeconds.Array.data[54].notePosInSeconds
-      value: 46
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[54].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[54].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[54].noteFunction.m_TypeName
-      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[52].specialAttack
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[53].playerShouldPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[53].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1597470358}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[53].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClearSections
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[53].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
         type: 2}
       propertyPath: notesInSeconds.Array.data[55].notePosInSeconds
-      value: 48
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
         type: 2}
-      propertyPath: notesInSeconds.Array.data[55].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      propertyPath: notesInSeconds.Array.data[56].notePosInSeconds
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
         type: 2}
-      propertyPath: notesInSeconds.Array.data[55].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[55].noteFunction.m_TypeName
+      propertyPath: notesInSeconds.Array.data[56].noteFunction.m_TypeName
       value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
     - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
         type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1597470356}
-    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
-        type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: StartAttack
+      propertyPath: notesInSeconds.Array.data[57].notePosInSeconds
+      value: 53.5
       objectReference: {fileID: 0}
     - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
         type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      propertyPath: notesInSeconds.Array.data[57].noteFunction.m_TypeName
+      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[58].notePosInSeconds
+      value: 54
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[58].noteFunction.m_TypeName
+      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[59].notePosInSeconds
+      value: 55.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[59].noteFunction.m_TypeName
+      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[54].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1597470359}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[54].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartAttackRejectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[54].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
         type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      propertyPath: notesInSeconds.Array.data[54].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
         type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      propertyPath: notesInSeconds.Array.data[54].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
         type: 2}
-      propertyPath: notesInSeconds.Array.data[52].noteFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      propertyPath: notesInSeconds.Array.data[55].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1597470359}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[55].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartAttackRejectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[55].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[55].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[55].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[56].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[56].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[60].notePosInSeconds
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[60].noteFunction.m_TypeName
+      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[61].notePosInSeconds
+      value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[61].noteFunction.m_TypeName
+      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[62].notePosInSeconds
+      value: 59
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[62].noteFunction.m_TypeName
+      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[56].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1741662627}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[56].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[56].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[57].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[57].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[63].notePosInSeconds
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[63].noteFunction.m_TypeName
+      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[57].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1741662627}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[57].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[57].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[57].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[58].playerShouldPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[59].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[59].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[64].notePosInSeconds
+      value: 61
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[64].noteFunction.m_TypeName
+      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[59].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1741662627}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[59].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[59].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[59].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[60].playerShouldPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[56].specialAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[61].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[61].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[61].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1741662627}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[61].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClearSections
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108610698085476, guid: 8e24aca7b1c125e43adf56bb0428b495,
+        type: 2}
+      propertyPath: notesInSeconds.Array.data[61].noteFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e24aca7b1c125e43adf56bb0428b495, type: 2}
@@ -9732,30 +7817,35 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 324347558}
   m_Script: {fileID: 11500000, guid: 38684f7c3ac13dd4cb0c6a853264acf6, type: 3}
---- !u!114 &1597470355 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114145815488191332, guid: 8e24aca7b1c125e43adf56bb0428b495,
-    type: 2}
-  m_PrefabInternal: {fileID: 1142565025}
-  m_Script: {fileID: 11500000, guid: 87ca1d720c97da7469a31115667f57f1, type: 3}
---- !u!114 &1597470356 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114528849843711432, guid: 8e24aca7b1c125e43adf56bb0428b495,
-    type: 2}
-  m_PrefabInternal: {fileID: 1142565025}
-  m_Script: {fileID: 11500000, guid: fdddd44bd375e4246ae986cf69949048, type: 3}
---- !u!114 &1597470358 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114074351824534810, guid: 8e24aca7b1c125e43adf56bb0428b495,
-    type: 2}
-  m_PrefabInternal: {fileID: 1142565025}
-  m_Script: {fileID: 11500000, guid: 6abb19479218eb54c989ee51f1c8474e, type: 3}
 --- !u!114 &1597470359 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114781553830641888, guid: 8e24aca7b1c125e43adf56bb0428b495,
     type: 2}
   m_PrefabInternal: {fileID: 1142565025}
   m_Script: {fileID: 11500000, guid: afff0711a6d203a4eb84dcd23c4679df, type: 3}
+--- !u!1 &1601417900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1762968276552830, guid: 3c654488f95e35f458e816a9fd1bc2e9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1625901920}
+--- !u!114 &1601417901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1601417900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ee78c1bd64153449c442b0aff9d2b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReflectiveDuration: 0.1
+  rend: {fileID: 0}
+  shield: {fileID: 341090091}
+  player: {fileID: 232572998}
+  boss: {fileID: 1565120365}
+  WaitingTime: 0.1
+  ReflectivePoint: {fileID: 232573000}
 --- !u!43 &1610216832
 Mesh:
   m_ObjectHideFlags: 0
@@ -10393,6 +8483,86 @@ Mesh:
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimized: 0
+--- !u!1001 &1726657842
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 232573000}
+    m_Modifications:
+    - target: {fileID: 4450109348886404, guid: d56fc31cf46a7344db9c50de92807633, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450109348886404, guid: d56fc31cf46a7344db9c50de92807633, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450109348886404, guid: d56fc31cf46a7344db9c50de92807633, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450109348886404, guid: d56fc31cf46a7344db9c50de92807633, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450109348886404, guid: d56fc31cf46a7344db9c50de92807633, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450109348886404, guid: d56fc31cf46a7344db9c50de92807633, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450109348886404, guid: d56fc31cf46a7344db9c50de92807633, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450109348886404, guid: d56fc31cf46a7344db9c50de92807633, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450109348886404, guid: d56fc31cf46a7344db9c50de92807633, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450109348886404, guid: d56fc31cf46a7344db9c50de92807633, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450109348886404, guid: d56fc31cf46a7344db9c50de92807633, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 135734164696206556, guid: d56fc31cf46a7344db9c50de92807633,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d56fc31cf46a7344db9c50de92807633, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &1741662619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1551490693511480, guid: 8e24aca7b1c125e43adf56bb0428b495,
+    type: 2}
+  m_PrefabInternal: {fileID: 1142565025}
+--- !u!114 &1741662627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1741662619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9cc4e797557664f95c002a23b32e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundControl: {fileID: 657596808}
+  ground: {fileID: 656650613}
+  player: {fileID: 232572998}
+  percentage: 0
+  mat: {fileID: 0}
 --- !u!43 &1749849223
 Mesh:
   m_ObjectHideFlags: 0

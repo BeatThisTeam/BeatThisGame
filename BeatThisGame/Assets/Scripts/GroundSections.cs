@@ -47,7 +47,7 @@ public class GroundSections : MonoBehaviour {
 
     public void Hurts(int ringIndex, int faceIndex) {
 
-        CharacterController player = ScenePrototypeManager.Instance.player.GetComponent<CharacterController>();
+        PlayerController player = ScenePrototypeManager.Instance.player.GetComponent<PlayerController>();
 
         if(rings[ringIndex].sections[faceIndex].hurts && player.ringIndex == ringIndex && player.faceIndex == faceIndex) {
             player.Damage(10);

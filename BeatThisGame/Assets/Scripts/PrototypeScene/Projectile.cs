@@ -13,6 +13,9 @@ public class Projectile : MonoBehaviour {
 
     public Attack2 att;
 
+    public bool rejectable;
+    public bool rejected;
+
     private void Awake() {
         tr = GetComponent<Transform>();
     }
@@ -31,14 +34,18 @@ public class Projectile : MonoBehaviour {
             tLerp += Time.deltaTime;
             yield return null;
         }
-        att.ResetTargetSections(playerFacePos, playerRingPos);
+
+        if (!rejectable && !rejected) {
+            att.ResetTargetSections(playerFacePos, playerRingPos);
+        }
+        
         Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             Debug.Log("colpito");
-            player.GetComponent<CharacterController>().Damage(damage);
+            player.GetComponent<PlayerController>().Damage(damage);
             att.ResetTargetSections(playerFacePos, playerRingPos);
             Destroy(this.gameObject);
         }

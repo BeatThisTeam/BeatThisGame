@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AttackCircle
   - Projectile
+  - Shiled
   layers:
   - Default
   - TransparentFX

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 public class ScenePrototypeManager : MonoBehaviour {
 
@@ -18,7 +19,7 @@ public class ScenePrototypeManager : MonoBehaviour {
     public GroundSections ground;
 
     public Transform player;
-    CharacterController playerCharContr;
+    PlayerController playerCharContr;
 
     public float noteToPlayInSeconds = 0;
 
@@ -56,7 +57,7 @@ public class ScenePrototypeManager : MonoBehaviour {
         }
 
         bossAnim = boss.GetComponent<Animator>();
-        playerCharContr = player.GetComponent<CharacterController>();
+        playerCharContr = player.GetComponent<PlayerController>();
     }
 
     private void Start() {
@@ -111,6 +112,7 @@ public class ScenePrototypeManager : MonoBehaviour {
         } else {
             SongManager.Instance.Stop();
             playing = false;
+            SceneManager.LoadScene(2);
         }
     }
 

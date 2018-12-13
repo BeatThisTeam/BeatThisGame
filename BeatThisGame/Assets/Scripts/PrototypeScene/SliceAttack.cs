@@ -24,7 +24,7 @@ public class SliceAttack : MonoBehaviour
     public BossController bossContr;
 
     public GroundColorChanger ground;
-    public CharacterController player;
+    public PlayerController player;
     public GroundSections groundSections;
 
     public Material mat1;
@@ -77,9 +77,9 @@ public class SliceAttack : MonoBehaviour
             groundSections.rings[1].sections[faceIndex].isTarget = true;
             groundSections.rings[2].sections[faceIndex].isTarget = true;
 
-            if (player.Dir == CharacterController.Direction.Left) {
+            if (player.Dir == PlayerController.Direction.Left) {
                 direction = -1;
-            }else if(player.Dir == CharacterController.Direction.Right) {
+            }else if(player.Dir == PlayerController.Direction.Right) {
                 direction = 1;
             } else if(Random.value > 0.5){
                 direction = -1;

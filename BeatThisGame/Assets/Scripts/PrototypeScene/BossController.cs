@@ -20,6 +20,8 @@ public class BossController : MonoBehaviour {
         if (other.CompareTag("AttackCircle")) {
             ScenePrototypeManager.Instance.GetComponent<SpecialAttack>().BossHit();
         }
+
+
     }
 
     public void print() {

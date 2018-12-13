@@ -114,13 +114,35 @@ MonoBehaviour:
   - notes:
     - 0
     durationInBeats: 4
+  - notes: []
+    durationInBeats: 4
+  - notes: []
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 3
+    durationInBeats: 4
   - notes:
     - 0
     durationInBeats: 4
   - notes:
     - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
     durationInBeats: 4
   currentBar:
     notes:
     - 0
+    - 2
     durationInBeats: 4

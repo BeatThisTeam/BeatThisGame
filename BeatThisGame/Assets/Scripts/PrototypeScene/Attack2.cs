@@ -7,6 +7,7 @@ public class Attack2 : MonoBehaviour {
     public float damage;
 
     public Projectile projectile;
+    public Projectile rejectableProjectile;
 
     public Transform player;
     public Transform boss;
@@ -19,11 +20,11 @@ public class Attack2 : MonoBehaviour {
     private int nAttacks = 0;
 
     private Vector3 spawnPos;
-    private CharacterController playerContr;
+    private PlayerController playerContr;
 
     public void StartAttack(float duration){
         
-        playerContr = player.GetComponent<CharacterController>();
+        playerContr = player.GetComponent<PlayerController>();
         initialTargetSection = playerContr.faceIndex;
         spawnPos = new Vector3(boss.position.x, spawnHeight, boss.position.z);
         Vector3 targetPos = new Vector3(player.position.x, spawnHeight, player.position.z);
@@ -32,6 +33,25 @@ public class Attack2 : MonoBehaviour {
         groundSections.rings[playerContr.ringIndex].sections[playerContr.faceIndex].isTarget = true;
         pr = Instantiate(projectile, spawnPos, Quaternion.identity);
         pr.player = player;
+        pr.att = this;
+        pr.playerFacePos = playerContr.faceIndex;
+        pr.playerRingPos = playerContr.ringIndex;
+        pr.damage = damage;
+        pr.Move(spawnPos, targetPos, duration);
+    }
+
+    public void StartAttackRejectable(float duration) {
+
+        playerContr = player.GetComponent<PlayerController>();
+        initialTargetSection = playerContr.faceIndex;
+        spawnPos = new Vector3(boss.position.x, spawnHeight, boss.position.z);
+        Vector3 targetPos = new Vector3(player.position.x, spawnHeight, player.position.z);
+        nAttacks = 0;
+        Projectile pr;
+        groundSections.rings[playerContr.ringIndex].sections[playerContr.faceIndex].isTarget = true;
+        pr = Instantiate(rejectableProjectile, spawnPos, Quaternion.identity);
+        pr.player = player;
+        pr.rejectable = true;
         pr.att = this;
         pr.playerFacePos = playerContr.faceIndex;
         pr.playerRingPos = playerContr.ringIndex;
