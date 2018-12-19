@@ -115,6 +115,7 @@ public class ScoreManager : MonoBehaviour {
                 specialAttackPower += specialAttackMaxPower * perfectAccuracy / numNotesInSection;
             }
 
+            EventManager.TriggerEvent("note");
             specialAttackUI.UpdateBar(specialAttackPower);
 
             if (SongManager.Instance.SongPositionInSeconds > noteToHit) {

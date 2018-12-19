@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33933005742668004}
   - component: {fileID: 23172851459979524}
   - component: {fileID: 114762175548465486}
-  - component: {fileID: 135975921631760768}
   - component: {fileID: 54924910639848044}
+  - component: {fileID: 135541169463037508}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Projectile
@@ -37,9 +37,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1251140387019392}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7923245, y: 4.59, z: -14.014205}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.6467423, y: 6.1580276, z: -25.364086}
+  m_LocalScale: {x: 1.6982999, y: 1.6982999, z: 1.6982999}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -117,7 +117,9 @@ MonoBehaviour:
   playerRingPos: 0
   playerFacePos: 0
   att: {fileID: 0}
---- !u!135 &135975921631760768
+  rejectable: 0
+  rejected: 0
+--- !u!135 &135541169463037508
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,5 +129,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}

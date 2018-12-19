@@ -30,8 +30,8 @@ public class PlayerController : MonoBehaviour {
         characterHealthBarUI.Setup(maxHealth);
         tr = GetComponent<Transform>();
         anim = GetComponent<Animator>();
-        rend = GetComponentInChildren<Renderer>();
-        rend.material.shader = Shader.Find(teleportShader);
+        //rend = GetComponentInChildren<Renderer>();
+        //rend.material.shader = Shader.Find(teleportShader);
     }
 
     private void Update() {
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.D)) {
             ScoreManager.Instance.HitNote(faceIndex, ringIndex);
             SoundManager.Instance.PlayMoveSound();
-            StartCoroutine("FadeOut");
+            //StartCoroutine("FadeOut");
             faceIndex = (faceIndex + 1) % ground.rings[ringIndex].sections.Count;
             dir = Direction.Right;
         }
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.A)) {
             ScoreManager.Instance.HitNote(faceIndex, ringIndex);
             SoundManager.Instance.PlayMoveSound();
-            StartCoroutine("FadeOut");
+            //StartCoroutine("FadeOut");
             faceIndex --;
             dir = Direction.Left;
             if(faceIndex < 0){
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.W)) {
             ScoreManager.Instance.HitNote(faceIndex, ringIndex);
             SoundManager.Instance.PlayMoveSound();
-            StartCoroutine("FadeOut");
+            //StartCoroutine("FadeOut");
             ringIndex --;
             dir = Direction.Up;
             if(ringIndex < 0) {
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.S)) {
             ScoreManager.Instance.HitNote(faceIndex, ringIndex);
             SoundManager.Instance.PlayMoveSound();
-            StartCoroutine("FadeOut");
+            //StartCoroutine("FadeOut");
             ringIndex = (ringIndex + 1) % ground.rings.Count;
             dir = Direction.Down;
         }
@@ -87,20 +87,20 @@ public class PlayerController : MonoBehaviour {
         characterHealthBarUI.UpdateBar(health);
     }
 
-    private IEnumerator FadeOut() {
+    //private IEnumerator FadeOut() {
 
-        float start = -2f;
-        float finish = 10f;
+    //    float start = -2f;
+    //    float finish = 10f;
 
-        float tLerp = 0f;
-        float duration = 0.2f;
+    //    float tLerp = 0f;
+    //    float duration = 0.2f;
 
-        while (tLerp <= duration) {
-            rend.material.SetFloat("_TransitionLevel", Mathf.Lerp(start, finish, tLerp/duration));
-            tLerp += Time.deltaTime;
+    //    while (tLerp <= duration) {
+    //        rend.material.SetFloat("_TransitionLevel", Mathf.Lerp(start, finish, tLerp/duration));
+    //        tLerp += Time.deltaTime;
 
-            yield return null;
-        }
-        rend.material.SetFloat("_TransitionLevel", 0);
-    }
+    //        yield return null;
+    //    }
+    //    rend.material.SetFloat("_TransitionLevel", 0);
+    //}
 }
