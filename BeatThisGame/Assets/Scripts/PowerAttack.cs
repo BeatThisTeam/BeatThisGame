@@ -5,30 +5,23 @@ using UnityEngine.UI;
 
 public class PowerAttack : MonoBehaviour 
 {
-    int minValue = 0, maxValue = 100, variationAmount = 2;
+    float minValue = 0f;
+    float maxValue;
+    float variationAmount = 2;
     Slider sliderRef;                                               // True when the player gets damaged.
 
+    public void Setup(float value) {
 
-    void Start()
-    {
         sliderRef = this.gameObject.GetComponent<Slider>();
         sliderRef.minValue = minValue;
-        sliderRef.maxValue = maxValue;
         sliderRef.value = minValue;
+        maxValue = value;
+        sliderRef.maxValue = maxValue;
     }
 
+    public void UpdateBar(float value) {
 
-    void Update()
-    {
-        if (Input.GetKeyDown("a"))
-        {
-
-            sliderRef.value -= variationAmount;
-        }
-        else if (Input.GetKeyDown("d"))
-        {
-            sliderRef.value += variationAmount;
-        }
+        Debug.Log(value);
+        sliderRef.value = value;
     }
-
 }

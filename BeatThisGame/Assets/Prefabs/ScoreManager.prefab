@@ -65,3 +65,5 @@ MonoBehaviour:
   numNotesInSection: 0
   numSpecialAttacks: 0
   numOtherAttacks: 0
+  specialAttackUI: {fileID: 0}
+  bossHealthBarUI: {fileID: 0}

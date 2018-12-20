@@ -4,30 +4,23 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
-    int minValue = 0, maxValue = 100, variationAmount = 2;
+    float minValue = 0;
+    float maxValue;
+    //variationAmount = 2;
     Slider sliderRef;                                               // True when the player gets damaged.
 
+    public void Setup(float value) {
 
-    void Start()
-    {
         sliderRef = this.gameObject.GetComponent<Slider>();
         sliderRef.minValue = minValue;
+        sliderRef.maxValue = maxValue;
+        maxValue = value;
         sliderRef.maxValue = maxValue;
         sliderRef.value = maxValue;
     }
 
+    public void UpdateBar(float value) {
 
-    void Update()
-    {
-        if (Input.GetKeyDown("a"))
-        {
-
-            sliderRef.value -= variationAmount;
-        }
-        else if (Input.GetKeyDown("d"))
-        {
-            sliderRef.value += variationAmount;
-        }
+        sliderRef.value = value;
     }
-    
 }

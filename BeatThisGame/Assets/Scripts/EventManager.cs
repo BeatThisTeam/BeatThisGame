@@ -22,6 +22,10 @@ public class EventManager : MonoBehaviour {
         }
     }
 
+    private void Awake() {
+        instance.Init();
+    }
+
     //initiate the new dictionary
     void Init() {
         if (eventDictionary == null) {

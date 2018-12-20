@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - AttackCircle
+  - Projectile
+  - Shiled
   layers:
   - Default
   - TransparentFX

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StagePrototype.unity
     guid: f0cc4a076f3651e4db10a8f7b42f9f22
+  - enabled: 1
+    path: Assets/Scenes/EndOfGame.unity
+    guid: b423e6a484a379e4fb96cc9b65caa6c1
   m_configObjects: {}
