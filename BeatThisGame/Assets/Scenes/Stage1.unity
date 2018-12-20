@@ -3233,7 +3233,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-24918
+  m_Name: pb_Mesh-1804
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -4642,7 +4642,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-24966
+  m_Name: pb_Mesh-1852
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -5819,7 +5819,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-24970
+  m_Name: pb_Mesh-1856
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -7362,7 +7362,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-24962
+  m_Name: pb_Mesh-1848
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -7598,7 +7598,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-24956
+  m_Name: pb_Mesh-1842
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -7783,7 +7783,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-24968
+  m_Name: pb_Mesh-1854
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -8046,7 +8046,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-24964
+  m_Name: pb_Mesh-1850
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -8213,7 +8213,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-24972
+  m_Name: pb_Mesh-1858
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -9253,7 +9253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackScreen: {fileID: 1081529131}
   mat1: {fileID: 2100000, guid: 2f1ba25700c306e448d4294e2974244b, type: 2}
-  mat2: {fileID: 2100000, guid: e8a6c4af6dfcb9746acbaa3dfea9f1e4, type: 2}
+  mat2: {fileID: 2100000, guid: b0c55650812e249fb896906e9cbf6e95, type: 2}
   gcc: {fileID: 657596808}
 --- !u!114 &1741662623
 MonoBehaviour:
@@ -9267,11 +9267,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abb19479218eb54c989ee51f1c8474e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundControl: {fileID: 657596808}
-  ground: {fileID: 656650613}
+  playerGroundControl: {fileID: 657596808}
+  playerGround: {fileID: 656650613}
+  attackRingPrefab: {fileID: 114373114926840684, guid: 4cda32dd0ac303d4890b0f59ef3c2ab9,
+    type: 2}
   player: {fileID: 232572998}
   percentage: 0.35
-  mat: {fileID: 2100000, guid: b0c55650812e249fb896906e9cbf6e95, type: 2}
+  defaultMat: {fileID: 2100000, guid: b0c55650812e249fb896906e9cbf6e95, type: 2}
+  damageMat: {fileID: 2100000, guid: 68b953d5b501f1a4ba369d0949b25a18, type: 2}
 --- !u!114 &1741662625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9408,7 +9411,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     removable: 0
   - notePosInSeconds: 14
-    playerShouldPlay: 0
+    playerShouldPlay: 1
     specialAttack: 0
     noteFunction:
       m_PersistentCalls:
@@ -9416,7 +9419,7 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     removable: 0
-  - notePosInSeconds: 15.5
+  - notePosInSeconds: 14.5
     playerShouldPlay: 0
     specialAttack: 0
     noteFunction:
@@ -9429,7 +9432,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0.5
+            m_FloatArgument: 1.5
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -9445,7 +9448,7 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     removable: 0
-  - notePosInSeconds: 17.5
+  - notePosInSeconds: 16.5
     playerShouldPlay: 0
     specialAttack: 0
     noteFunction:
@@ -9458,7 +9461,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0.5
+            m_FloatArgument: 1.5
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -12415,7 +12418,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-24960
+  m_Name: pb_Mesh-1846
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -13189,7 +13192,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-24958
+  m_Name: pb_Mesh-1844
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2

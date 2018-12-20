@@ -45,6 +45,28 @@ public class GroundSections : MonoBehaviour {
         }
     }
 
+    public void SwitchFaceDelayed(int ringIndex, int faceIndex, float delay) {
+
+        StartCoroutine(SwitchFaceDelayedCoroutine(ringIndex, faceIndex, delay));
+    }
+
+    public void SwitchFaceDelayed(int ringIndex, int faceIndex, bool val, float delay) {
+
+        StartCoroutine(SwitchFaceDelayedCoroutine(ringIndex, faceIndex, delay));
+    }
+
+    public IEnumerator SwitchFaceDelayedCoroutine(int ringIndex, int faceIndex, float delay) {
+
+        yield return new WaitForSeconds(delay);
+        SwitchFace(ringIndex, faceIndex);
+    }
+
+    public IEnumerator SwitchFaceDelayedCoroutine(int ringIndex, int faceIndex, bool val, float delay) {
+
+        yield return new WaitForSeconds(delay);
+        SwitchFace(ringIndex, faceIndex, val);
+    }
+
     public void Hurts(int ringIndex, int faceIndex) {
 
         PlayerController player = ScenePrototypeManager.Instance.player.GetComponent<PlayerController>();

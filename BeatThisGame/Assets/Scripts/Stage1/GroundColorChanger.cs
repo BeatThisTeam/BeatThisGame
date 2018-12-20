@@ -199,6 +199,17 @@ public class GroundColorChanger : MonoBehaviour
         rendererFaces.material = mat;
     }
 
+    public void ChangeColorDelayed(int ringIndex, int faceIndex, Material mat, float delay) {
+
+        StartCoroutine(ChangeColorDelayedCoroutine(ringIndex, faceIndex, mat, delay));
+    }
+
+    private IEnumerator ChangeColorDelayedCoroutine(int ringIndex, int faceIndex, Material mat, float delay) {
+
+        yield return new WaitForSeconds(delay);
+        ChangeColor(ringIndex, faceIndex, mat);
+    }
+
     public void ChangeColorSlice(int faceIndex, Material mat){
 
         if(faceIndex >= groundSections.rings[0].sections.Count) {
