@@ -6,6 +6,9 @@ public class Projectile : MonoBehaviour {
 
     public float damage;
 
+    //The number of projectiles fired in the same attack
+    public int numFired;
+
     Transform tr;
     public Transform player;
 
@@ -26,13 +29,13 @@ public class Projectile : MonoBehaviour {
 
     public void Move(Vector3 startPos, Vector3 endPos, float duration) {
 
-        EventManager.StartListening("note", action);
+        
         StartCoroutine( MoveCoroutine(startPos, endPos, duration));
     }
 
     IEnumerator MoveCoroutine(Vector3 startPos, Vector3 endPos, float duration) {
        
-        float tLerp = 0;
+        float elapsedTime = 0;
 
         float distance = Vector3.Distance(startPos, endPos);
         float velocity = distance / duration;
@@ -42,18 +45,16 @@ public class Projectile : MonoBehaviour {
             //tr.position = Vector3.Lerp(startPos, endPos, tLerp / duration);
             //tLerp += Time.deltaTime;
             //yield return null;
-
+            elapsedTime += Time.deltaTime;
             Vector3 pos = tr.position;
             pos = pos + dir * velocity * Time.deltaTime;
             tr.position = pos;
             yield return null;
-        }
 
-        if (!rejectable && !rejected) {
-            att.ResetTargetSections(playerFacePos, playerRingPos);
-        }
-        
-        Destroy(this.gameObject);
+            if(elapsedTime >= duration + 0.5f) {
+                DestroyGameObject();
+            }
+        }     
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -65,8 +66,11 @@ public class Projectile : MonoBehaviour {
         }
     }
 
-    private void DestroyGameObject() {
-        EventManager.StopListening("note", action);
+    public void DestroyGameObject() {
+
+        if (!rejectable && !rejected) {
+            att.ResetTargetSections(playerFacePos, playerRingPos);
+        }
         Destroy(this.gameObject);
     }
 }

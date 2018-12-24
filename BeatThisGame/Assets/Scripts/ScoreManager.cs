@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour {
 
     public static ScoreManager Instance { get { return instance; } }
 
-    private float noteToHit;
+    public float noteToHit;
 
     [Header("Delta Accuracy")]
     public float deltaAccuracy;
@@ -99,9 +99,14 @@ public class ScoreManager : MonoBehaviour {
         //Debug.Log("delta: " + Mathf.Abs(noteToHit - SongManager.Instance.SongPositionInSeconds));
         //Debug.Log("songpos: " + SongManager.Instance.SongPositionInSeconds);
         //Debug.Log("targetpos: " + noteToHit);
-
+        //Debug.Log(facePos +" "+ ringPos);
         float diff = Mathf.Abs(noteToHit - SongManager.Instance.SongPositionInSeconds);
-
+        //if(diff > deltaAccuracy) {
+        //    Debug.Log(noteToHit);
+        //    Debug.Log(SongManager.Instance.SongPositionInSeconds);
+        //    Debug.Log(diff);
+        //}
+        //Debug.Assert(ground.rings[ringPos].sections[facePos].isTarget);
         if (diff < deltaAccuracy && ground.rings[ringPos].sections[facePos].isTarget) {
 
             if(diff < deltaAccuracy && diff > deltaAccuracy / 2) {
@@ -115,7 +120,7 @@ public class ScoreManager : MonoBehaviour {
                 specialAttackPower += specialAttackMaxPower * perfectAccuracy / numNotesInSection;
             }
 
-            EventManager.TriggerEvent("note");
+            //EventManager.TriggerEvent("note");
             specialAttackUI.UpdateBar(specialAttackPower);
 
             if (SongManager.Instance.SongPositionInSeconds > noteToHit) {

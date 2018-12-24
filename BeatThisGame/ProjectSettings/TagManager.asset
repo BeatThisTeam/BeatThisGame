@@ -7,6 +7,8 @@ TagManager:
   - AttackCircle
   - Projectile
   - Shiled
+  - InnerCircle
+  - OuterCircle
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,10 @@ public class BossController : MonoBehaviour {
 
     public Transform player;
 
+    public Material damagedMaterial;
+
+    private bool damageable = true;
+
     private void Awake() {
 
         tr = GetComponent<Transform>();
@@ -18,10 +22,37 @@ public class BossController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("AttackCircle")) {
-            ScenePrototypeManager.Instance.GetComponent<SpecialAttack>().BossHit();
+            if (damageable) {
+                ScenePrototypeManager.Instance.GetComponent<SpecialAttack>().BossHit();
+                StartCoroutine(PlayDamageAnimation(0.5f));
+            }
+        }           
+    }
+
+    private IEnumerator PlayDamageAnimation(float duration) {
+
+        damageable = false;
+        float stateDuration = 0.1f;
+        float timer = 0f;
+
+        Material nextMaterial;
+        Material defaultMat;
+        Material temp;
+        Renderer renderer;
+        renderer = GetComponentInChildren<Renderer>();
+        nextMaterial = damagedMaterial;
+        defaultMat = renderer.material;
+
+        while (timer < duration) {
+            temp = renderer.material;
+            renderer.material = nextMaterial;
+            nextMaterial = temp;
+            timer += stateDuration;
+            yield return new WaitForSeconds(stateDuration);
         }
-
-
+        Debug.Log(defaultMat.ToString());
+        renderer.material = defaultMat;
+        damageable = true;
     }
 
     public void print() {
