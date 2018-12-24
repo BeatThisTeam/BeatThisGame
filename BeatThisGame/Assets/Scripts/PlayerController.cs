@@ -24,7 +24,13 @@ public class PlayerController : MonoBehaviour {
 
     public PlayerHealth characterHealthBarUI;
 
+
     public UpDownCam cam;
+
+    public GameObject body;
+
+    private bool damageable = true;
+
 
     public void Setup() {
 
@@ -85,8 +91,26 @@ public class PlayerController : MonoBehaviour {
 
     public void Damage(float damage) {
 
-        health -= damage;
-        characterHealthBarUI.UpdateBar(health);
+        if (damageable) {
+            health -= damage;
+            characterHealthBarUI.UpdateBar(health);
+            StartCoroutine(PlayDamageAnimation(0.5f));
+        }
+    }
+
+    private IEnumerator PlayDamageAnimation(float duration) {
+
+        damageable = false;
+        float stateDuration = 0.1f;
+        float timer = 0f;
+        
+        while (timer < duration) {
+            body.SetActive(!body.activeSelf);
+            timer += stateDuration;
+            yield return new WaitForSeconds(stateDuration);
+        }
+        body.SetActive(true);
+        damageable = true;
     }
 
     //private IEnumerator FadeOut() {

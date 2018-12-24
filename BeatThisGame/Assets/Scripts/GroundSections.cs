@@ -29,7 +29,7 @@ public class GroundSections : MonoBehaviour {
 
         if(rings[ringIndex].sections[faceIndex].hurts == true) {
             ResetHurt(ringIndex, faceIndex);
-            rings[ringIndex].sections[faceIndex].isTarget = true;
+            //rings[ringIndex].sections[faceIndex].isTarget = true;
         } else {
             StartCoroutine(SetHurt(ringIndex, faceIndex, 0.1f));
         }
@@ -39,10 +39,32 @@ public class GroundSections : MonoBehaviour {
 
         if (val == false) {
             ResetHurt(ringIndex, faceIndex);
-            rings[ringIndex].sections[faceIndex].isTarget = true;
+            //rings[ringIndex].sections[faceIndex].isTarget = true;
         } else {
             StartCoroutine(SetHurt(ringIndex, faceIndex, 0.1f));
         }
+    }
+
+    public void SwitchFaceDelayed(int ringIndex, int faceIndex, float delay) {
+
+        StartCoroutine(SwitchFaceDelayedCoroutine(ringIndex, faceIndex, delay));
+    }
+
+    public void SwitchFaceDelayed(int ringIndex, int faceIndex, bool val, float delay) {
+
+        StartCoroutine(SwitchFaceDelayedCoroutine(ringIndex, faceIndex, delay));
+    }
+
+    public IEnumerator SwitchFaceDelayedCoroutine(int ringIndex, int faceIndex, float delay) {
+
+        yield return new WaitForSeconds(delay);
+        SwitchFace(ringIndex, faceIndex);
+    }
+
+    public IEnumerator SwitchFaceDelayedCoroutine(int ringIndex, int faceIndex, bool val, float delay) {
+
+        yield return new WaitForSeconds(delay);
+        SwitchFace(ringIndex, faceIndex, val);
     }
 
     public void Hurts(int ringIndex, int faceIndex) {

@@ -20,8 +20,7 @@ public class PowerAttack : MonoBehaviour
     }
 
     public void UpdateBar(float value) {
-
-        Debug.Log(value);
+        
         sliderRef.value = value;
     }
 }
