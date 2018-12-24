@@ -7,22 +7,19 @@ public class FollowCam5 : MonoBehaviour {
     public GroundSections CamRing;
 
     public PlayerController player;
-    public GroundSections ground;
 
-    public Transform target;
     public Transform monster;
-    public Transform emptycam;
 
     public float SmoothSpeed;
 
-    public Vector3 offset;
-
     private Vector3 DesiredPosition;
 
-    public float Height;
-    public float angle;
-    public float radiusOffset;
-
+    //private void Start()
+    //{
+    //    int FaceIndex = player.faceIndex;
+        
+    //    transform.position = CamRing.rings[0].sections[FaceIndex].tr.position;
+    //}
 
     private void FixedUpdate()
     {

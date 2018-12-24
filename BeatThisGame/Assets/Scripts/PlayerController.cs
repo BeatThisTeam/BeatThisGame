@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour {
 
     public PlayerHealth characterHealthBarUI;
 
+    public UpDownCam cam;
+
     public void Setup() {
 
         health = maxHealth;
@@ -35,7 +37,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
-
+         
         if (Input.GetKeyDown(KeyCode.D)) {
             ScoreManager.Instance.HitNote(faceIndex, ringIndex);
             SoundManager.Instance.PlayMoveSound();
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.W)) {
+        if (Input.GetKeyDown(KeyCode.W) && cam.i == true && cam.set == 1) {
             ScoreManager.Instance.HitNote(faceIndex, ringIndex);
             SoundManager.Instance.PlayMoveSound();
             //StartCoroutine("FadeOut");
@@ -66,7 +68,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S)) {
+        if (Input.GetKeyDown(KeyCode.S) && cam.i == true && cam.set == 1) {
             ScoreManager.Instance.HitNote(faceIndex, ringIndex);
             SoundManager.Instance.PlayMoveSound();
             //StartCoroutine("FadeOut");
