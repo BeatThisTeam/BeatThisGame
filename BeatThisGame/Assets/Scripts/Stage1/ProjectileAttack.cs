@@ -57,6 +57,7 @@ public class ProjectileAttack : Attack {
             pr.Move(spawnPos, targetPos, duration);
             targetModifier += 2;
         }
+
     }
 
     private void FireProjectile(Vector3 startPos, Vector3 endPos, float duration, bool rejectable) {
