@@ -5,108 +5,67 @@ using UnityEngine;
 public class UpDownCam : MonoBehaviour
 {
 
-    public Transform[] view;
-    Transform EndView;
+    private Transform[] view;
+    private int viewIndex;
 
-    public Transform monster;
+    [Header("Camera Positions")]
+    public Transform camPosUp;
+    public Transform camPosDown;
 
-    public float TransitionSpeed;
-    //public float SmoothWASDSpeed;
+    [Header("Camera look direction")]
+    public Transform cameraTarget;
 
-    public bool i;
+    [Header("Camera movement duration")]
+    public float transitionDuration;
 
-    public int set = 1;
-
-    public GameObject MainCamera;
-    public GameObject OverheadCamera;
-
-    public float WaitingTime;
-    public float ActiveWaitingTime;
-
+    [Header("Player")]
     public PlayerController player;
 
-    public GroundSections OvCamRing;
+    public void Setup() {
 
-    public void FixedUpdate()
-    {
-
-        Camera MainCam = MainCamera.GetComponent<Camera>();
-        Camera OvCam = OverheadCamera.GetComponent<Camera>();
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            set = 0;
-            OvCam.enabled = true;
-            MainCam.enabled = false;
-
-            EndView = view[0];
-            StartCoroutine(UpDown(EndView));
-            StartCoroutine(Active());
-            
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            i = false;
-            set = 1;
-            EndView = view[1];
-            StartCoroutine(UpDown(EndView));
-            StartCoroutine(OvCameraDown(MainCam, OvCam, WaitingTime));
-        }
-
-        //if (i == true)
-        //{
-        //    StartCoroutine(MoveWASD());
-        //}
-       
+        view = new Transform[2];
+        view[0] = camPosUp;
+        view[1] = camPosDown;
+        viewIndex = 1;
     }
 
-    IEnumerator UpDown(Transform EndView)
-    {
-        while(i == false)
-        {
-            transform.position = Vector3.Lerp(transform.position, EndView.position, TransitionSpeed * Time.deltaTime);
-            //transform.LookAt(monster);
+    private void Update() {
+
+        int FaceIndex = player.faceIndex;
+        Vector3 DesiredPosition = view[viewIndex].position;
+
+        Vector3 SmoothedPosition = Vector3.Lerp(transform.position, DesiredPosition, 9f * Time.deltaTime);
+
+        transform.position = SmoothedPosition;
+        transform.LookAt(cameraTarget);
+    }
+
+    public void ChangeCamera() {
+
+        if (viewIndex == 0) {
+            viewIndex = 1;
+        } else {
+            viewIndex = 0;
+        }
+        StartCoroutine(UpDown(view[viewIndex], transitionDuration));
+    }
+
+    IEnumerator UpDown(Transform EndView, float duration){
+
+        float tLerp = 0;
+
+        while (tLerp <= duration) {
+            transform.position = Vector3.Lerp(transform.position, EndView.position, tLerp/duration);
 
             Vector3 currentAngle = new Vector3
-                (Mathf.LerpAngle(transform.rotation.eulerAngles.x, EndView.rotation.eulerAngles.x, TransitionSpeed * Time.deltaTime),
-                  Mathf.LerpAngle(transform.rotation.eulerAngles.y, EndView.rotation.eulerAngles.y, TransitionSpeed * Time.deltaTime),
-                  Mathf.LerpAngle(transform.rotation.eulerAngles.z, EndView.rotation.eulerAngles.z, TransitionSpeed * Time.deltaTime));
+                (Mathf.LerpAngle(transform.rotation.eulerAngles.x, EndView.rotation.eulerAngles.x, tLerp / duration),
+                Mathf.LerpAngle(transform.rotation.eulerAngles.y, EndView.rotation.eulerAngles.y, tLerp / duration),
+                Mathf.LerpAngle(transform.rotation.eulerAngles.z, EndView.rotation.eulerAngles.z, tLerp / duration));
 
             transform.eulerAngles = currentAngle;
+            tLerp += Time.deltaTime;
 
             yield return null;
         }
-
-        
-    }
-
-    //IEnumerator MoveWASD()
-    //{
-
-    //    int FaceIndex = player.faceIndex;
-    //    Vector3 DesiredPosition = OvCamRing.rings[0].sections[FaceIndex].tr.position;
-
-    //    Vector3 SmoothedPosition = Vector3.Lerp(transform.position, DesiredPosition, SmoothWASDSpeed * Time.deltaTime);
-
-    //    transform.position = SmoothedPosition;
-    //    transform.LookAt(monster);
-
-    //    yield return null;
-    //}
-
-
-    IEnumerator OvCameraDown(Camera MainCam, Camera OvCam, float WaitingTime)
-    {
-        yield return new WaitForSeconds(WaitingTime);
-        i = true;
-        set = 1;
-        MainCam.enabled = true;
-        OvCam.enabled = false;
-    }
-
-    IEnumerator Active()
-    {
-        yield return new WaitForSeconds(ActiveWaitingTime);
-        i = true;
     }
 }
