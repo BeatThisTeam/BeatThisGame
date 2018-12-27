@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject body;
 
     private bool damageable = true;
-
+    private Shield shield;
 
     public void Setup() {
 
@@ -38,11 +38,16 @@ public class PlayerController : MonoBehaviour {
         characterHealthBarUI.Setup(maxHealth);
         tr = GetComponent<Transform>();
         anim = GetComponent<Animator>();
+        shield = GetComponent<Shield>();
         //rend = GetComponentInChildren<Renderer>();
         //rend.material.shader = Shader.Find(teleportShader);
     }
 
     private void Update() {
+
+        if (Input.GetKeyDown(KeyCode.P)) {
+            shield.ActivateShield();
+        }
          
         if (Input.GetKeyDown(KeyCode.D)) {
             ScoreManager.Instance.HitNote(faceIndex, ringIndex);
@@ -63,7 +68,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && cam.i == true && cam.set == 1) {
+        if (Input.GetKeyDown(KeyCode.W)) {
             ScoreManager.Instance.HitNote(faceIndex, ringIndex);
             SoundManager.Instance.PlayMoveSound();
             //StartCoroutine("FadeOut");
@@ -74,7 +79,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && cam.i == true && cam.set == 1) {
+        if (Input.GetKeyDown(KeyCode.S)) {
             ScoreManager.Instance.HitNote(faceIndex, ringIndex);
             SoundManager.Instance.PlayMoveSound();
             //StartCoroutine("FadeOut");

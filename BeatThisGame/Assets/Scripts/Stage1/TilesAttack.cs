@@ -78,6 +78,12 @@ public class TilesAttack : MonoBehaviour {
         }
     }
 
+    public void FadeTiles(float duration, int ringIndex, int faceIndex) {
+
+         playerGroundControl.ChangeColor(ringIndex, faceIndex, false, duration);
+                
+    }
+
     public void AttackOnFace(float duration) {
 
         AttackOnFace(duration, player.faceIndex);

@@ -21,6 +21,8 @@ public class ScenePrototypeManager : MonoBehaviour {
     public Transform player;
     PlayerController playerCharContr;
 
+    public UpDownCam camera;
+
     public float noteToPlayInSeconds = 0;
 
     private bool playing = true;
@@ -64,6 +66,7 @@ public class ScenePrototypeManager : MonoBehaviour {
 
         playerCharContr.Setup();
         SongManager.Instance.SetSong(song);
+        camera.Setup();
         boss.StartIdle();
         ScoreManager.Instance.Setup();
         //metronome.StartMetronome();
