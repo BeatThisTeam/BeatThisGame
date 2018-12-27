@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Activator.cs" t="Include" />
+        <e p="AttackHintActivator.cs" t="Include" />
+        <e p="Editor" t="Include">
+          <e p="NotesInSecondsBuilder.cs" t="Include" />
+        </e>
+        <e p="LowMan" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="ThirdPersonCharacter.cs" t="Include" />
+          </e>
+        </e>
+        <e p="movehintact.cs" t="Include" />
+        <e p="RedHintActivator.cs" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="Attack.cs" t="Include" />
+          <e p="BossHealth.cs" t="Include" />
+          <e p="CircleMetronome.cs" t="Include" />
+          <e p="Cube.cs" t="Include" />
+          <e p="EventManager.cs" t="Include" />
+          <e p="FollowCam5.cs" t="Include" />
+          <e p="GroundSections.cs" t="Include" />
+          <e p="LoadSceneOnClick.cs" t="Include" />
+          <e p="OverheadCamMovement.cs" t="Include" />
+          <e p="PlayerController.cs" t="Include" />
+          <e p="PlayerHealth.cs" t="Include" />
+          <e p="PowerAttack.cs" t="Include" />
+          <e p="QuitOnClick.cs" t="Include" />
+          <e p="Scene1Manager.cs" t="Include" />
+          <e p="ScenePrototypeManager.cs" t="Include" />
+          <e p="ScoreManager.cs" t="Include" />
+          <e p="Section.cs" t="Include" />
+          <e p="SelectOnInput.cs" t="Include" />
+          <e p="Shield.cs" t="Include" />
+          <e p="ShieldReflection.cs" t="Include" />
+          <e p="SimpleCameraController.cs" t="Include" />
+          <e p="Song.cs" t="Include" />
+          <e p="SongManager.cs" t="Include" />
+          <e p="SoundManager.cs" t="Include" />
+          <e p="Stage1" t="Include">
+            <e p="Attack2.cs" t="Include" />
+            <e p="BossController.cs" t="Include" />
+            <e p="Circle.cs" t="Include" />
+            <e p="GroundColorChanger.cs" t="Include" />
+            <e p="IntroSection.cs" t="Include" />
+            <e p="Projectile.cs" t="Include" />
+            <e p="ProjectileAttack.cs" t="Include" />
+            <e p="RingAttack.cs" t="Include" />
+            <e p="SliceAttack.cs" t="Include" />
+            <e p="SpecialAttack.cs" t="Include" />
+            <e p="TilesAttack.cs" t="Include" />
+          </e>
+          <e p="SwitchingCamera.cs" t="Include" />
+          <e p="UpDownCam.cs" t="Include" />
+          <e p="UpDownCam2.cs" t="Include" />
+        </e>
+        <e p="ShieldHintActivator.cs" t="Include" />
+        <e p="TextMesh Pro" t="Include">
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="BeatThisGame.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2018.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.2/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_BeatThisGame.1590070301.00" t="ExcludeRecursive" />
+  </component>
+</project>
