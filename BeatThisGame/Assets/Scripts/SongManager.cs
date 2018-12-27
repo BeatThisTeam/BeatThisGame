@@ -73,6 +73,7 @@ public class SongManager : MonoBehaviour {
     public void UpdateSongValues() {
 
         if (playing) {
+
             //We update all our song position variables
             float newSongPositionInSeconds = (float)(AudioSettings.dspTime - dspSongTime);
 

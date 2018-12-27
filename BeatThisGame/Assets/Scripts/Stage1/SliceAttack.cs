@@ -30,7 +30,9 @@ public class SliceAttack : MonoBehaviour
     public Material mat1;
     public Material mat2;
 
-    public void StartAttack(float noteToPlayInSeconds){
+    public TilesAttack tilesAttack;
+
+    public void StartAttack(float duration){
 
         sliceCount = groundSections.rings[0].sections.Count;
 
@@ -42,25 +44,27 @@ public class SliceAttack : MonoBehaviour
         //Vector3 spawnPos = new Vector3(groundSections.rings[2].sections[faceIndex].tr.position.x, spawnHeight, groundSections.rings[2].sections[faceIndex].tr.position.z);
         //Vector3 endPos = new Vector3(groundSections.rings[2].sections[faceIndex].tr.position.x, endHeight, groundSections.rings[2].sections[faceIndex].tr.position.z);
 
-        float WallTime = ScenePrototypeManager.Instance.notesInSeconds[ScenePrototypeManager.Instance.notesInSecondsIndex + 1].notePosInSeconds - noteToPlayInSeconds;
+        //float WallTime = ScenePrototypeManager.Instance.notesInSeconds[ScenePrototypeManager.Instance.notesInSecondsIndex + 1].notePosInSeconds - noteToPlayInSeconds;
 
         Vector3 lookAtPos = _player.position - bossContr.transform.position;
         lookAtPos.y = 0;
         bossContr.transform.rotation = Quaternion.LookRotation(lookAtPos);
         bossContr.transform.Rotate(0, 90, 0);
-        bossContr.StartSlam(WallTime);
+        bossContr.StartSlam(duration);
 
         groundSections.rings[0].sections[faceIndex].isTarget = true;
         //groundSections.rings[1].sections[faceIndex].isTarget = true;
         //groundSections.rings[2].sections[faceIndex].isTarget = true;
 
-        ground.ChangeColorSlice((storeFaceIndex + 2) % sliceCount, 0f);
-        groundSections.SwitchFace(0, (storeFaceIndex + 2) % sliceCount, true);
+        //ground.ChangeColorSlice((storeFaceIndex + 2) % sliceCount, 0f);
+        tilesAttack.AttackOnFace(duration, (storeFaceIndex + 2) % sliceCount);
+        groundSections.SwitchFaceDelayed(player.ringIndex, (storeFaceIndex + 2) % sliceCount, true, duration);
         //groundSections.SwitchFace(1, (storeFaceIndex + 2) % sliceCount, true);
         //groundSections.SwitchFace(2, (storeFaceIndex + 2) % sliceCount, true);
 
-        ground.ChangeColorSlice((storeFaceIndex - 2) % sliceCount, 0f);
-        groundSections.SwitchFace(0, (storeFaceIndex - 2) % sliceCount, true);
+        //ground.ChangeColorSlice((storeFaceIndex - 2) % sliceCount, 0f);
+        tilesAttack.AttackOnFace(duration, (storeFaceIndex - 2) % sliceCount);
+        groundSections.SwitchFaceDelayed(player.ringIndex, (storeFaceIndex - 2) % sliceCount, true, duration);
         //groundSections.SwitchFace(1, (storeFaceIndex - 2) % sliceCount, true);
         //groundSections.SwitchFace(2, (storeFaceIndex - 2) % sliceCount, true);
 
@@ -94,18 +98,21 @@ public class SliceAttack : MonoBehaviour
             index = (index + sliceCount + direction) % sliceCount;
         }
         Debug.Log(index);
-        ground.ChangeColorSlice(index, duration);
-        //groundSections.SwitchFace(0, index, false);
+        //ground.ChangeColorSlice(index, duration);
+        //tilesAttack.FadeTiles(duration, 0, index);
+        groundSections.SwitchFaceDelayed(0, index, false, duration);
         //groundSections.SwitchFace(1, index, false);
         //groundSections.SwitchFace(2, index, false);
 
-        ground.ChangeColorSlice((index + sliceCount + 1) % sliceCount, duration);
-        //groundSections.SwitchFace(0, (index + sliceCount + 1) % sliceCount, true);
+        tilesAttack.AttackOnFace(duration, (index + sliceCount + 1) % sliceCount);
+        //ground.ChangeColorSlice((index + sliceCount + 1) % sliceCount, duration);
+        groundSections.SwitchFaceDelayed(0, (index + sliceCount + 1) % sliceCount, true, duration);
         //groundSections.SwitchFace(1, (index + sliceCount + 1) % sliceCount, true);
         //groundSections.SwitchFace(2, (index + sliceCount + 1) % sliceCount, true);
 
-        ground.ChangeColorSlice((index + sliceCount - 1) % sliceCount, duration);
-        //groundSections.SwitchFace(0, (index + sliceCount - 1) % sliceCount, true);
+        tilesAttack.AttackOnFace(duration, (index + sliceCount - 1) % sliceCount);
+        //ground.ChangeColorSlice((index + sliceCount - 1) % sliceCount, duration);
+        groundSections.SwitchFaceDelayed(0, (index + sliceCount - 1) % sliceCount, true, duration);
         //groundSections.SwitchFace(1, (index + sliceCount - 1) % sliceCount, true);
         //groundSections.SwitchFace(2, (index + sliceCount - 1) % sliceCount, true);
     }

@@ -26,7 +26,13 @@ public class BossController : MonoBehaviour {
                 ScenePrototypeManager.Instance.GetComponent<SpecialAttack>().BossHit();
                 StartCoroutine(PlayDamageAnimation(0.5f));
             }
-        }           
+        }
+
+        if (other.CompareTag("Projectile")) {
+            if (damageable && other.GetComponent<Projectile>().rejected) {
+                StartCoroutine(PlayDamageAnimation(0.5f));
+            }            
+        }
     }
 
     private IEnumerator PlayDamageAnimation(float duration) {

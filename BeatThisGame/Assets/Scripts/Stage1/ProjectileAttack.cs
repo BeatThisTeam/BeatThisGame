@@ -17,6 +17,13 @@ public class ProjectileAttack : Attack {
     private Vector3 spawnPos;
     public Transform target;
 
+    private int targetModifier = 0;
+
+    public TilesAttack tilesAttack;
+
+    bool attackContinued = false;
+
+
     public override void StartAttack(float duration) {
 
         initialTargetSection = playerCtrl.faceIndex;
@@ -24,7 +31,7 @@ public class ProjectileAttack : Attack {
         Vector3 targetPos = target.position;
         nAttacks = 0;       
         ground.rings[playerCtrl.ringIndex].sections[playerCtrl.faceIndex].isTarget = true;
-        FireProjectile(spawnPos, targetPos, duration, false);
+        FireProjectile(spawnPos, targetPos, duration, false, playerCtrl.ringIndex, playerCtrl.faceIndex);
     }
 
     public void StartAttackRejectable(float duration) {
@@ -34,33 +41,33 @@ public class ProjectileAttack : Attack {
         Vector3 targetPos = target.position;
         nAttacks = 0;       
         ground.rings[playerCtrl.ringIndex].sections[playerCtrl.faceIndex].isTarget = true;
-        FireProjectile(spawnPos, targetPos, duration, true);
+        FireProjectile(spawnPos, targetPos, duration, true, playerCtrl.ringIndex, playerCtrl.faceIndex);
     }
 
-    public void ContinueAttack(float duration) {
+    //public void ContinueAttack(float duration) {
 
-        int ringIndex = playerCtrl.ringIndex;
-        int numberOfSections = ground.rings[0].sections.Count;
-        nAttacks++;
-        int targetModifier = -(nAttacks);
-        Debug.Log(targetModifier);
-        Projectile pr;
-        for (int i = 0; i < nAttacks + 1; i++) {
+    //    int ringIndex = playerCtrl.ringIndex;
+    //    int numberOfSections = ground.rings[0].sections.Count;
+    //    nAttacks++;
+    //    int targetModifier = -(nAttacks);
+    //    Debug.Log(targetModifier);
+    //    Projectile pr;
+    //    for (int i = 0; i < nAttacks + 1; i++) {
 
-            int targetSection = (initialTargetSection + numberOfSections + targetModifier) % numberOfSections;
-            Vector3 targetPos = new Vector3(ground.rings[ringIndex].sections[targetSection].tr.position.x, spawnHeight, ground.rings[ringIndex].sections[targetSection].tr.position.z);
-            ground.rings[playerCtrl.ringIndex].sections[targetSection].isTarget = true;
-            pr = Instantiate(projectile, spawnPos, Quaternion.identity);
-            pr.player = player;
-            pr.att = this;
-            pr.damage = damage;
-            pr.Move(spawnPos, targetPos, duration);
-            targetModifier += 2;
-        }
+    //        int targetSection = (initialTargetSection + numberOfSections + targetModifier) % numberOfSections;
+    //        Vector3 targetPos = new Vector3(ground.rings[ringIndex].sections[targetSection].tr.position.x, spawnHeight, ground.rings[ringIndex].sections[targetSection].tr.position.z);
+    //        ground.rings[playerCtrl.ringIndex].sections[targetSection].isTarget = true;
+    //        pr = Instantiate(projectile, spawnPos, Quaternion.identity);
+    //        pr.player = player;
+    //        pr.att = this;
+    //        pr.damage = damage;
+    //        pr.Move(spawnPos, targetPos, duration);
+    //        targetModifier += 2;
+    //    }
 
-    }
+    //}
 
-    private void FireProjectile(Vector3 startPos, Vector3 endPos, float duration, bool rejectable) {
+    private void FireProjectile(Vector3 startPos, Vector3 endPos, float duration, bool rejectable, int targetRing, int targetFace) {
 
         Projectile pr;
         if (rejectable) {
@@ -70,8 +77,8 @@ public class ProjectileAttack : Attack {
         }       
         pr.player = player;
         pr.att = this;
-        pr.playerFacePos = playerCtrl.faceIndex;
-        pr.playerRingPos = playerCtrl.ringIndex;
+        pr.playerFacePos = targetFace;
+        pr.playerRingPos = targetRing;
         pr.damage = damage;
         pr.Move(startPos, endPos, duration);
     }
@@ -79,6 +86,59 @@ public class ProjectileAttack : Attack {
     public void ResetTargetSections(int faceIndex, int ringIndex) {
 
         ground.rings[ringIndex].sections[faceIndex].isTarget = false;
+    }
+
+    public void StartAttackWithTile(float duration) {
+
+        initialTargetSection = playerCtrl.faceIndex;
+        int numberOfSections = ground.rings[0].sections.Count;
+        spawnPos = new Vector3(boss.position.x, target.position.y, boss.position.z);
+        Vector3 targetPos = target.position;
+        nAttacks = 0;
+        ground.rings[playerCtrl.ringIndex].sections[playerCtrl.faceIndex].isTarget = true;
+        FireProjectile(spawnPos, targetPos, duration, false, playerCtrl.ringIndex, playerCtrl.faceIndex);
+        tilesAttack.AttackOnFace(duration, playerCtrl.faceIndex);
+
+
+        if (Random.value > 0.5) {
+            targetModifier++;
+        } else {
+            targetModifier--;
+        }
+
+        int targetSection = (initialTargetSection + numberOfSections + targetModifier) % numberOfSections;
+        gcc.ChangeColor(playerCtrl.ringIndex, targetSection);
+        ground.SwitchFace(playerCtrl.ringIndex, targetSection);
+    }
+
+    public void ContinueAttackWithTile(float duration) {
+
+        if (!attackContinued) {
+
+            if (targetModifier == -1) {
+                targetModifier = 1;
+                attackContinued = true;
+            } else if (targetModifier == 1) {
+                targetModifier = -1;
+                attackContinued = true;
+            }
+        } else {
+            if (targetModifier > 0) {
+                targetModifier++;
+            } else {
+                targetModifier--;
+            }
+        }
+
+        int numberOfSections = ground.rings[0].sections.Count;
+        int targetSection = (initialTargetSection + numberOfSections + targetModifier) % numberOfSections;
+
+        spawnPos = new Vector3(boss.position.x, target.position.y, boss.position.z);
+        Vector3 targetPos = ground.rings[playerCtrl.ringIndex].sections[targetSection].sectionTarget.position;
+        nAttacks = 0;
+        ground.rings[playerCtrl.ringIndex].sections[targetSection].isTarget = true;
+        FireProjectile(spawnPos, targetPos, duration, false, playerCtrl.ringIndex, targetSection);
+        tilesAttack.AttackOnFace(duration, targetSection);
     }
 
 }
