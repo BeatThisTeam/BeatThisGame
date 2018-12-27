@@ -326,10 +326,10 @@ GameObject:
   - component: {fileID: 4471259328168380}
   - component: {fileID: 212548821670945354}
   - component: {fileID: 135886800466295780}
-  - component: {fileID: 114893487117103392}
+  - component: {fileID: 114943760788439370}
   m_Layer: 0
   m_Name: OuterCircle
-  m_TagString: Untagged
+  m_TagString: OuterCircle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,8 +404,8 @@ GameObject:
   - component: {fileID: 4155417639305268}
   - component: {fileID: 95320350402076582}
   - component: {fileID: 114932792962158564}
-  - component: {fileID: 136846998842837214}
   - component: {fileID: 114708390363905238}
+  - component: {fileID: 136846998842837214}
   m_Layer: 0
   m_Name: Canimated6
   m_TagString: Player
@@ -499,10 +499,10 @@ GameObject:
   - component: {fileID: 4623076586507504}
   - component: {fileID: 212763860438570770}
   - component: {fileID: 135192292910384664}
-  - component: {fileID: 114641442677621032}
+  - component: {fileID: 114602341819400794}
   m_Layer: 0
   m_Name: InnerCircle
-  m_TagString: Untagged
+  m_TagString: InnerCircle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -613,12 +613,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1762968276552830}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 3, z: -26.8}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
-  - {fileID: 4711983342946164}
   - {fileID: 4375467261142866}
+  - {fileID: 4711983342946164}
   - {fileID: 4067222615786696}
   - {fileID: 4272409546676328}
   m_Father: {fileID: 0}
@@ -753,12 +753,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1254909411709432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.84, z: -0.47}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalScale: {x: 26, y: 26, z: 26}
   m_Children: []
   m_Father: {fileID: 4155417639305268}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4417593141426490
 Transform:
@@ -926,7 +926,7 @@ Transform:
   - {fileID: 4355355388356860}
   - {fileID: 4479603240500418}
   m_Father: {fileID: 4155417639305268}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4751095832711896
 Transform:
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   ReflectivePoint: {fileID: 4155417639305268}
   boss: {fileID: 0}
   ReflectiveDuration: 0.5
---- !u!114 &114641442677621032
+--- !u!114 &114602341819400794
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1117,9 +1117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f1ad436918aba4795ac8384a3ba643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  col: {r: 2.34555, g: 2.34555, b: 2.34555, a: 1}
-  circle1: {fileID: 212763860438570770}
-  circle2: {fileID: 212548821670945354}
+  col: {r: 1, g: 1, b: 1, a: 1}
+  circle1: {fileID: 212548821670945354}
+  circle2: {fileID: 212763860438570770}
 --- !u!114 &114708390363905238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1138,20 +1138,6 @@ MonoBehaviour:
   boss: {fileID: 0}
   WaitingTime: 0.1
   ReflectivePoint: {fileID: 4155417639305268}
---- !u!114 &114893487117103392
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1639554335801882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7f1ad436918aba4795ac8384a3ba643, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  col: {r: 0.31313974, g: 1.3004134, b: 0, a: 1}
-  circle1: {fileID: 212763860438570770}
-  circle2: {fileID: 212548821670945354}
 --- !u!114 &114932792962158564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1171,6 +1157,22 @@ MonoBehaviour:
   rend: {fileID: 0}
   teleportShader: Teleport
   characterHealthBarUI: {fileID: 0}
+  cam: {fileID: 0}
+  body: {fileID: 1497019483581204}
+--- !u!114 &114943760788439370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1639554335801882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f1ad436918aba4795ac8384a3ba643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {r: 0.31097797, g: 0.9716981, b: 0, a: 1}
+  circle1: {fileID: 212763860438570770}
+  circle2: {fileID: 212548821670945354}
 --- !u!135 &135192292910384664
 SphereCollider:
   m_ObjectHideFlags: 1
