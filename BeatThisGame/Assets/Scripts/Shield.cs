@@ -21,18 +21,15 @@ public class Shield : MonoBehaviour {
 
     public Transform ReflectivePoint;
 
-    private void Start()
-    {
+    private void Start() {
         shield.SetActive(false);
         active = false;
     }
 
-    void FixedUpdate () {
+    public void ActivateShield() {
 
-        if (Input.GetKeyDown(KeyCode.P)){
-            StartCoroutine(ShieldActive(WaitingTime));                     
-        }
-	}
+        StartCoroutine(ShieldActive(WaitingTime));
+    }
 
 
     private IEnumerator ShieldActive(float WaitingTime){
