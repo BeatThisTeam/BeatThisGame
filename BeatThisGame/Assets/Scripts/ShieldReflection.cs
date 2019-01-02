@@ -29,6 +29,7 @@ public class ShieldReflection : MonoBehaviour {
                 proj = Instantiate(projectile, StartPos, Quaternion.identity);
                 proj.rejectable = false;
                 proj.rejected = true;
+                proj.rejectAccuracy = ScoreManager.Instance.accuracy;
                 proj.Move(StartPos, EndPos, ReflectiveDuration);
 
             }
