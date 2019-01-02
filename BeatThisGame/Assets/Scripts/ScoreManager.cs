@@ -10,17 +10,19 @@ public class ScoreManager : MonoBehaviour {
 
     public float noteToHit;
 
-    [Header("Delta Accuracy")]
+    [Header("Accuracy")]
     public float deltaAccuracy;
+    public float accuracy;
 
     [Header("Accuracy Percentages")]
     public float perfectAccuracy;
     public float goodAccuracy;
     public float okAccuracy;
 
-    [Header("Special Attack Stats")]
+    [Header("Attack Stats")]
     public float specialAttackTotalDamage;
     public float specialAttackMaxPower;
+    public float normalAttackMaxPower;
     public float specialAttackPower;
     public float specialAttackAccuracy;
 
@@ -32,7 +34,7 @@ public class ScoreManager : MonoBehaviour {
     public GroundSections ground;
     public int numNotesInSection;
     public int numSpecialAttacks;
-    public int numOtherAttacks;
+    public int numNormalAttacks;
 
     public PowerAttack specialAttackUI;
     public BossHealth bossHealthBarUI;
@@ -59,31 +61,33 @@ public class ScoreManager : MonoBehaviour {
 
         specialAttackMaxPower = maxBossHealth * specialAttackTotalDamage / numSpecialAttacks;
 
+        normalAttackMaxPower = maxBossHealth * (1 - specialAttackTotalDamage) / numNormalAttacks;
+
         specialAttackPower = 0;
 
         specialAttackUI.Setup(specialAttackMaxPower);
         bossHealthBarUI.Setup(maxBossHealth);
 
         numNotesInSection = CalcNumNotesInSection(0);
-        
-        //CalcNumOtherAttacks();
     }
 
     private int CalcNumNotesInSection(int index) {
 
-        specialAttackPower = 0;
-        specialAttackUI.UpdateBar(specialAttackPower);
+        
         int counter = 0;
-        for (int i = index; i < ScenePrototypeManager.Instance.notesInSeconds.Count; i++) {
-           
-            if (ScenePrototypeManager.Instance.notesInSeconds[i].specialAttack && counter != 0) {
-                lastSpecialAttackIndex = i;
-                return counter;
-            }
+        for (int i = index + 2; i < ScenePrototypeManager.Instance.notesInSeconds.Count; i++) {
+
             if (ScenePrototypeManager.Instance.notesInSeconds[i].playerShouldPlay) {
                 //Debug.Log(ScenePrototypeManager.Instance.notesInSeconds[i].notePosInSeconds);
                 counter++;
             }
+
+            if (ScenePrototypeManager.Instance.notesInSeconds[i].specialAttack && counter != 0) {
+                lastSpecialAttackIndex = i;
+                //Debug.Log("num attack in section" + counter);
+                //Debug.Log("");
+                return counter;
+            }           
         }
         return -1;
     }
@@ -96,6 +100,7 @@ public class ScoreManager : MonoBehaviour {
                 counter++;
             }
         }
+        //Debug.Log(counter);
         return counter;
     }
 
@@ -116,14 +121,17 @@ public class ScoreManager : MonoBehaviour {
             if(diff < deltaAccuracy && diff > deltaAccuracy / 2) {
                 //Debug.Log("ok");
                 GiveFeedback(1f);
+                accuracy = okAccuracy;
                 specialAttackPower += specialAttackMaxPower * okAccuracy / numNotesInSection;
             }else if (diff <= deltaAccuracy / 2 && diff > deltaAccuracy / 6) {
                 //Debug.Log("good");
                 GiveFeedback(2f);
+                accuracy = goodAccuracy;
                 specialAttackPower += specialAttackMaxPower * goodAccuracy / numNotesInSection;
             } else if (diff <= deltaAccuracy / 6) {
                 //Debug.Log("perfect");
                 GiveFeedback(3f);
+                accuracy = perfectAccuracy;
                 specialAttackPower += specialAttackMaxPower * perfectAccuracy / numNotesInSection;
             }
 
@@ -160,9 +168,7 @@ public class ScoreManager : MonoBehaviour {
             } else {
                 nextNoteToHit(ScenePrototypeManager.Instance.notesInSecondsIndex + 1);
             }
-        }
-
-        UpdateBossHealth();
+        }        
 
         numNotesInSection = CalcNumNotesInSection(lastSpecialAttackIndex);
     }
@@ -194,6 +200,16 @@ public class ScoreManager : MonoBehaviour {
     public void UpdateBossHealth() {
 
         float damage = specialAttackPower * specialAttackAccuracy;
+        Debug.Log(damage);
+        currentBossHealth -= damage;
+        bossHealthBarUI.UpdateBar(currentBossHealth);
+        specialAttackPower = 0;
+        specialAttackUI.UpdateBar(specialAttackPower);
+    }
+
+    public void UpdateBossHealth(float accuracy) {
+
+        float damage = normalAttackMaxPower * accuracy;
         Debug.Log(damage);
         currentBossHealth -= damage;
         bossHealthBarUI.UpdateBar(currentBossHealth);
