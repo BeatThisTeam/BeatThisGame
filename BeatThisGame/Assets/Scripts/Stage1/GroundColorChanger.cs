@@ -9,6 +9,7 @@ public class GroundColorChanger : MonoBehaviour
     [ColorUsage(true, true)] public Color col1;
     [ColorUsage(true, true)] public Color col2;
 
+    public string shader;
     public Material mat1;
     public Material mat2;
     public Material defaultMat;
@@ -34,12 +35,12 @@ public class GroundColorChanger : MonoBehaviour
 
         Renderer rendererFaces;
         rendererFaces = groundSections.rings[ringIndex].sections[faceIndex].GetComponent<Renderer>();
-        rendererFaces.material.shader = Shader.Find("Dissolve2");
+        rendererFaces.material.shader = Shader.Find(shader);
 
         float value = rendererFaces.material.GetFloat("_Dissolve");
 
 
-        if (value == 0) {
+        if (value <= 0) {
             rendererFaces.material.SetFloat("_Dissolve", 0.8f);
         } else {
             rendererFaces.material.SetFloat("_Dissolve", 0f);
@@ -69,7 +70,7 @@ public class GroundColorChanger : MonoBehaviour
 
         Renderer rendererFaces;
         rendererFaces = groundSections.rings[ringIndex].sections[faceIndex].GetComponent<Renderer>();
-        rendererFaces.material.shader = Shader.Find("Dissolve2");
+        rendererFaces.material.shader = Shader.Find(shader);
 
         float value = rendererFaces.material.GetFloat("_Dissolve");
 
@@ -127,7 +128,7 @@ public class GroundColorChanger : MonoBehaviour
         float finalValue;
         bool activation;
         rendererFaces = groundSections.rings[ringIndex].sections[faceIndex].GetComponent<Renderer>();
-        rendererFaces.material.shader = Shader.Find("Dissolve2");
+        rendererFaces.material.shader = Shader.Find(shader);
 
         value = rendererFaces.material.GetFloat("_Dissolve");
 
@@ -212,7 +213,7 @@ public class GroundColorChanger : MonoBehaviour
         float start;
         float end;
         rendererFaces = groundSections.rings[ringIndex].sections[faceIndex].GetComponent<Renderer>();
-        rendererFaces.material.shader = Shader.Find("Dissolve2");
+        rendererFaces.material.shader = Shader.Find(shader);
 
         value = rendererFaces.material.GetFloat("_Dissolve");
 
@@ -248,7 +249,7 @@ public class GroundColorChanger : MonoBehaviour
         float end;
         bool activation;
         rendererFaces = groundSections.rings[ringIndex].sections[faceIndex].GetComponent<Renderer>();
-        rendererFaces.material.shader = Shader.Find("Dissolve2");
+        rendererFaces.material.shader = Shader.Find(shader);
 
         value = rendererFaces.material.GetFloat("_Dissolve");
 
