@@ -51,7 +51,7 @@ public class SpecialAttack : MonoBehaviour {
                 playerOuterCircle.GetComponent<Circle>().ChangeRingColors();
             }
 
-            if (Input.GetKeyDown(KeyCode.Space)) {
+            if (Input.GetButtonDown("SpecialAttack")) {
                 ScoreManager.Instance.HitSpecialAttack();
                 enlarge = true;
                 StartCoroutine(EnlargeCoroutine());

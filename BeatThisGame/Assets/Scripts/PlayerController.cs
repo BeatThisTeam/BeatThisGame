@@ -32,6 +32,11 @@ public class PlayerController : MonoBehaviour {
     private bool damageable = true;
     private Shield shield;
 
+    private bool enableVerticalMovement;
+    private bool axisInUse = false;
+    private float horizAxisInput;
+    private float vertAxisInput;
+
     public void Setup() {
 
         health = maxHealth;
@@ -41,52 +46,75 @@ public class PlayerController : MonoBehaviour {
         shield = GetComponent<Shield>();
         //rend = GetComponentInChildren<Renderer>();
         //rend.material.shader = Shader.Find(teleportShader);
+
+        if (ground.rings.Count > 1) {
+            enableVerticalMovement = true;
+        } else {
+            enableVerticalMovement = false;
+        }
     }
 
     private void Update() {
 
-        if (Input.GetKeyDown(KeyCode.P)) {
+        horizAxisInput = Input.GetAxisRaw("Horizontal");
+        vertAxisInput = Input.GetAxisRaw("Vertical");
+        
+        if(horizAxisInput != 0 || vertAxisInput != 0) {
+
+            if (!axisInUse) {
+
+                axisInUse = true;
+
+                if(horizAxisInput > 0) {
+                    ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+                    SoundManager.Instance.PlayMoveSound();
+                    //StartCoroutine("FadeOut");
+                    faceIndex = (faceIndex + 1) % ground.rings[ringIndex].sections.Count;
+                    dir = Direction.Right;
+                }
+
+                if(horizAxisInput < 0) {
+                    ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+                    SoundManager.Instance.PlayMoveSound();
+                    //StartCoroutine("FadeOut");
+                    faceIndex--;
+                    dir = Direction.Left;
+                    if (faceIndex < 0) {
+                        faceIndex = ground.rings[ringIndex].sections.Count - 1;
+                    }
+                }
+
+                if(vertAxisInput > 0 && enableVerticalMovement) {
+                    ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+                    SoundManager.Instance.PlayMoveSound();
+                    //StartCoroutine("FadeOut");
+                    ringIndex--;
+                    dir = Direction.Up;
+                    if (ringIndex < 0) {
+                        ringIndex = ground.rings.Count - 1;
+                    }
+                }
+
+                if(vertAxisInput < 0 && enableVerticalMovement) {
+                    ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+                    SoundManager.Instance.PlayMoveSound();
+                    //StartCoroutine("FadeOut");
+                    ringIndex = (ringIndex + 1) % ground.rings.Count;
+                    dir = Direction.Down;
+                }
+            }
+        }
+
+        if (horizAxisInput == 0 && vertAxisInput == 0) {
+
+            axisInUse = false;
+        }
+
+        if (Input.GetButtonDown("Shield")) {
+            ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+            SoundManager.Instance.PlayShieldSound();
             shield.ActivateShield();
         }
-         
-        if (Input.GetKeyDown(KeyCode.D)) {
-            ScoreManager.Instance.HitNote(faceIndex, ringIndex);
-            SoundManager.Instance.PlayMoveSound();
-            //StartCoroutine("FadeOut");
-            faceIndex = (faceIndex + 1) % ground.rings[ringIndex].sections.Count;
-            dir = Direction.Right;
-        }
-
-        if (Input.GetKeyDown(KeyCode.A)) {
-            ScoreManager.Instance.HitNote(faceIndex, ringIndex);
-            SoundManager.Instance.PlayMoveSound();
-            //StartCoroutine("FadeOut");
-            faceIndex --;
-            dir = Direction.Left;
-            if(faceIndex < 0){
-                faceIndex = ground.rings[ringIndex].sections.Count - 1;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.W)) {
-            ScoreManager.Instance.HitNote(faceIndex, ringIndex);
-            SoundManager.Instance.PlayMoveSound();
-            //StartCoroutine("FadeOut");
-            ringIndex --;
-            dir = Direction.Up;
-            if(ringIndex < 0) {
-                ringIndex = ground.rings.Count - 1;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.S)) {
-            ScoreManager.Instance.HitNote(faceIndex, ringIndex);
-            SoundManager.Instance.PlayMoveSound();
-            //StartCoroutine("FadeOut");
-            ringIndex = (ringIndex + 1) % ground.rings.Count;
-            dir = Direction.Down;
-        }
-
         
         tr.position = ground.rings[ringIndex].sections[faceIndex].tr.position;
         Vector3 lookAtPos = Vector3.zero - tr.position;
@@ -100,6 +128,7 @@ public class PlayerController : MonoBehaviour {
             health -= damage;
             characterHealthBarUI.UpdateBar(health);
             StartCoroutine(PlayDamageAnimation(0.5f));
+            SoundManager.Instance.PlayCharacterDamageSound();
         }
     }
 
