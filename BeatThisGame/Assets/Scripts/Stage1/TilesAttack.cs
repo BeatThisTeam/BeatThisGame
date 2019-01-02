@@ -24,6 +24,8 @@ public class TilesAttack : MonoBehaviour {
 
             int numFaces = playerGround.rings[0].sections.Count;
             int numRings = playerGround.rings.Count;
+            Debug.Assert(numRings == 1);
+
             int playerRingPosCorrected = player.ringIndex + numRings;
             int playerSectPosCorrected = player.faceIndex + numFaces;
             hurtingFaces = new bool[numRings,numFaces];
@@ -80,8 +82,7 @@ public class TilesAttack : MonoBehaviour {
 
     public void FadeTiles(float duration, int ringIndex, int faceIndex) {
 
-         playerGroundControl.ChangeColor(ringIndex, faceIndex, false, duration);
-                
+        playerGroundControl.ChangeColor(ringIndex, faceIndex, false, duration);                
     }
 
     public void AttackOnFace(float duration) {
@@ -104,6 +105,7 @@ public class TilesAttack : MonoBehaviour {
         attackRingControl.ChangeColor(player.ringIndex, face, damageMat);
         playerGroundControl.ChangeColorDelayed(player.ringIndex, face, damageMat, duration);
         playerGround.SwitchFaceDelayed(player.ringIndex, face, duration);
+        playerGround.rings[0].sections[face].isTarget = true;
         StartCoroutine(AttackCoroutine(duration, attackRing));
     }
 

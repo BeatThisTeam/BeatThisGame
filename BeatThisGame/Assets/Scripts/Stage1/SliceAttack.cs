@@ -34,11 +34,11 @@ public class SliceAttack : MonoBehaviour
 
     public void StartAttack(float duration){
 
+        set = false;
         sliceCount = groundSections.rings[0].sections.Count;
 
         faceIndex = player.faceIndex;
         storeFaceIndex = player.faceIndex + sliceCount;
-        Debug.Log("sfi" + storeFaceIndex);
         allredFaceIndex = player.faceIndex + sliceCount;
 
         //Vector3 spawnPos = new Vector3(groundSections.rings[2].sections[faceIndex].tr.position.x, spawnHeight, groundSections.rings[2].sections[faceIndex].tr.position.z);
@@ -90,14 +90,12 @@ public class SliceAttack : MonoBehaviour
             } else {
                 direction = 1;
             }
-
-            Debug.Log("dir" + direction);
+            
             index = (storeFaceIndex + 2 * direction) % sliceCount;                
             set = true;
         } else {
             index = (index + sliceCount + direction) % sliceCount;
         }
-        Debug.Log(index);
         //ground.ChangeColorSlice(index, duration);
         //tilesAttack.FadeTiles(duration, 0, index);
         groundSections.SwitchFaceDelayed(0, index, false, duration);

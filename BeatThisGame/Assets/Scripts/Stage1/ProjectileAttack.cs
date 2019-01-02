@@ -26,6 +26,11 @@ public class ProjectileAttack : Attack {
 
     public override void StartAttack(float duration) {
 
+        Vector3 lookAtPos = player.position - boss.transform.position;
+        lookAtPos.y = 0;
+        boss.transform.rotation = Quaternion.LookRotation(lookAtPos);
+        boss.transform.Rotate(0, 90, 0);
+
         initialTargetSection = playerCtrl.faceIndex;
         spawnPos = new Vector3(boss.position.x, target.position.y, boss.position.z);
         Vector3 targetPos = target.position;
@@ -35,6 +40,11 @@ public class ProjectileAttack : Attack {
     }
 
     public void StartAttackRejectable(float duration) {
+
+        Vector3 lookAtPos = player.position - boss.transform.position;
+        lookAtPos.y = 0;
+        boss.transform.rotation = Quaternion.LookRotation(lookAtPos);
+        boss.transform.Rotate(0, 90, 0);
 
         initialTargetSection = playerCtrl.faceIndex;
         spawnPos = new Vector3(boss.position.x, target.position.y, boss.position.z);
@@ -90,6 +100,13 @@ public class ProjectileAttack : Attack {
 
     public void StartAttackWithTile(float duration) {
 
+        Vector3 lookAtPos = player.position - boss.transform.position;
+        lookAtPos.y = 0;
+        boss.transform.rotation = Quaternion.LookRotation(lookAtPos);
+        boss.transform.Rotate(0, 90, 0);
+
+        targetModifier = 0;
+        attackContinued = false;
         initialTargetSection = playerCtrl.faceIndex;
         int numberOfSections = ground.rings[0].sections.Count;
         spawnPos = new Vector3(boss.position.x, target.position.y, boss.position.z);
@@ -112,6 +129,11 @@ public class ProjectileAttack : Attack {
     }
 
     public void ContinueAttackWithTile(float duration) {
+
+        Vector3 lookAtPos = player.position - boss.transform.position;
+        lookAtPos.y = 0;
+        boss.transform.rotation = Quaternion.LookRotation(lookAtPos);
+        boss.transform.Rotate(0, 90, 0);
 
         if (!attackContinued) {
 
