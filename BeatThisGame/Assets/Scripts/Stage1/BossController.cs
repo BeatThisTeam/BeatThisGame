@@ -21,15 +21,20 @@ public class BossController : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
+
         if (other.CompareTag("AttackCircle")) {
             if (damageable) {
                 ScenePrototypeManager.Instance.GetComponent<SpecialAttack>().BossHit();
+                ScoreManager.Instance.UpdateBossHealth();
+                SoundManager.Instance.PlayBossDamageSound();
                 StartCoroutine(PlayDamageAnimation(0.5f));
             }
         }
 
         if (other.CompareTag("Projectile")) {
             if (damageable && other.GetComponent<Projectile>().rejected) {
+                ScoreManager.Instance.UpdateBossHealth(other.GetComponent<Projectile>().rejectAccuracy);
+                SoundManager.Instance.PlayBossDamageSound();
                 StartCoroutine(PlayDamageAnimation(0.5f));
             }            
         }
@@ -102,9 +107,10 @@ public class BossController : MonoBehaviour {
         float tLerp = 0;
         float animTime = 0;
 
-        while (animTime <= duration) {           
+        while (tLerp <= duration) {
+            animTime = Mathf.Lerp(0, 1, tLerp / duration);
             bossAnim.SetFloat("slamTime", animTime);
-            animTime += Time.deltaTime;
+            tLerp += Time.deltaTime;
             yield return null;
         }
     }

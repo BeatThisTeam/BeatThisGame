@@ -9,6 +9,9 @@ public class SoundManager : MonoBehaviour {
     public static SoundManager Instance { get { return instance; } }
 
     public AudioClip moveSound;
+    public AudioClip shieldSound;
+    public List<AudioClip> characterDamage;
+    public List<AudioClip> bossDamage;
 
     private AudioSource audioSource;
 
@@ -23,12 +26,39 @@ public class SoundManager : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void PlayClip(AudioClip clip) {
+
+        if (audioSource != clip) {
+            audioSource.clip = clip;
+        }
+
+        audioSource.Play();
+    }
+
+    private void PlayRandomClip(List<AudioClip> clips) {
+
+        int numClips = clips.Count;
+        int clipIndex = Random.Range(0, numClips - 1);
+        PlayClip(clips[clipIndex]);
+    }
+
     public void PlayMoveSound() {
 
-        if(audioSource != moveSound) {
-            audioSource.clip = moveSound;
-        }
-        
-        audioSource.Play();
+        PlayClip(moveSound);
+    }
+
+    public void PlayBossDamageSound() {
+
+        PlayRandomClip(bossDamage);
+    }
+
+    public void PlayCharacterDamageSound() {
+
+        PlayRandomClip(characterDamage);
+    }
+
+    public void PlayShieldSound() {
+
+        PlayClip(shieldSound);
     }
 }
