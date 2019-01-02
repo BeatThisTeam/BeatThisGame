@@ -53,11 +53,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteToHit: 0
   deltaAccuracy: 0.2
+  accuracy: 0
   perfectAccuracy: 1
   goodAccuracy: 0.75
   okAccuracy: 0.5
   specialAttackTotalDamage: 0.9
   specialAttackMaxPower: 100
+  normalAttackMaxPower: 0
   specialAttackPower: 0
   specialAttackAccuracy: 0
   maxBossHealth: 100
@@ -65,6 +67,9 @@ MonoBehaviour:
   ground: {fileID: 0}
   numNotesInSection: 0
   numSpecialAttacks: 0
-  numOtherAttacks: 0
+  numNormalAttacks: 6
   specialAttackUI: {fileID: 0}
   bossHealthBarUI: {fileID: 0}
+  okText: {fileID: 0}
+  goodText: {fileID: 0}
+  perfectText: {fileID: 0}

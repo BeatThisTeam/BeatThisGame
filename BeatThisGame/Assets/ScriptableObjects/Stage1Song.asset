@@ -30,7 +30,6 @@ MonoBehaviour:
     durationInBeats: 4
   - notes:
     - 1
-    - 3
     durationInBeats: 4
   - notes:
     - 0
@@ -43,7 +42,6 @@ MonoBehaviour:
   - notes:
     - 0
     - 1
-    - 3
     durationInBeats: 4
   - notes:
     - 0
@@ -89,29 +87,9 @@ MonoBehaviour:
     durationInBeats: 4
   - notes:
     - 0
-    - 1
     durationInBeats: 4
   - notes:
     - 0
-    durationInBeats: 4
-  - notes:
-    - 0
-    - 2
-    durationInBeats: 4
-  - notes:
-    - 0
-    - 1
-    - 2
-    - 3
-    durationInBeats: 4
-  - notes:
-    - 0
-    - 1
-    - 2
-    durationInBeats: 4
-  - notes:
-    - 0
-    - 2
     durationInBeats: 4
   - notes:
     - 0
@@ -127,11 +105,28 @@ MonoBehaviour:
     - 0
     - 1
     - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
     - 3
     durationInBeats: 4
   - notes:
     - 0
     - 1
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
     - 2
     durationInBeats: 4
   - notes:
@@ -149,7 +144,6 @@ MonoBehaviour:
   - notes:
     - 0
     - 1
-    - 2
     - 3
     durationInBeats: 4
   - notes:
@@ -170,6 +164,37 @@ MonoBehaviour:
     durationInBeats: 4
   - notes:
     - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
     - 1
     - 2
     durationInBeats: 4
@@ -177,10 +202,266 @@ MonoBehaviour:
     - 0
     - 1
     - 2
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 3.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 1
+    - 1.5
+    - 2
+    - 3
+    - 3.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1.3333334
+    - 2.6666667
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 3.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 1
+    - 1.5
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1.3333334
+    - 2.6666667
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 1
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 1
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1.5
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    - 2.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 1.5
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 1
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 1
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 1
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1.5
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 2
+    - 2.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1.5
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
     durationInBeats: 4
   currentBar:
     notes:
     - 0
-    - 1
-    - 2
+    - 0.5
     durationInBeats: 4

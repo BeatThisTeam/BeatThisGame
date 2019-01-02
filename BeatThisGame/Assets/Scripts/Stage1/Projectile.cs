@@ -19,8 +19,11 @@ public class Projectile : MonoBehaviour {
 
     public bool rejectable;
     public bool rejected;
+    public float rejectAccuracy;
 
     private UnityAction action;
+
+    private static int conta;
 
     private void Awake() {
         tr = GetComponent<Transform>();
@@ -59,10 +62,16 @@ public class Projectile : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            Debug.Log("colpito");
+            
             player.GetComponent<PlayerController>().Damage(damage);
             att.ResetTargetSections(playerFacePos, playerRingPos);
             DestroyGameObject();
+
+            if (rejectable) {
+                conta++;
+                Debug.Log(conta);
+            }
+            
         }
     }
 
