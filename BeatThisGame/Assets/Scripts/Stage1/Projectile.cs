@@ -45,9 +45,6 @@ public class Projectile : MonoBehaviour {
         Vector3 dir = Vector3.Normalize(endPos - startPos);
 
         while (true) {
-            //tr.position = Vector3.Lerp(startPos, endPos, tLerp / duration);
-            //tLerp += Time.deltaTime;
-            //yield return null;
             elapsedTime += Time.deltaTime;
             Vector3 pos = tr.position;
             pos = pos + dir * velocity * Time.deltaTime;

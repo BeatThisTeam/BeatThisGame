@@ -61,7 +61,6 @@ public class BossController : MonoBehaviour {
             timer += stateDuration;
             yield return new WaitForSeconds(stateDuration);
         }
-        Debug.Log(defaultMat.ToString());
         renderer.material = defaultMat;
         damageable = true;
     }

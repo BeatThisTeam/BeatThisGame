@@ -90,6 +90,8 @@ public class TilesAttack : MonoBehaviour {
         AttackOnFace(duration, player.faceIndex);
     }
 
+    
+
     public void AttackOnFace(float duration, int face) {
 
         GroundSections attackRing = Instantiate(attackRingPrefab, Vector3.zero, Quaternion.identity);

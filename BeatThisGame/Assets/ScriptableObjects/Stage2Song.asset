@@ -25,6 +25,61 @@ MonoBehaviour:
     durationInBeats: 4
   - notes:
     - 0
+    - 0.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    - 2.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 2
+    - 2.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 2
+    - 2.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 0.5
+    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
     durationInBeats: 4
   - notes:
     - 0
