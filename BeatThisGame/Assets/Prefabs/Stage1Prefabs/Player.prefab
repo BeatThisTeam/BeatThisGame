@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 114253859335589340}
   - component: {fileID: 114943474124054116}
   - component: {fileID: 136448726199646678}
+  - component: {fileID: 114915311781478724}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1027,7 +1028,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: f717e47222a364bd5b44c99b54bba1a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1141,6 +1142,19 @@ MonoBehaviour:
   ReflectivePoint: {fileID: 4799954575984692}
   boss: {fileID: 0}
   ReflectiveDuration: 0.5
+--- !u!114 &114915311781478724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055101149756758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cd26e141ad44a2db2979f5703fe481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LOD: {fileID: 1921373952309504}
+  transitionSpeed: 0.2
 --- !u!114 &114943474124054116
 MonoBehaviour:
   m_ObjectHideFlags: 1
