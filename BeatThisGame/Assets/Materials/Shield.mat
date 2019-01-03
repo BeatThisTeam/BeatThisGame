@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: BackgoundFog
-  m_Shader: {fileID: 4800000, guid: 4f8f15ab45ab44963b3dc20eaa9dbd82, type: 3}
+  m_Name: Shield
+  m_Shader: {fileID: 4800000, guid: fc62b0d2ca8314420a6f4da380e83e9b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -18,6 +18,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_DADBC132:
+        m_Texture: {fileID: 2800000, guid: 7470e5c95c0f74d3388acbb2a8bb17f2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -59,10 +63,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2EA3CDD1: 20
-    - Vector1_A130A347: 1
-    - Vector1_D6B764F2: 0.1
-    - Vector1_D88C9D4A: 0.01
+    - Vector1_16786E7C: 0.07
+    - Vector1_217E9671: 1
+    - Vector1_C6369CDC: 0
+    - Vector1_DB15A8CF: 0.6
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -84,6 +88,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_9B1A0842: {r: 2.9960785, g: 1.5372549, b: 0.5019608, a: 0}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
