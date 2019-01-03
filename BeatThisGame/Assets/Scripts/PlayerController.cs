@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 
     public enum Direction { Up, Down, Left, Right };
 
+    public bool isAlive = true;
     public float maxHealth;
     public float health;
 
@@ -24,10 +25,10 @@ public class PlayerController : MonoBehaviour {
 
     public PlayerHealth characterHealthBarUI;
 
-
     public UpDownCam cam;
 
     public GameObject body;
+    public Material[] materials;
 
     private bool damageable = true;
     private Shield shield;
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour {
         tr = GetComponent<Transform>();
         anim = GetComponent<Animator>();
         shield = GetComponent<Shield>();
+        materials = body.GetComponent<Renderer>().materials;
         //rend = GetComponentInChildren<Renderer>();
         //rend.material.shader = Shader.Find(teleportShader);
 
@@ -64,11 +66,11 @@ public class PlayerController : MonoBehaviour {
             if (!axisInUse) {
 
                 axisInUse = true;
+                StartCoroutine(FadeIn(0.4f));
 
-                if(horizAxisInput > 0) {
+                if (horizAxisInput > 0) {
                     ScoreManager.Instance.HitNote(faceIndex, ringIndex);
                     SoundManager.Instance.PlayMoveSound();
-                    //StartCoroutine("FadeOut");
                     faceIndex = (faceIndex + 1) % ground.rings[ringIndex].sections.Count;
                     dir = Direction.Right;
                 }
@@ -76,7 +78,6 @@ public class PlayerController : MonoBehaviour {
                 if(horizAxisInput < 0) {
                     ScoreManager.Instance.HitNote(faceIndex, ringIndex);
                     SoundManager.Instance.PlayMoveSound();
-                    //StartCoroutine("FadeOut");
                     faceIndex--;
                     dir = Direction.Left;
                     if (faceIndex < 0) {
@@ -87,7 +88,6 @@ public class PlayerController : MonoBehaviour {
                 if(vertAxisInput > 0 && enableVerticalMovement) {
                     ScoreManager.Instance.HitNote(faceIndex, ringIndex);
                     SoundManager.Instance.PlayMoveSound();
-                    //StartCoroutine("FadeOut");
                     ringIndex--;
                     dir = Direction.Up;
                     if (ringIndex < 0) {
@@ -98,7 +98,6 @@ public class PlayerController : MonoBehaviour {
                 if(vertAxisInput < 0 && enableVerticalMovement) {
                     ScoreManager.Instance.HitNote(faceIndex, ringIndex);
                     SoundManager.Instance.PlayMoveSound();
-                    //StartCoroutine("FadeOut");
                     ringIndex = (ringIndex + 1) % ground.rings.Count;
                     dir = Direction.Down;
                 }
@@ -113,9 +112,10 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Shield")) {
             ScoreManager.Instance.HitNote(faceIndex, ringIndex);
             SoundManager.Instance.PlayShieldSound();
+            PlayAttackAnimation();
             shield.ActivateShield();
         }
-        
+       
         tr.position = ground.rings[ringIndex].sections[faceIndex].tr.position;
         Vector3 lookAtPos = Vector3.zero - tr.position;
         lookAtPos.y = 0;
@@ -126,10 +126,42 @@ public class PlayerController : MonoBehaviour {
 
         if (damageable) {
             health -= damage;
-            characterHealthBarUI.UpdateBar(health);
-            StartCoroutine(PlayDamageAnimation(0.5f));
             SoundManager.Instance.PlayCharacterDamageSound();
+            characterHealthBarUI.UpdateBar(health);
+            if (health <= 0) {
+                StartCoroutine(PlayDeathAnimation(2f));
+            } else {
+                StartCoroutine(PlayDamageAnimation(0.5f));
+            }           
+                    
+        }        
+    }
+
+    public void PlayAttackAnimation() {
+
+        anim.SetTrigger("Attack");
+    }
+
+    private IEnumerator PlayDeathAnimation(float duration) {
+        
+        damageable = false;
+        anim.SetBool("isDead", true);
+
+        float i = 0;
+        float tLerp = 0f;
+
+        while (tLerp <= duration) {
+            foreach (Material material in materials) {
+                i = Mathf.Lerp(0, 1f, tLerp/duration);
+                material.SetFloat("Vector1_D4B3BD5A", i);
+                material.SetFloat("Vector1_DC68DE65", i);
+                tLerp += Time.deltaTime;
+                //Debug.Log("i is " + i);
+                yield return null;
+            }
         }
+
+        isAlive = false;
     }
 
     private IEnumerator PlayDamageAnimation(float duration) {
@@ -147,20 +179,22 @@ public class PlayerController : MonoBehaviour {
         damageable = true;
     }
 
-    //private IEnumerator FadeOut() {
+    private IEnumerator FadeIn(float duration) {
+        
 
-    //    float start = -2f;
-    //    float finish = 10f;
+        float i = 0;
+        float tLerp = 0f;
 
-    //    float tLerp = 0f;
-    //    float duration = 0.2f;
-
-    //    while (tLerp <= duration) {
-    //        rend.material.SetFloat("_TransitionLevel", Mathf.Lerp(start, finish, tLerp/duration));
-    //        tLerp += Time.deltaTime;
-
-    //        yield return null;
-    //    }
-    //    rend.material.SetFloat("_TransitionLevel", 0);
-    //}
+        while (tLerp <= duration) {
+            foreach (Material material in materials) {
+                i = Mathf.Lerp(1, 0f, tLerp / duration);
+                material.SetFloat("Vector1_DC68DE65", i);
+                tLerp += Time.deltaTime;
+                yield return null;
+            }
+        }
+        materials[0].SetFloat("Vector1_DC68DE65", 0);
+        materials[1].SetFloat("Vector1_DC68DE65", 0);
+        materials[2].SetFloat("Vector1_DC68DE65", 0);
+    }
 }

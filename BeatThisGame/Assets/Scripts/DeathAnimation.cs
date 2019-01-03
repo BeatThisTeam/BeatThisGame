@@ -5,7 +5,7 @@ using UnityEngine;
 public class DeathAnimation : MonoBehaviour {
 
     private Animator anim;
-    private Material[] materials;
+    public Material[] materials;
     private float i;
 
     public GameObject LOD;

@@ -53,6 +53,7 @@ public class SpecialAttack : MonoBehaviour {
 
             if (Input.GetButtonDown("SpecialAttack")) {
                 ScoreManager.Instance.HitSpecialAttack();
+                player.GetComponent<PlayerController>().PlayAttackAnimation();
                 enlarge = true;
                 StartCoroutine(EnlargeCoroutine());
                 StopCoroutine(cr);

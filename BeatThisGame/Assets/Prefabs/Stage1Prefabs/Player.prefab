@@ -1102,16 +1102,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a14b12db7895b4d901f693c81597bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 1
   maxHealth: 100
   health: 0
   ground: {fileID: 0}
   faceIndex: 0
-  ringIndex: 0
+  ringIndex: 1
   rend: {fileID: 0}
   teleportShader: Teleport
   characterHealthBarUI: {fileID: 0}
   cam: {fileID: 0}
-  body: {fileID: 1609905377258752}
+  body: {fileID: 1921373952309504}
+  materials: []
 --- !u!114 &114518962124235150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1153,6 +1155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cd26e141ad44a2db2979f5703fe481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materials: []
   LOD: {fileID: 1921373952309504}
   transitionSpeed: 0.2
 --- !u!114 &114943474124054116

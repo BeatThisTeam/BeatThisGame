@@ -91,7 +91,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000002, guid: c28441004d8ec0645b6907fba26f4629,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -448,6 +448,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdcdb4be600a9514582db424d06b7b41, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &36375260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1921373952309504, guid: ebe7ac0077324a841913c9f883a1be2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1398693308}
 --- !u!1001 &44524154
 Prefab:
   m_ObjectHideFlags: 0
@@ -9359,6 +9364,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114253859335589340, guid: ebe7ac0077324a841913c9f883a1be2f,
+        type: 2}
+      propertyPath: materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4799954575984692, guid: ebe7ac0077324a841913c9f883a1be2f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9411,7 +9421,32 @@ Prefab:
       propertyPath: characterHealthBarUI
       value: 
       objectReference: {fileID: 212482851}
-    m_RemovedComponents: []
+    - target: {fileID: 1921373952309504, guid: ebe7ac0077324a841913c9f883a1be2f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114253859335589340, guid: ebe7ac0077324a841913c9f883a1be2f,
+        type: 2}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 36375260}
+    - target: {fileID: 114253859335589340, guid: ebe7ac0077324a841913c9f883a1be2f,
+        type: 2}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114915311781478724, guid: ebe7ac0077324a841913c9f883a1be2f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114253859335589340, guid: ebe7ac0077324a841913c9f883a1be2f,
+        type: 2}
+      propertyPath: ringIndex
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114915311781478724, guid: ebe7ac0077324a841913c9f883a1be2f, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: ebe7ac0077324a841913c9f883a1be2f, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1441282258

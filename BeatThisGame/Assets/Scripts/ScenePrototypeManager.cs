@@ -78,7 +78,7 @@ public class ScenePrototypeManager : MonoBehaviour {
         SongManager.Instance.UpdateSongValues();
         ScoreManager.Instance.UpdateNoteToHit();
 
-        if (playing) {
+        if (playing && playerCharContr.isAlive) {
             if (noteToPlayInSeconds == 0) {
                 noteToPlayInSeconds = notesInSeconds[notesInSecondsIndex].notePosInSeconds;
                 ScoreManager.Instance.nextNoteToHit(notesInSecondsIndex);
@@ -88,6 +88,9 @@ public class ScenePrototypeManager : MonoBehaviour {
                 notesInSeconds[notesInSecondsIndex].noteFunction.Invoke();
                 IncrementNoteToPlayInSeconds();
             }
+        } else {
+            SongManager.Instance.Stop();
+            SceneManager.LoadScene(2);
         }
     }
 
@@ -113,9 +116,8 @@ public class ScenePrototypeManager : MonoBehaviour {
         if (notesInSecondsIndex < notesInSeconds.Count) {
             noteToPlayInSeconds = notesInSeconds[notesInSecondsIndex].notePosInSeconds;
         } else {
-            SongManager.Instance.Stop();
-            playing = false;
-            SceneManager.LoadScene(2);
+            
+            playing = false;           
         }
     }
 

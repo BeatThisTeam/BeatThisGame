@@ -9427,12 +9427,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 114943474124054116, guid: ebe7ac0077324a841913c9f883a1be2f,
+    - target: {fileID: 114840046362241750, guid: ebe7ac0077324a841913c9f883a1be2f,
         type: 2}
       propertyPath: boss
       value: 
       objectReference: {fileID: 1565120365}
-    - target: {fileID: 114840046362241750, guid: ebe7ac0077324a841913c9f883a1be2f,
+    - target: {fileID: 114943474124054116, guid: ebe7ac0077324a841913c9f883a1be2f,
         type: 2}
       propertyPath: boss
       value: 
@@ -9447,11 +9447,6 @@ Prefab:
       propertyPath: characterHealthBarUI
       value: 
       objectReference: {fileID: 212482851}
-    - target: {fileID: 114253859335589340, guid: ebe7ac0077324a841913c9f883a1be2f,
-        type: 2}
-      propertyPath: ringIndex
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebe7ac0077324a841913c9f883a1be2f, type: 2}
   m_IsPrefabAsset: 0
