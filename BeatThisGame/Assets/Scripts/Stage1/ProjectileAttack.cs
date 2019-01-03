@@ -9,6 +9,8 @@ public class ProjectileAttack : Attack {
     public Projectile projectile;
     public Projectile rejectableProjectile;
 
+    public float[] ringDistances = new float[3];
+
     public float spawnHeight = 12f;
 
     private int initialTargetSection;
@@ -17,6 +19,7 @@ public class ProjectileAttack : Attack {
     private Vector3 spawnPos;
     public Transform target;
 
+    private int targetRing;
     private int targetModifier = 0;
 
     public TilesAttack tilesAttack;
@@ -41,19 +44,52 @@ public class ProjectileAttack : Attack {
 
     public void StartAttackRejectable(float duration) {
 
+        spawnPos = new Vector3(boss.position.x, target.position.y, boss.position.z);
+        Vector3 targetPos = target.position;
+        targetRing = playerCtrl.ringIndex;
+        initialTargetSection = playerCtrl.faceIndex;
+        targetModifier = 0;
+
+        if (ringDistances[targetRing] == 0) {
+            ringDistances[targetRing] = Vector3.Distance(spawnPos, targetPos);
+        }
+        
         Vector3 lookAtPos = player.position - boss.transform.position;
         lookAtPos.y = 0;
         boss.transform.rotation = Quaternion.LookRotation(lookAtPos);
         boss.transform.Rotate(0, 90, 0);
 
-        initialTargetSection = playerCtrl.faceIndex;
-        spawnPos = new Vector3(boss.position.x, target.position.y, boss.position.z);
-        Vector3 targetPos = target.position;
+        initialTargetSection = playerCtrl.faceIndex;      
         nAttacks = 0;       
         ground.rings[playerCtrl.ringIndex].sections[playerCtrl.faceIndex].isTarget = true;
         FireProjectile(spawnPos, targetPos, duration, true, playerCtrl.ringIndex, playerCtrl.faceIndex);
     }
 
+    public void ContinueAttackRejectable(float duration) {
+
+        if(targetModifier == 0) {
+            if(Random.Range(0f,1f) > 0.5) {
+                targetModifier++;
+            } else {
+                targetModifier--;
+            }
+        }else if(targetModifier > 0) {
+            targetModifier++;
+        } else {
+            targetModifier--;
+        }
+
+        int numberOfSections = ground.rings[0].sections.Count;
+        int targetSection = (initialTargetSection + numberOfSections + targetModifier) % numberOfSections;
+
+        Vector3 direction = new Vector3(ground.rings[targetRing].sections[targetSection].tr.position.x, target.position.y, ground.rings[targetRing].sections[targetSection].tr.position.z) - spawnPos;       
+        direction = Vector3.Normalize(direction);
+        Vector3 targetPos = direction * ringDistances[targetRing];
+        targetPos.y = target.position.y;
+        Debug.Log(targetPos);
+        Debug.Log(target.position);
+        FireProjectile(spawnPos, targetPos, duration, true, targetRing, targetSection);
+    }
     //public void ContinueAttack(float duration) {
 
     //    int ringIndex = playerCtrl.ringIndex;
