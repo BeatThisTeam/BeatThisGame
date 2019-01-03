@@ -18,6 +18,8 @@ public class ScoreManager : MonoBehaviour {
     public float goodAccuracy;
     public float okAccuracy;
 
+    public float currentAccuracy = 0f;
+
     [Header("Special Attack Stats")]
     public float specialAttackTotalDamage;
     public float specialAttackMaxPower;
@@ -37,9 +39,11 @@ public class ScoreManager : MonoBehaviour {
     public PowerAttack specialAttackUI;
     public BossHealth bossHealthBarUI;
     
-    public GameObject okText;
-    public GameObject goodText;
-    public GameObject perfectText;
+    //public GameObject okText;
+    //public GameObject goodText;
+    //public GameObject perfectText;
+
+    public ChangeText changeText;
 
     private int lastSpecialAttackIndex;
 
@@ -114,17 +118,22 @@ public class ScoreManager : MonoBehaviour {
         if (diff < deltaAccuracy && ground.rings[ringPos].sections[facePos].isTarget) {
 
             if(diff < deltaAccuracy && diff > deltaAccuracy / 2) {
-                //Debug.Log("ok");
-                GiveFeedback(1f);
+                Debug.Log("ok");
                 specialAttackPower += specialAttackMaxPower * okAccuracy / numNotesInSection;
-            }else if (diff <= deltaAccuracy / 2 && diff > deltaAccuracy / 6) {
-                //Debug.Log("good");
-                GiveFeedback(2f);
+                currentAccuracy = 1f; //okAccuracy;
+                changeText.UpdateText(1f);
+            }
+            else if (diff <= deltaAccuracy / 2 && diff > deltaAccuracy / 6) {
+                Debug.Log("good");
                 specialAttackPower += specialAttackMaxPower * goodAccuracy / numNotesInSection;
+                currentAccuracy = 2f; // goodAccuracy;
+                changeText.UpdateText(2f);
+
             } else if (diff <= deltaAccuracy / 6) {
-                //Debug.Log("perfect");
-                GiveFeedback(3f);
+                Debug.Log("perfect");
                 specialAttackPower += specialAttackMaxPower * perfectAccuracy / numNotesInSection;
+                currentAccuracy = 3f; // perfectAccuracy;
+                changeText.UpdateText(3f);
             }
 
             //EventManager.TriggerEvent("note");
@@ -199,31 +208,10 @@ public class ScoreManager : MonoBehaviour {
         bossHealthBarUI.UpdateBar(currentBossHealth);
     }
 
-    public void GiveFeedback(float accuracy)
+    public float getAccuracy()
     {
-        if(accuracy == 1)
-        {
-            okText.SetActive(true);
-            StartCoroutine("WaitForSec");
-        }
-        if (accuracy == 2)
-        {
-            goodText.SetActive(true);
-            StartCoroutine("WaitForSec");
-        }
-        if (accuracy == 3)
-        {
-            perfectText.SetActive(true);
-            StartCoroutine("WaitForSec");
-        }
-        
+        return currentAccuracy;
     }
-
-    IEnumerator WaitForSec()
-    {
-        yield return new WaitForSeconds(1);
-        okText.SetActive(false);
-        goodText.SetActive(false);
-        perfectText.SetActive(false);
-    }
+    
 }
+
