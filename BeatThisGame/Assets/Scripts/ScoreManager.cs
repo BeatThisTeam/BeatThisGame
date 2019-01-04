@@ -19,13 +19,7 @@ public class ScoreManager : MonoBehaviour {
     public float goodAccuracy;
     public float okAccuracy;
 
-<<<<<<< HEAD
     [Header("Attack Stats")]
-=======
-    public float currentAccuracy = 0f;
-
-    [Header("Special Attack Stats")]
->>>>>>> Alejandra
     public float specialAttackTotalDamage;
     public float specialAttackMaxPower;
     public float normalAttackMaxPower;
@@ -127,38 +121,19 @@ public class ScoreManager : MonoBehaviour {
         if (diff < deltaAccuracy && ground.rings[ringPos].sections[facePos].isTarget) {
 
             if(diff < deltaAccuracy && diff > deltaAccuracy / 2) {
-<<<<<<< HEAD
                 //Debug.Log("ok");
-                GiveFeedback(1f);
                 accuracy = okAccuracy;
                 specialAttackPower += specialAttackMaxPower * okAccuracy / numNotesInSection;
-            }else if (diff <= deltaAccuracy / 2 && diff > deltaAccuracy / 6) {
-                //Debug.Log("good");
-                GiveFeedback(2f);
-                accuracy = goodAccuracy;
-=======
-                Debug.Log("ok");
-                specialAttackPower += specialAttackMaxPower * okAccuracy / numNotesInSection;
-                currentAccuracy = 1f; //okAccuracy;
                 changeText.UpdateText(1f);
-            }
-            else if (diff <= deltaAccuracy / 2 && diff > deltaAccuracy / 6) {
-                Debug.Log("good");
->>>>>>> Alejandra
+            } else if (diff <= deltaAccuracy / 2 && diff > deltaAccuracy / 6) {
+                //Debug.Log("good");
+                accuracy = goodAccuracy;
                 specialAttackPower += specialAttackMaxPower * goodAccuracy / numNotesInSection;
-                currentAccuracy = 2f; // goodAccuracy;
                 changeText.UpdateText(2f);
-
             } else if (diff <= deltaAccuracy / 6) {
-<<<<<<< HEAD
                 //Debug.Log("perfect");
-                GiveFeedback(3f);
                 accuracy = perfectAccuracy;
-=======
-                Debug.Log("perfect");
->>>>>>> Alejandra
                 specialAttackPower += specialAttackMaxPower * perfectAccuracy / numNotesInSection;
-                currentAccuracy = 3f; // perfectAccuracy;
                 changeText.UpdateText(3f);
             }
 
@@ -241,11 +216,5 @@ public class ScoreManager : MonoBehaviour {
         currentBossHealth -= damage;
         bossHealthBarUI.UpdateBar(currentBossHealth);
     }
-
-    public float getAccuracy()
-    {
-        return currentAccuracy;
-    }
-    
 }
 
