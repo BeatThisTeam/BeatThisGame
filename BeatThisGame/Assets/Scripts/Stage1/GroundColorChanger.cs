@@ -140,7 +140,7 @@ public class GroundColorChanger : MonoBehaviour
         } else {
             start = 0.8f;
             end = 0f;
-            finalValue = 0f;
+            finalValue = -0.1f;
             activation = false;
         }
 
