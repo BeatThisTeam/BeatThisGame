@@ -33,7 +33,7 @@ public class FloorLight : MonoBehaviour {
         float secPBeat = 60 / bpm;
 
         patterns = new List<Pattern>() {
-            new Pattern(){ startTime = 32.72727f, num = 4, noteIndex = 0, notes = new float[] {
+            new Pattern(){ startTime = 32.72727f, num = 3, noteIndex = 0, notes = new float[] {
                 secPBeat/4,
                 secPBeat/4,
                 secPBeat/4,
@@ -54,27 +54,6 @@ public class FloorLight : MonoBehaviour {
                 secPBeat/4,
                 (secPBeat/4)*2,
             } },
-            new Pattern(){ startTime = 37.09091f, num = 4, noteIndex = 0, notes = new float[] {
-                secPBeat/4,
-                secPBeat/4,
-                secPBeat/4,
-                secPBeat/4,
-                secPBeat/4,
-                secPBeat/4,
-                secPBeat*2,
-                secPBeat/4,
-                secPBeat/4,
-                secPBeat/4,
-                secPBeat/4,
-                secPBeat/4,
-                secPBeat/4,
-                secPBeat/4,
-                secPBeat/4,
-                secPBeat,
-                (secPBeat/4)*3,
-                secPBeat/4,
-                (secPBeat/4)*2,
-            },}
         };
 
         mat = GetComponent<Renderer>().material;
@@ -88,16 +67,19 @@ public class FloorLight : MonoBehaviour {
                 int noteIndex = patterns[patternIndex].noteIndex;
 
                 Debug.Log(noteIndex);
-                Debug.Log(patternIndex);
-
+                Debug.Log(patternIndex);               
                 StartCoroutine(Light(0.05f));
                 //Light();
                 patterns[patternIndex].startTime += patterns[patternIndex].notes[noteIndex];
 
-                if (patterns[patternIndex].noteIndex < patterns[patternIndex].notes.Length - 1) {
+                if (patterns[patternIndex].noteIndex < patterns[patternIndex].notes.Length - 1) {                   
                     patterns[patternIndex].noteIndex++;
                 } else {
-                    if (patternIndex < patterns.Count - 1) {
+                    if(patterns[patternIndex].num > 0) {
+                        patterns[patternIndex].num--;
+                        patterns[patternIndex].noteIndex = 0;
+                    }
+                    else if (patternIndex < patterns.Count - 1) {
                         patternIndex++;
                     } else {
                         playing = false;
