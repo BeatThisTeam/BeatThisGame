@@ -197,4 +197,9 @@ public class PlayerController : MonoBehaviour {
         materials[1].SetFloat("Vector1_DC68DE65", 0);
         materials[2].SetFloat("Vector1_DC68DE65", 0);
     }
+
+    public void SetDir(Direction direction) {
+
+        dir = direction;
+    }
 }

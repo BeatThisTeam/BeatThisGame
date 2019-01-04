@@ -12,6 +12,8 @@ public class BossController : MonoBehaviour {
 
     public Material damagedMaterial;
 
+    public GameObject rejectPlayerComponent;
+
     private bool damageable = true;
 
     private void Awake() {
@@ -88,6 +90,7 @@ public class BossController : MonoBehaviour {
 
     public void StartReturn() {
 
+        rejectPlayerComponent.SetActive(false);
         bossAnim.SetBool("slam", false);
         bossAnim.SetBool("return", true);
     }
@@ -112,5 +115,7 @@ public class BossController : MonoBehaviour {
             tLerp += Time.deltaTime;
             yield return null;
         }
+
+        rejectPlayerComponent.SetActive(true);
     }
 }

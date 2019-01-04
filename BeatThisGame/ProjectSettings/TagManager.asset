@@ -9,6 +9,7 @@ TagManager:
   - Shiled
   - InnerCircle
   - OuterCircle
+  - RejectPlayer
   layers:
   - Default
   - TransparentFX
