@@ -88,6 +88,7 @@ public class ProjectileAttack : Attack {
         targetPos.y = target.position.y;
         Debug.Log(targetPos);
         Debug.Log(target.position);
+        ground.rings[targetRing].sections[targetSection].isTarget = true;
         FireProjectile(spawnPos, targetPos, duration, true, targetRing, targetSection);
     }
     //public void ContinueAttack(float duration) {
