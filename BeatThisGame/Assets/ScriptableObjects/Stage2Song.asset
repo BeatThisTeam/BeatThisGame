@@ -135,6 +135,32 @@ MonoBehaviour:
     - 0
     - 1
     - 2
+    - 2.5
+    - 3
+    - 3.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 3.5
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 1
+    - 2
     - 3
     durationInBeats: 4
   - notes:
@@ -145,6 +171,7 @@ MonoBehaviour:
     durationInBeats: 4
   - notes:
     - 0
+    - 1
     - 2
     - 3
     durationInBeats: 4
@@ -152,41 +179,85 @@ MonoBehaviour:
     - 0
     - 1
     - 2
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 1.5
+    - 2
+    - 2.5
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    - 1
+    - 2
+    - 3
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
     durationInBeats: 4
   - notes:
     - 0
     - 2
+    - 3
     durationInBeats: 4
   - notes:
     - 0
+    - 1
     - 2
+    - 3
     durationInBeats: 4
   - notes:
     - 0
+    - 1
     - 2
+    - 3
+    - 3.5
     durationInBeats: 4
   - notes:
     - 0
+    - 0.5
+    - 1
     - 2
+    - 3
     durationInBeats: 4
   - notes:
     - 0
-    - 2
+    - 1
     durationInBeats: 4
   - notes:
     - 0
-    - 2
     durationInBeats: 4
   - notes:
     - 0
-    - 2
     durationInBeats: 4
   - notes:
     - 0
-    - 2
+    durationInBeats: 4
+  - notes:
+    - 0
+    durationInBeats: 4
+  - notes:
+    - 0
     durationInBeats: 4
   currentBar:
     notes:
     - 0
-    - 2
     durationInBeats: 4

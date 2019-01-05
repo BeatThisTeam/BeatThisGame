@@ -33,9 +33,7 @@ public class UpDownCam : MonoBehaviour
 
         int FaceIndex = player.faceIndex;
         Vector3 DesiredPosition = view[viewIndex].position;
-
         Vector3 SmoothedPosition = Vector3.Lerp(transform.position, DesiredPosition, 9f * Time.deltaTime);
-
         transform.position = SmoothedPosition;
         transform.LookAt(cameraTarget);
     }
