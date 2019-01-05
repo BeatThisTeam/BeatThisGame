@@ -26,7 +26,6 @@ public class ProjectileAttack : Attack {
 
     bool attackContinued = false;
 
-
     public override void StartAttack(float duration) {
 
         Vector3 lookAtPos = player.position - boss.transform.position;
@@ -91,28 +90,6 @@ public class ProjectileAttack : Attack {
         ground.rings[targetRing].sections[targetSection].isTarget = true;
         FireProjectile(spawnPos, targetPos, duration, true, targetRing, targetSection);
     }
-    //public void ContinueAttack(float duration) {
-
-    //    int ringIndex = playerCtrl.ringIndex;
-    //    int numberOfSections = ground.rings[0].sections.Count;
-    //    nAttacks++;
-    //    int targetModifier = -(nAttacks);
-    //    Debug.Log(targetModifier);
-    //    Projectile pr;
-    //    for (int i = 0; i < nAttacks + 1; i++) {
-
-    //        int targetSection = (initialTargetSection + numberOfSections + targetModifier) % numberOfSections;
-    //        Vector3 targetPos = new Vector3(ground.rings[ringIndex].sections[targetSection].tr.position.x, spawnHeight, ground.rings[ringIndex].sections[targetSection].tr.position.z);
-    //        ground.rings[playerCtrl.ringIndex].sections[targetSection].isTarget = true;
-    //        pr = Instantiate(projectile, spawnPos, Quaternion.identity);
-    //        pr.player = player;
-    //        pr.att = this;
-    //        pr.damage = damage;
-    //        pr.Move(spawnPos, targetPos, duration);
-    //        targetModifier += 2;
-    //    }
-
-    //}
 
     private void FireProjectile(Vector3 startPos, Vector3 endPos, float duration, bool rejectable, int targetRing, int targetFace) {
 
@@ -199,5 +176,4 @@ public class ProjectileAttack : Attack {
         FireProjectile(spawnPos, targetPos, duration, false, playerCtrl.ringIndex, targetSection);
         tilesAttack.AttackOnFace(duration, targetSection);
     }
-
 }

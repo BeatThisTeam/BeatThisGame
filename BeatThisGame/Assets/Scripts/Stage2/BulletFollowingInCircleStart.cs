@@ -8,29 +8,19 @@ public class BulletFollowingInCircleStart : Attack {
     public Transform targetDx;
     public Transform targetSx;
 
-    //public PlayerController Player;
-    // public int PlayerFacePos;
-    //  public int PlayerRingPos;
-   // public GroundSections Ground;
-
-    //public float speed;
-
-    public BulletFollowingInCircle projectile;
+    public Projectile projectile;
     private Vector3 spawnpos;
     private Vector3 endpos;
+
+    public float damage;
 
     private float randomNumber;
     private int i;
     private int PlayerFacePosNew;
     int sliceCount;
-   
-
-   // public float radius;
     
+    public override void StartAttack(float duration){
 
-
-    public override void StartAttack(float duration)
-    {
         target = new Transform[2];
         target[0] = targetDx;
         target[1] = targetSx;
@@ -44,14 +34,12 @@ public class BulletFollowingInCircleStart : Attack {
 
         randomNumber = Random.Range(0.0f, 1.0f);
 
-        if (randomNumber < 0.5f)
-        {
+        if (randomNumber < 0.5f){
             i = 0;
-            PlayerFacePosNew = ((PlayerFacePos + 4) + sliceCount) % sliceCount;
-            
+            PlayerFacePosNew = ((PlayerFacePos + 4) + sliceCount) % sliceCount;           
         }
-        if (randomNumber >= 0.5f)
-        {
+
+        if (randomNumber >= 0.5f){
             i = 1;
             PlayerFacePosNew = ((PlayerFacePos - 4) + sliceCount) % sliceCount;
         }
@@ -60,21 +48,22 @@ public class BulletFollowingInCircleStart : Attack {
         Debug.Log("spawn pos " + PlayerFacePosNew);
 
         spawnpos = new Vector3(ground.rings[PlayerRingPos].sections[PlayerFacePosNew].transform.position.x, target[i].position.y, ground.rings[PlayerRingPos].sections[PlayerFacePosNew].transform.position.z);
-
+        Debug.Log(spawnpos);
         endpos = target[i].position;
 
         float radius = Mathf.Abs(ground.rings[PlayerRingPos].sections[0].transform.position.z);
 
-        BulletFollowingInCircle pr;
+        Projectile pr;
         pr = Instantiate(projectile, spawnpos, Quaternion.identity);
 
         pr.radius = radius;
         pr.duration = duration;
         pr.height = height;
+        pr.damage = damage;
+        pr.playerFacePos = playerCtrl.faceIndex;
+        pr.playerRingPos = playerCtrl.ringIndex;
+        pr.att = GetComponent<ProjectileAttack>();
+        pr.player = player;
         pr.CircleTrajectory(radius, height, duration, spawnpos, endpos, i);
-
-
-
     }
-
 }

@@ -8,18 +8,18 @@ public class BulletFollowingInCircle : MonoBehaviour {
     public float duration;
     public float height;
 
-    public void Awake()
-    {
+    public void Awake(){
+
         GetComponent<Transform>();
     }
 
-    public void CircleTrajectory(float radius, float height, float duration, Vector3 spawnpos, Vector3 endpos, int direction)
-    {
+    public void CircleTrajectory(float radius, float height, float duration, Vector3 spawnpos, Vector3 endpos, int direction){
+
         StartCoroutine(CircleTrajectoryCoroutine(radius, height, duration, spawnpos, endpos, direction));
     }
 
-   public  IEnumerator CircleTrajectoryCoroutine(float radius, float height, float duration, Vector3 spawnpos, Vector3 endpos, int direction)
-    {
+   public  IEnumerator CircleTrajectoryCoroutine(float radius, float height, float duration, Vector3 spawnpos, Vector3 endpos, int direction){
+
         float TimeCounter = 0;
         float angle = 0;
         float speed = (Mathf.PI) / duration; //2*PI in degress is 360, PI is 180, so you get "duration" seconds to complete half a circle
@@ -29,22 +29,13 @@ public class BulletFollowingInCircle : MonoBehaviour {
 
         transform.position = spawnpos;
 
-        while (TimeCounter <= duration )
-        {
-            //float x = Mathf.Sin(TimeCounter) * radius;
-            //float y = height;
-            //float z = Mathf.Cos(TimeCounter);
+        while (TimeCounter <= duration ){
 
-            //x = x + Mathf.Cos(TimeCounter);
-            //z = z + Mathf.Sin(TimeCounter);
-
-            if (direction == 0)
-            {
+            if (direction == 0){
                 angle -= speed * Time.deltaTime; //if you want to switch direction, use += instead of -=
             }
             
-            if (direction == 1)
-            {
+            if (direction == 1){
                 angle += speed * Time.deltaTime; //if you want to switch direction, use -= instead of +=
             }
 
@@ -55,17 +46,11 @@ public class BulletFollowingInCircle : MonoBehaviour {
 
             TimeCounter += Time.deltaTime;
 
-            //Vector3 Trajectory = Vector3.Slerp(spawnpos, endpos, TimeCounter/duration);
-            //transform.position = new Vector3(Trajectory.x, endpos.y, Trajectory.z);
-
             yield return null;
         }
 
-        if (TimeCounter > duration)
-        {
+        if (TimeCounter > duration){
             Destroy(this.gameObject);
-
         }
-    }
-
+   }
 }
