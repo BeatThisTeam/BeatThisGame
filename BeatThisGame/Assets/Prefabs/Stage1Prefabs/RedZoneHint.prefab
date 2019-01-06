@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 224460959796344826}
   - component: {fileID: 222853439534655600}
   - component: {fileID: 114255901708050778}
-  - component: {fileID: 114372636162251070}
   m_Layer: 5
   m_Name: RedZoneHint
   m_TagString: Untagged
@@ -64,17 +63,6 @@ MonoBehaviour:
   m_Text: 'Avoid the red zone, bullets and attacks to stay alive!
 
 '
---- !u!114 &114372636162251070
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1570610911865542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eebd755bafa947d887fd70b4cb6a485, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &222853439534655600
 CanvasRenderer:
   m_ObjectHideFlags: 1

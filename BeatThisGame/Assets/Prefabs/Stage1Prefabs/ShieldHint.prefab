@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 224904796407126932}
   - component: {fileID: 222138008472592778}
   - component: {fileID: 114927096748839256}
-  - component: {fileID: 114542963301861342}
   m_Layer: 5
   m_Name: ShieldHint
   m_TagString: Untagged
@@ -29,17 +28,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114542963301861342
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1403758788584752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9449f1e03f02144ec86aa7226b9cd839, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114927096748839256
 MonoBehaviour:
   m_ObjectHideFlags: 1
