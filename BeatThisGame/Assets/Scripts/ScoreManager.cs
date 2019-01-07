@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
@@ -29,6 +30,10 @@ public class ScoreManager : MonoBehaviour {
     [Header("Boss Life")]
     public float maxBossHealth;
     public float currentBossHealth;
+
+    [Header("Score")]
+    public Text scoreText;
+    public float score;
 
     [Space]
     public GroundSections ground;
@@ -65,7 +70,9 @@ public class ScoreManager : MonoBehaviour {
         bossHealthBarUI.Setup(maxBossHealth);
 
         numNotesInSection = CalcNumNotesInSection(0);
-        
+
+        score = 0;
+        UpdateScore();
         //CalcNumOtherAttacks();
     }
 
@@ -118,18 +125,21 @@ public class ScoreManager : MonoBehaviour {
                 specialAttackPower += specialAttackMaxPower * okAccuracy / numNotesInSection;
                 currentAccuracy = 1f; //okAccuracy;
                 changeText.UpdateText(1f);
+                AddScore(10f);
             }
             else if (diff <= deltaAccuracy / 2 && diff > deltaAccuracy / 6) {
                 Debug.Log("good");
                 specialAttackPower += specialAttackMaxPower * goodAccuracy / numNotesInSection;
                 currentAccuracy = 2f; // goodAccuracy;
                 changeText.UpdateText(2f);
-
-            } else if (diff <= deltaAccuracy / 6) {
+                AddScore(20f);
+            }
+            else if (diff <= deltaAccuracy / 6) {
                 Debug.Log("perfect");
                 specialAttackPower += specialAttackMaxPower * perfectAccuracy / numNotesInSection;
                 currentAccuracy = 3f; // perfectAccuracy;
                 changeText.UpdateText(3f);
+                AddScore(30f);
             }
 
             //EventManager.TriggerEvent("note");
@@ -202,6 +212,17 @@ public class ScoreManager : MonoBehaviour {
         Debug.Log(damage);
         currentBossHealth -= damage;
         bossHealthBarUI.UpdateBar(currentBossHealth);
+    }
+
+    public void AddScore(float scoreValue)
+    {
+        score += scoreValue;
+        UpdateScore();
+    }
+
+    public void UpdateScore()
+    {
+        scoreText.text = "SCORE: " + score;
     }
 
     public float getAccuracy()
