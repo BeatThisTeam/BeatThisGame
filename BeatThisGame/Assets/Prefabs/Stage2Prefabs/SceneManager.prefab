@@ -4626,12 +4626,112 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     removable: 0
+  - notePosInSeconds: 155.45457
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114544908972756516}
+          m_MethodName: StartAttackRejectable
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_MethodName: ChangeCamera
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 156.54549
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114544908972756516}
+          m_MethodName: ContinueAttackRejectable
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
   - notePosInSeconds: 157.09094
     playerShouldPlay: 0
     specialAttack: 0
     noteFunction:
       m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114544908972756516}
+          m_MethodName: ContinueAttackRejectable
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 157.6364
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
         m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 158.18185
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 158.72731
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114827405129528632}
+          m_MethodName: StartAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     removable: 0
@@ -4640,11 +4740,543 @@ MonoBehaviour:
     specialAttack: 0
     noteFunction:
       m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114827405129528632}
+          m_MethodName: StartAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 159.81822
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114827405129528632}
+          m_MethodName: StartAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 160.09094
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114827405129528632}
+          m_MethodName: FadeTiles
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.2728
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 160.36368
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     removable: 0
+  - notePosInSeconds: 160.6364
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114827405129528632}
+          m_MethodName: FadeTiles
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.2728
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 160.90913
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114544908972756516}
+          m_MethodName: StartAttackRejectable
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 161.18185
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114827405129528632}
+          m_MethodName: FadeTiles
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.2728
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
   - notePosInSeconds: 161.45459
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114827405129528632}
+          m_MethodName: ClearSections
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114544908972756516}
+          m_MethodName: ContinueAttackRejectable
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 162.00005
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114544908972756516}
+          m_MethodName: ContinueAttackRejectable
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 162.5455
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 163.09096
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114493151705925206}
+          m_MethodName: StartAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 163.63641
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114493151705925206}
+          m_MethodName: StartAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 164.18187
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114493151705925206}
+          m_MethodName: StartAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 164.45459
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114493151705925206}
+          m_MethodName: FadeTiles
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.2728
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 164.72733
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 165.00005
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114493151705925206}
+          m_MethodName: FadeTiles
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.2728
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 165.27278
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114544908972756516}
+          m_MethodName: StartAttackRejectable
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 165.5455
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114493151705925206}
+          m_MethodName: FadeTiles
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.2728
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 165.81824
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114493151705925206}
+          m_MethodName: ClearSections
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114544908972756516}
+          m_MethodName: StartAttackRejectable
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 166.3637
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114544908972756516}
+          m_MethodName: ContinueAttackRejectable
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 166.90915
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 167.4546
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114544908972756516}
+          m_MethodName: ContinueAttackRejectable
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 168.00006
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 168.54552
+    playerShouldPlay: 1
+    specialAttack: 1
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114255864392543582}
+          m_MethodName: StartAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 169.63643
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114544908972756516}
+          m_MethodName: ContinueAttackRejectable
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.0909
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 170.18188
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 170.72734
+    playerShouldPlay: 1
+    specialAttack: 1
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114255864392543582}
+          m_MethodName: StartAttack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.6364
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 172.36371
+    playerShouldPlay: 1
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 174.54553
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 176.72736
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 178.90918
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 181.091
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 183.27283
     playerShouldPlay: 0
     specialAttack: 0
     noteFunction:
