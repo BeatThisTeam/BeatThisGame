@@ -67,7 +67,7 @@ public class ChangeText : MonoBehaviour {
     IEnumerator WaitForSec()
     {
         StartCoroutine(FadeTextToFullAlpha(1f, GetComponent<Text>()));
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.5f);
         StartCoroutine(FadeTextToZeroAlpha(1f, GetComponent<Text>()));
         text = noText;
     }
