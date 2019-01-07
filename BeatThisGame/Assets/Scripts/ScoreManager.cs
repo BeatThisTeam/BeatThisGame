@@ -43,6 +43,12 @@ public class ScoreManager : MonoBehaviour {
 
     private int lastSpecialAttackIndex;
 
+    private int hitCount = 0;
+    private float totAccuracy = 0;
+    public float avgAccuracy = 0;
+    public bool stageCleared = false;
+    public string grade;
+
     private void Awake() {
         if (instance != null && instance != this) {
             Destroy(this.gameObject);
@@ -115,7 +121,7 @@ public class ScoreManager : MonoBehaviour {
         //}
         //Debug.Assert(ground.rings[ringPos].sections[facePos].isTarget);
         if (diff < deltaAccuracy && ground.rings[ringPos].sections[facePos].isTarget) {
-
+           
             if(diff < deltaAccuracy && diff > deltaAccuracy / 2) {
                 //Debug.Log("ok");
                 accuracy = okAccuracy;
@@ -132,7 +138,8 @@ public class ScoreManager : MonoBehaviour {
                 specialAttackPower += specialAttackMaxPower * perfectAccuracy / numNotesInSection;
                 changeText.UpdateText(3f);
             }
-
+            hitCount++;
+            totAccuracy += accuracy;
             //EventManager.TriggerEvent("note");
             specialAttackUI.UpdateBar(specialAttackPower);
 
@@ -211,6 +218,38 @@ public class ScoreManager : MonoBehaviour {
         Debug.Log(damage);
         currentBossHealth -= damage;
         bossHealthBarUI.UpdateBar(currentBossHealth);
+    }
+
+    public void FinalScore() {
+        avgAccuracy = (totAccuracy / hitCount)*100;
+
+        if (currentBossHealth / maxBossHealth > 0.5) {
+            grade = "-";
+        }
+        if(currentBossHealth / maxBossHealth <= 0.5) {
+            grade = "D";
+            stageCleared = true;
+        }
+        if (currentBossHealth / maxBossHealth <= 0.4) {
+            grade = "C";
+            stageCleared = true;
+        }
+        if (currentBossHealth / maxBossHealth <= 0.3) {
+            grade = "B";
+            stageCleared = true;
+        }
+        if (currentBossHealth / maxBossHealth <= 0.2) {
+            grade = "A";
+            stageCleared = true;
+        }
+        if (currentBossHealth / maxBossHealth <= 0.1) {
+            grade = "S";
+            stageCleared = true;
+        }
+        if (currentBossHealth / maxBossHealth == 0) {
+            grade = "SS";
+            stageCleared = true;
+        }
     }
 }
 

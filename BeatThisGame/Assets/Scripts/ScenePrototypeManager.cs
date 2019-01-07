@@ -21,6 +21,8 @@ public class ScenePrototypeManager : MonoBehaviour {
     public Transform player;
     PlayerController playerCharContr;
 
+    public ScorePanel scorePanel;
+
     public UpDownCam camera;
 
     public float noteToPlayInSeconds = 0;
@@ -88,9 +90,13 @@ public class ScenePrototypeManager : MonoBehaviour {
                 notesInSeconds[notesInSecondsIndex].noteFunction.Invoke();
                 IncrementNoteToPlayInSeconds();
             }
+        } else if (playerCharContr.isAlive) {
+            SongManager.Instance.Stop();
+            ScoreManager.Instance.FinalScore();
+            scorePanel.DisplayScore();
         } else {
             SongManager.Instance.Stop();
-            SceneManager.LoadScene(2);
+            scorePanel.DisplayDeathScore();
         }
     }
 
