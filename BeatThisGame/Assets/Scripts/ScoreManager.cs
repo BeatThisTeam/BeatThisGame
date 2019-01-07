@@ -39,10 +39,6 @@ public class ScoreManager : MonoBehaviour {
     public PowerAttack specialAttackUI;
     public BossHealth bossHealthBarUI;
     
-    //public GameObject okText;
-    //public GameObject goodText;
-    //public GameObject perfectText;
-
     public ChangeText changeText;
 
     private int lastSpecialAttackIndex;
