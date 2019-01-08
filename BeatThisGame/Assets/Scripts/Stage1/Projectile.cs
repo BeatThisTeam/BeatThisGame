@@ -111,9 +111,9 @@ public class Projectile : MonoBehaviour {
 
             //if (rejectable) {
             //    conta++;
-            //    Debug.Log(conta);
+            //    Debug.Log("PROJECTILE n. " + conta);
             //}
-            
+
         }
     }
 

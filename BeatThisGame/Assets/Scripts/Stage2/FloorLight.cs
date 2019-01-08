@@ -54,8 +54,50 @@ public class FloorLight : MonoBehaviour {
                 secPBeat/4,
                 (secPBeat/4)*2,
             } },
+            new Pattern(){ startTime = 85.09091f, num = 7, noteIndex = 0, notes = new float[] {
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat*2,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat,
+                (secPBeat/4)*3,
+                secPBeat/4,
+                (secPBeat/4)*2,
+            } },
+            new Pattern(){ startTime = 207.2729f, num = 3, noteIndex = 0, notes = new float[] {
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat*2,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat/4,
+                secPBeat,
+                (secPBeat/4)*3,
+                secPBeat/4,
+                (secPBeat/4)*2,
+            } },
         };
-
+        
         mat = GetComponent<Renderer>().material;
     }
 
@@ -66,8 +108,8 @@ public class FloorLight : MonoBehaviour {
                 free = false;
                 int noteIndex = patterns[patternIndex].noteIndex;
 
-                Debug.Log(noteIndex);
-                Debug.Log(patternIndex);               
+                //Debug.Log(noteIndex);
+                //Debug.Log(patternIndex);               
                 StartCoroutine(Light(0.05f));
                 //Light();
                 patterns[patternIndex].startTime += patterns[patternIndex].notes[noteIndex];

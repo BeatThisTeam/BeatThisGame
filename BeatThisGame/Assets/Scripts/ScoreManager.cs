@@ -221,34 +221,37 @@ public class ScoreManager : MonoBehaviour {
     }
 
     public void FinalScore() {
-        avgAccuracy = (totAccuracy / hitCount)*100;
 
-        if (currentBossHealth / maxBossHealth > 0.5) {
-            grade = "-";
-        }
-        if(currentBossHealth / maxBossHealth <= 0.5) {
-            grade = "D";
-            stageCleared = true;
-        }
-        if (currentBossHealth / maxBossHealth <= 0.4) {
-            grade = "C";
-            stageCleared = true;
-        }
-        if (currentBossHealth / maxBossHealth <= 0.3) {
-            grade = "B";
-            stageCleared = true;
-        }
-        if (currentBossHealth / maxBossHealth <= 0.2) {
-            grade = "A";
-            stageCleared = true;
-        }
-        if (currentBossHealth / maxBossHealth <= 0.1) {
-            grade = "S";
-            stageCleared = true;
-        }
-        if (currentBossHealth / maxBossHealth == 0) {
-            grade = "SS";
-            stageCleared = true;
+        if (!stageCleared) {
+            avgAccuracy = (totAccuracy / hitCount) * 100;
+
+            if (currentBossHealth / maxBossHealth > 0.5) {
+                grade = "-";
+            }
+            if (currentBossHealth / maxBossHealth <= 0.5) {
+                grade = "D";
+                stageCleared = true;
+            }
+            if (currentBossHealth / maxBossHealth <= 0.4) {
+                grade = "C";
+                stageCleared = true;
+            }
+            if (currentBossHealth / maxBossHealth <= 0.3) {
+                grade = "B";
+                stageCleared = true;
+            }
+            if (currentBossHealth / maxBossHealth <= 0.2) {
+                grade = "A";
+                stageCleared = true;
+            }
+            if (currentBossHealth / maxBossHealth <= 0.1) {
+                grade = "S";
+                stageCleared = true;
+            }
+            if (currentBossHealth / maxBossHealth == 0) {
+                grade = "SS";
+                stageCleared = true;
+            }
         }
     }
 }

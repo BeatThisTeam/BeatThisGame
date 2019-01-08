@@ -17,10 +17,17 @@ public class ScorePanel : MonoBehaviour {
 
         if (ScoreManager.Instance.stageCleared) {
             stageClearedPanel.SetActive(true);
-            accuracyTxt.text = ScoreManager.Instance.avgAccuracy.ToString("F2");
-            gradeTxt.text = ScoreManager.Instance.grade;
+            if(accuracyTxt) {
+                accuracyTxt.text = ScoreManager.Instance.avgAccuracy.ToString("F2");
+            }
+            if (gradeTxt) {
+                gradeTxt.text = ScoreManager.Instance.grade;
+            }
+            
         } else {
             stageFailedPanel.SetActive(true);
+            accuracyTxt.text = "--";
+            gradeTxt.text = "--";
         }
     }
 
