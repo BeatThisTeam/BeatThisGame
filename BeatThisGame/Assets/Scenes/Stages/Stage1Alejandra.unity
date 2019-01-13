@@ -11446,6 +11446,32 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114511020755366454, guid: 0c062b3d14eebec45be55a2b6633495f,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: c7b2eeea6770d4fb886e1b2186eb0aa7,
+        type: 3}
+    - target: {fileID: 114511020755366454, guid: 0c062b3d14eebec45be55a2b6633495f,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.505162
+      objectReference: {fileID: 0}
+    - target: {fileID: 114511020755366454, guid: 0c062b3d14eebec45be55a2b6633495f,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.79607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 114511020755366454, guid: 0c062b3d14eebec45be55a2b6633495f,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.8301887
+      objectReference: {fileID: 0}
+    - target: {fileID: 114511020755366454, guid: 0c062b3d14eebec45be55a2b6633495f,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c062b3d14eebec45be55a2b6633495f, type: 2}
   m_IsPrefabAsset: 0
