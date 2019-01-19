@@ -5,10 +5,16 @@ using UnityEngine.UI;
 
 public class FeedbackText : MonoBehaviour {
 
-    public Text feedbackText;
+    public Text fineText;
+    public Text okText;
+    public Text goodText;
+    public Text perfectText;
 
-	void Update () {
+    void Update () {
         Vector3 textPos = Camera.main.WorldToScreenPoint(this.transform.position);
-        feedbackText.transform.position = textPos;
-	}
+        fineText.transform.position = textPos;
+        okText.transform.position = textPos;
+        goodText.transform.position = textPos;
+        perfectText.transform.position = textPos;
+    }
 }

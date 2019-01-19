@@ -3,45 +3,62 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChangeText : MonoBehaviour {
+public class ChangeText : MonoBehaviour
+{
 
     [SerializeField]
-    private Text feedbackText = null;
-
+    public Text FineText;
+    [SerializeField]
+    public Text OkText;
+    [SerializeField]
+    public Text GoodText;
+    [SerializeField]
+    public Text PerfectText;
 
     string noText = " ";
+    string fineText = "FINE!";
     string okText = "OK!";
     string goodText = "GOOD!";
     string perfectText = "PERFECT!";
-    string text;
 
-    void Start ()
+    void Start()
     {
-        feedbackText.text = noText;
-	}
-
-    public void Update()
-    {
-        feedbackText.text = text;
+        FineText.text = noText;
+        OkText.text = noText;
+        GoodText.text = noText;
+        PerfectText.text = noText;
     }
 
     public void UpdateText(float acc)
     {
-        
+
         if (acc == 1f)
         {
-            text = okText;
-            StartCoroutine("WaitForSec");
+            OkText.text = okText;
+            //StartCoroutine(FadeTextToFullAlpha(1f, OkText.GetComponent<Text>()));
+            StartCoroutine(FadeTextToZeroAlpha(1f, OkText.GetComponent<Text>()));
+            Debug.Log("ok fade out");
         }
         else if (acc == 2f)
         {
-            text = goodText;
-            StartCoroutine("WaitForSec");
+            GoodText.text = goodText;
+            //StartCoroutine(FadeTextToFullAlpha(1f, GoodText.GetComponent<Text>()));
+            StartCoroutine(FadeTextToZeroAlpha(1f, GoodText.GetComponent<Text>()));
+            Debug.Log("good fade out");
         }
         else if (acc == 3f)
         {
-            text = perfectText;
-            StartCoroutine("WaitForSec");
+            PerfectText.text = perfectText;
+            //StartCoroutine(FadeTextToFullAlpha(1f, PerfectText.GetComponent<Text>()));
+            StartCoroutine(FadeTextToZeroAlpha(1f, PerfectText.GetComponent<Text>()));
+            Debug.Log("perfect fade out");
+        }
+        else
+        {
+            FineText.text = fineText;
+            //StartCoroutine(FadeTextToFullAlpha(1f, FineText.GetComponent<Text>()));
+            StartCoroutine(FadeTextToZeroAlpha(1f, FineText.GetComponent<Text>()));
+            Debug.Log("fine fade out");
         }
     }
 
@@ -64,12 +81,6 @@ public class ChangeText : MonoBehaviour {
             yield return null;
         }
     }
-    IEnumerator WaitForSec()
-    {
-        StartCoroutine(FadeTextToFullAlpha(1f, GetComponent<Text>()));
-        yield return new WaitForSeconds(0.5f);
-        StartCoroutine(FadeTextToZeroAlpha(1f, GetComponent<Text>()));
-        text = noText;
-    }
+    
 
 }
