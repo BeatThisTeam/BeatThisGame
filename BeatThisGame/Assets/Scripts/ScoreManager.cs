@@ -49,6 +49,8 @@ public class ScoreManager : MonoBehaviour {
     public bool stageCleared = false;
     public string grade;
 
+    public bool hit = false;
+
     private void Awake() {
         if (instance != null && instance != this) {
             Destroy(this.gameObject);
@@ -114,7 +116,7 @@ public class ScoreManager : MonoBehaviour {
         //Debug.Log("targetpos: " + noteToHit);
         //Debug.Log(facePos +" "+ ringPos);
         float diff = Mathf.Abs(noteToHit - SongManager.Instance.SongPositionInSeconds);
-        //if(diff > deltaAccuracy) {
+        //if (diff > deltaAccuracy) {
         //    Debug.Log(noteToHit);
         //    Debug.Log(SongManager.Instance.SongPositionInSeconds);
         //    Debug.Log(diff);
@@ -138,6 +140,7 @@ public class ScoreManager : MonoBehaviour {
                 specialAttackPower += specialAttackMaxPower * perfectAccuracy / numNotesInSection;
                 changeText.UpdateText(3f);
             }
+            hit = true;
             hitCount++;
             totAccuracy += accuracy;
             //EventManager.TriggerEvent("note");
@@ -196,9 +199,16 @@ public class ScoreManager : MonoBehaviour {
     }
 
     public void UpdateNoteToHit() {
-        if(noteToHit < SongManager.Instance.SongPositionInSeconds - deltaAccuracy) {
-            //Debug.Log("MISS");
+        
+        if (noteToHit < SongManager.Instance.SongPositionInSeconds - deltaAccuracy) {
+
+            if (!hit) {
+                Debug.Log("MISS");
+            }
+            
             nextNoteToHit(ScenePrototypeManager.Instance.notesInSecondsIndex);
+
+            hit = false;
         }
     }
 
@@ -254,5 +264,12 @@ public class ScoreManager : MonoBehaviour {
             }
         }
     }
+
+    //private void FixedUpdate() {
+        
+    //    if(SongManager.Instance.SongPositionInSeconds > noteToHit + deltaAccuracy) {
+    //        Debug.Log("MISS");
+    //    }
+    //}
 }
 
