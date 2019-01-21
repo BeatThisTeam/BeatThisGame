@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114812401546083090}
   - component: {fileID: 114340554757682174}
   - component: {fileID: 114097829923571266}
+  - component: {fileID: 114333961116948976}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1139629980812986}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -55,25 +56,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec2e027ce49a4b49a689c1f9f52cb7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground: {fileID: 0}
-  gcc: {fileID: 0}
-  player: {fileID: 0}
-  playerCtrl: {fileID: 0}
-  boss: {fileID: 0}
-  targetDx: {fileID: 0}
-  targetSx: {fileID: 0}
-  Player: {fileID: 0}
-  Ground: {fileID: 0}
-  speed: 0
-  projectile: {fileID: 0}
   radius: 0
+  duration: 0
+  height: 0
 --- !u!114 &114295526820291168
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1139629980812986}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d565ed1db8b0e34296505b8aa0fa5cb, type: 3}
   m_Name: 
@@ -82,6 +74,7 @@ MonoBehaviour:
   boss: {fileID: 0}
   ground: {fileID: 0}
   player: {fileID: 0}
+  scorePanel: {fileID: 0}
   camera: {fileID: 0}
   noteToPlayInSeconds: 0
   metronome: {fileID: 0}
@@ -188,6 +181,28 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     removable: 0
   notesInSecondsIndex: 0
+--- !u!114 &114333961116948976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1139629980812986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c31b6cce35b7b4e88a422a82a3dff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button:
+  - {fileID: 1177162650312232, guid: 9122c3e379af99745abd2c3addb8cf45, type: 2}
+  - {fileID: 1421707348211344, guid: e8b98517178273b4988f88c9dcd3581e, type: 2}
+  - {fileID: 1799259303868362, guid: 703dd3b082a4e8a46a361b87ba28fed8, type: 2}
+  - {fileID: 1627922421244770, guid: 324d8e33b89501b49a4f775e2e18e850, type: 2}
+  Boss:
+  - {fileID: 1122837499282796, guid: 33a7cb63e5237a14187db25b13825b34, type: 2}
+  - {fileID: 1411074902856224, guid: 41923270da40a104daf801091581f2b5, type: 2}
+  - {fileID: 1303122264963968, guid: 68cd5463f87904344adcea7adfe4e134, type: 2}
+  - {fileID: 1467381926355536, guid: c8e50038e503d2c439359d372260edd4, type: 2}
+  Cam: {fileID: 0}
 --- !u!114 &114340554757682174
 MonoBehaviour:
   m_ObjectHideFlags: 1
