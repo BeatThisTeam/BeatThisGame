@@ -163,12 +163,15 @@ public class ScoreManager : MonoBehaviour {
             if (diff < deltaAccuracy && diff > deltaAccuracy / 2) {
                 //Debug.Log("ok");
                 specialAttackAccuracy = okAccuracy;
+                accuracy = okAccuracy;
             } else if (diff <= deltaAccuracy / 2 && diff > deltaAccuracy / 6) {
                 //Debug.Log("good");
                 specialAttackAccuracy = goodAccuracy;
+                accuracy = goodAccuracy;
             } else if (diff <= deltaAccuracy / 6) {
                 //Debug.Log("perfect");
                 specialAttackAccuracy = perfectAccuracy;
+                accuracy = perfectAccuracy;
             }
 
             if (SongManager.Instance.SongPositionInSeconds > noteToHit) {

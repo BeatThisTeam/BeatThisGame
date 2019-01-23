@@ -27,7 +27,7 @@ public class ScenePrototypeManager : MonoBehaviour {
 
     public float noteToPlayInSeconds = 0;
 
-    private bool playing = true;
+    public bool playing = true;
 
     public CircleMetronome metronome;
 

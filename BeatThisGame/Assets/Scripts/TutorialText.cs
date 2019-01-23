@@ -19,7 +19,7 @@ public class TutorialText : MonoBehaviour
 
         //gameObject.transform.position += Vector3.up * 1000f;
         currentText.text = texts[textIndex];
-        if (textIndex < texts.Count - 1) {
+        if (textIndex < texts.Count) {
             textIndex++;
         }        
         
