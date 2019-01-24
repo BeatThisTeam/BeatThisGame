@@ -57,11 +57,6 @@ public class Menu : MonoBehaviour {
 
     }
 
-    //private void Start()
-    //{
-    //    StartCoroutine(ChangeButton(0));
-    //}
-
     void Update () {
         int FaceIndex = Cam.FaceIndex;
         int Ring = Cam.i;
@@ -83,63 +78,66 @@ public class Menu : MonoBehaviour {
             StartCoroutine(ChangeLevel(FaceIndex));
         }
 
+        if (Input.GetButtonDown("Submit")) {
+
+            if (PlayButton.activeInHierarchy) {
+                SceneManager.LoadScene(1);
+            }
+
+            if (QuitButton.activeInHierarchy) {
+                Application.Quit();
+            }
+
+            if (LevelButton.activeInHierarchy) {
+                Cam.SwitchRing(0.01f);
+            }
+
+            if (Tutorial.activeInHierarchy) {
+                SceneManager.LoadScene(1);
+            }
+
+            if (LV1blob.activeInHierarchy) {
+                SceneManager.LoadScene(2);
+            }
+            
+            if (LV2parents.activeInHierarchy) {
+                SceneManager.LoadScene(3);
+            }            
+        }
+
+        if (Input.GetButtonDown("Shield") && Ring == 1) {
+            Cam.SwitchRing(0.01f);
+            Tutorial.SetActive(false);
+            LV1blob.SetActive(false);
+            LV2parents.SetActive(false);
+            LV3boss.SetActive(false);
+        }
     }
 
     public IEnumerator ChangeButton(int FaceIndex)
     {
-        if (Button[((FaceIndex - 1) + 4) % 4].activeInHierarchy == true)
-        {
-            //Destroy(bt[((FaceIndex - 1) + 4) % 4]);
+        if (Button[((FaceIndex - 1) + 4) % 4].activeInHierarchy == true){
             Button[((FaceIndex - 1) + 4) % 4].SetActive(false);
-            //active[((FaceIndex - 1) + 4) % 4] = false;
         }
 
-        if (Button[((FaceIndex + 1) + 4) % 4].activeInHierarchy == true)
-        {
-            //Destroy(bt[((FaceIndex + 1) + 4) % 4]);
+        if (Button[((FaceIndex + 1) + 4) % 4].activeInHierarchy == true){
             Button[((FaceIndex + 1) + 4) % 4].SetActive(false);
-           // active[((FaceIndex + 1) + 4) % 4] = false;
         }
-
-        //bt[FaceIndex] = Instantiate(Button[FaceIndex]);
+        
 
         Button[FaceIndex].SetActive(true);
-
-        //active[FaceIndex] = true;
+        
 
         yield return null;
     }
 
-    public IEnumerator ChangeLevel(int FaceIndex)
-    {
-        
-        //if (activeLS[((FaceIndex - 1) + 4) % 4] == true)
-        //{
-        //    //Destroy(boss[((FaceIndex - 1) + 4) % 4]);
-        //    Boss[((FaceIndex - 1) + 4) % 4].SetActive(false);
-        //    //active[((FaceIndex - 1) + 4) % 4] = false;
-        //}
+    public IEnumerator ChangeLevel(int FaceIndex){
 
-        //if (active[((FaceIndex + 1) + 4) % 4] == true)
-        //{
-        //    //Destroy(boss[((FaceIndex + 1) + 4) % 4]);
-        //    Boss[((FaceIndex + 1) + 4) % 4].SetActive(false);
-        //    active[((FaceIndex + 1) + 4) % 4] = false;
-        //}
-
-        ////boss[FaceIndex] = Instantiate(Boss[FaceIndex]);
-
-        //Boss[FaceIndex].SetActive(true);
-
-        //active[FaceIndex] = true;
-
-        if (Boss[((FaceIndex - 1) + 4) % 4].activeInHierarchy == true)
-        {
+        if (Boss[((FaceIndex - 1) + 4) % 4].activeInHierarchy == true){
             Boss[((FaceIndex - 1) + 4) % 4].SetActive(false);
         }
 
-        if (Boss[((FaceIndex + 1) + 4) % 4].activeInHierarchy == true)
-        {
+        if (Boss[((FaceIndex + 1) + 4) % 4].activeInHierarchy == true){
             Boss[((FaceIndex + 1) + 4) % 4].SetActive(false);
         }
 
