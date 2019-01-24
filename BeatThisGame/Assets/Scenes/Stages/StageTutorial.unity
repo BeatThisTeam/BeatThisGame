@@ -7399,6 +7399,12 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114380501023254478, guid: dd79046822a2f6f4c9e77bd67f7968a9,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: afb23c3f2e485415b9e50f2a2396ef73,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: dd79046822a2f6f4c9e77bd67f7968a9, type: 2}
