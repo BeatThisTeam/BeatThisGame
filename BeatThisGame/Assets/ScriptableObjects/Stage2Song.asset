@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9ed4f9a4837bd842b11c00ba7e6b4a7, type: 3}
   m_Name: Stage2Song
   m_EditorClassIdentifier: 
-  track: {fileID: 8300000, guid: ca40b8f9cd509a34580149b4af77e28a, type: 3}
+  track: {fileID: 8300000, guid: a950a8267da8d3049aa03bafcba1097c, type: 3}
   bpm: 110
   bars:
   - notes:
