@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour {
     public GameObject LevelButton;
     public GameObject OptionsButton;
     public GameObject QuitButton;
+    public GameObject title;
 
     public GameObject[] Boss;
     public GameObject Tutorial;
@@ -90,6 +91,7 @@ public class Menu : MonoBehaviour {
 
             if (LevelButton.activeInHierarchy) {
                 Cam.SwitchRing(0.01f);
+                title.SetActive(false);
             }
 
             if (Tutorial.activeInHierarchy) {
@@ -107,6 +109,7 @@ public class Menu : MonoBehaviour {
 
         if (Input.GetButtonDown("Shield") && Ring == 1) {
             Cam.SwitchRing(0.01f);
+            title.SetActive(true);
             Tutorial.SetActive(false);
             LV1blob.SetActive(false);
             LV2parents.SetActive(false);

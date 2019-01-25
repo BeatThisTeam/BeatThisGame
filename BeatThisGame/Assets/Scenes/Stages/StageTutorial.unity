@@ -530,22 +530,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentText: {fileID: 55149436}
   texts:
-  - Welcome to the tutorial! Do your hear this click? We'll use it to learn the machanics,
-    to pass the stages you'll have to keep the rythm in order to perform and avoid
-    attacks.
-  - Move using WASD, arrow keys or D-Pad.
-  - Try to avoid the next attacks, the red tile will hurt you.
-  - To avoid them follow the rythm and move when they are exactly under the player.
-  - If you do a grade will appear on top of C's head (ok, good or perfect). Try to
-    avoid one attack with a PERFECT grade!
-  - Great! Let's go on with the tutorial.
-  - You can reject RED BULLETS with your shield to damage the bosses, press E or B
-    button (joystick) when they are between the two circles around you.
-  - 'Avoiding and rejecting at the right time you will load the special attack bar
-    (under the red C''s life bar). '
-  - 'At some points in the songs a circle will shrink around you, press space or A(joystick)
-    when it is between your two circles to perform the special attack and damage the
-    bosses. '
+  - 'Welcome to the tutorial! Do your hear this click? We''ll use it to learn the
+    machanics, to pass the stages you''ll have to keep the rythm in order to perform
+    and avoid attacks.
+
+
+    Press A to continue'
+  - 'Move using WASD, arrow keys or D-Pad.
+
+
+    Press A to continue'
+  - 'Try to avoid the next attacks, the red tile will hurt you.
+
+
+    Press A to continue'
+  - 'To avoid them follow the rythm and move when they are exactly under the player.
+
+
+    Press A to continue'
+  - 'If you do a grade will appear on top of C''s head (ok, good or perfect). Try
+    to avoid one attack with a PERFECT grade!
+
+
+    Press A to continue'
+  - 'Great! Let''s go on with the tutorial.
+
+
+    Press A to continue'
+  - 'You can reject RED BULLETS with your shield to damage the bosses, press E or
+    B button (joystick) when they are between the two circles around you.
+
+
+    Press A to continue'
+  - "Avoiding and rejecting at the right time you will load the special attack bar
+    (under the red C's life bar). \n\nPress A to continue"
+  - "Avoiding and rejecting at the right time you will load the special attack bar
+    (under the red C's life bar). \n\nPress A to continue"
   textIndex: 0
 --- !u!114 &55149436 stripped
 MonoBehaviour:
@@ -5076,6 +5096,73 @@ Mesh:
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimized: 0
+--- !u!1001 &597499014
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1565120365}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 6d07c037050964a84adb202245515797, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6d07c037050964a84adb202245515797, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6d07c037050964a84adb202245515797, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6d07c037050964a84adb202245515797, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6d07c037050964a84adb202245515797, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6005597
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6d07c037050964a84adb202245515797, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6d07c037050964a84adb202245515797, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.79958
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6d07c037050964a84adb202245515797, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6d07c037050964a84adb202245515797, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f80e2bc2527fe4cbc80f52061675f770, type: 2}
+    - target: {fileID: 400000, guid: 6d07c037050964a84adb202245515797, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6d07c037050964a84adb202245515797, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6d07c037050964a84adb202245515797, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6d07c037050964a84adb202245515797, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -73.82
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6d07c037050964a84adb202245515797, type: 3}
+  m_IsPrefabAsset: 0
+--- !u!4 &597499015 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 6d07c037050964a84adb202245515797,
+    type: 3}
+  m_PrefabInternal: {fileID: 597499014}
 --- !u!1 &601671018
 GameObject:
   m_ObjectHideFlags: 0
@@ -5730,8 +5817,8 @@ RectTransform:
   - {fileID: 880222519}
   - {fileID: 601671019}
   - {fileID: 1630851723}
-  - {fileID: 55149434}
   - {fileID: 1012753201}
+  - {fileID: 55149434}
   - {fileID: 1773203870}
   - {fileID: 1741452805}
   - {fileID: 1092046496}
@@ -7354,7 +7441,7 @@ Prefab:
     - target: {fileID: 224124245593841276, guid: dd79046822a2f6f4c9e77bd67f7968a9,
         type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 224124245593841276, guid: dd79046822a2f6f4c9e77bd67f7968a9,
         type: 2}
@@ -7621,8 +7708,6 @@ GameObject:
   - component: {fileID: 921745857}
   - component: {fileID: 921745856}
   - component: {fileID: 921745860}
-  - component: {fileID: 921745862}
-  - component: {fileID: 921745861}
   m_Layer: 0
   m_Name: BossObject
   m_TagString: Untagged
@@ -7707,48 +7792,6 @@ MonoBehaviour:
   player: {fileID: 232573000}
   damagedMaterial: {fileID: 2100000, guid: 68b953d5b501f1a4ba369d0949b25a18, type: 2}
   rejectPlayerComponent: {fileID: 0}
---- !u!23 &921745861
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 921745855}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 24749554b76469d498a3a7218af80563, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &921745862
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 921745855}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &928703095
 GameObject:
   m_ObjectHideFlags: 0
@@ -8452,7 +8495,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 646297445}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12318,7 +12361,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 5.2, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
-  m_Children: []
+  m_Children:
+  - {fileID: 597499015}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -15349,7 +15393,7 @@ Prefab:
     - target: {fileID: 224251297042348504, guid: eaa92ce8826db964cb45e1c0b7412bff,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224631555941389784, guid: eaa92ce8826db964cb45e1c0b7412bff,
         type: 2}
@@ -15388,8 +15432,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1905329455547578, guid: eaa92ce8826db964cb45e1c0b7412bff, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1361266918033244, guid: eaa92ce8826db964cb45e1c0b7412bff, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114896303597401054, guid: eaa92ce8826db964cb45e1c0b7412bff,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 90f52f01f0345452da470096427fa824,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaa92ce8826db964cb45e1c0b7412bff, type: 2}
   m_IsPrefabAsset: 0
