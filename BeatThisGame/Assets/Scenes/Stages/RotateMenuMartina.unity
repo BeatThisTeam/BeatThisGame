@@ -680,7 +680,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 74261475}
   m_LocalRotation: {x: -0, y: -0.6320293, z: 0, w: -0.77494454}
-  m_LocalPosition: {x: -20, y: 20, z: -4}
+  m_LocalPosition: {x: -20, y: 15, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1992919874}
@@ -771,7 +771,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 87392687}
   m_LocalRotation: {x: -0, y: -0.7749445, z: -0, w: 0.63202935}
-  m_LocalPosition: {x: 20, y: 20, z: 4}
+  m_LocalPosition: {x: 20, y: 15, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1887847980}
@@ -1146,7 +1146,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 164777682}
   m_LocalRotation: {x: 0, y: -0.11840396, z: 0, w: 0.9929655}
-  m_LocalPosition: {x: 4, y: 20, z: -20}
+  m_LocalPosition: {x: 4, y: 15, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1078791770}
@@ -2923,7 +2923,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 602906666}
   m_LocalRotation: {x: -0, y: -0.99488074, z: -0, w: -0.10105625}
-  m_LocalPosition: {x: -4, y: 20, z: 20}
+  m_LocalPosition: {x: -4, y: 15, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1993779973}
@@ -8783,7 +8783,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_TargetDisplay: 0
 --- !u!1001 &1469092003
 Prefab:
@@ -10130,8 +10130,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -230}
-  m_SizeDelta: {x: 400, y: 400}
+  m_AnchoredPosition: {x: 0, y: -180}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1696596915
 MonoBehaviour:
@@ -10353,7 +10353,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: e8e3125ca3a96492786c640abca65623, type: 3}
-    m_FontSize: 40
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -10364,7 +10364,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BACK
+  m_Text: BACK (B)
 --- !u!222 &1829702874
 CanvasRenderer:
   m_ObjectHideFlags: 0
