@@ -39,11 +39,6 @@ public class Projectile : MonoBehaviour {
         StartCoroutine( MoveCoroutine(startPos, endPos, duration));
     }
 
-    public void CircleTrajectory(float radius, float height, float duration, Vector3 spawnpos, Vector3 endpos, int direction) {
-
-        StartCoroutine(CircleTrajectoryCoroutine(radius, height, duration, spawnpos, endpos, direction));
-    }
-
     IEnumerator MoveCoroutine(Vector3 startPos, Vector3 endPos, float duration) {
        
         float elapsedTime = 0;
@@ -63,43 +58,6 @@ public class Projectile : MonoBehaviour {
                 DestroyGameObject();
             }
         }     
-    }
-
-    public IEnumerator CircleTrajectoryCoroutine(float radius, float height, float duration, Vector3 spawnpos, Vector3 endpos, int direction) {
-
-        float TimeCounter = 0;
-        float angle = 0;
-        float speed = (Mathf.PI) / duration; //2*PI in degress is 360, PI is 180, so you get "duration" seconds to complete half a circle
-
-        float x = spawnpos.x;
-        float z = spawnpos.z;
-
-        transform.position = spawnpos;
-        Debug.Log(transform.position);
-
-        while (TimeCounter <= duration) {
-
-            if (direction == 0) {
-                angle -= speed * Time.deltaTime; //if you want to switch direction, use += instead of -=
-            }
-
-            if (direction == 1) {
-                angle += speed * Time.deltaTime; //if you want to switch direction, use -= instead of +=
-            }
-
-            x = Mathf.Cos(angle) * radius;
-            z = Mathf.Sin(angle) * radius;
-
-            transform.position = new Vector3(x, height, z);
-
-            TimeCounter += Time.deltaTime;
-
-            yield return null;
-        }
-
-        if (TimeCounter > duration) {
-            Destroy(this.gameObject);
-        }
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -123,5 +81,48 @@ public class Projectile : MonoBehaviour {
             att.ResetTargetSections(playerFacePos, playerRingPos);
         }
         Destroy(this.gameObject);
+    }
+
+
+
+    public void CircleTrajectory(float radius, float height, float duration, Vector3 spawnpos, Vector3 endpos, int direction) {
+        StartCoroutine(CircleTrajectoryCoroutine(radius, height, duration, spawnpos, endpos,
+        direction));
+    }
+
+    public IEnumerator CircleTrajectoryCoroutine(float radius, float height, float duration, Vector3 spawnpos, Vector3 endpos, int direction) {
+        float distance = 1f;
+        transform.position = spawnpos;
+        float x = spawnpos.x;
+        float z = spawnpos.z;
+
+        distance = Vector3.Angle(endpos, spawnpos);
+        float distanceRad = distance * Mathf.Deg2Rad;
+        float TimeCounter = 0f;
+        float angle = 0f;
+        float speed = distanceRad / duration;
+
+        while (TimeCounter <= duration) {
+
+            if (direction == 0) { 
+                angle += speed* Time.deltaTime;
+            }
+
+            if (direction == 1){
+                angle -= speed* Time.deltaTime;
+            }
+
+            x = (spawnpos.x* Mathf.Cos(angle)) + (spawnpos.z* Mathf.Sin(angle));
+            z = (spawnpos.z* Mathf.Cos(angle)) - (spawnpos.x* Mathf.Sin(angle));
+            Vector3 DesiredPosition = new Vector3(x, height, z);
+            transform.position = DesiredPosition;
+            
+            TimeCounter += Time.deltaTime;
+            yield return null;
+        }
+
+        if (TimeCounter > duration) {
+            Destroy(this.gameObject);
+        }
     }
 }
