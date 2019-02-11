@@ -1,0 +1,334 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1937344935673362}
+  m_IsPrefabAsset: 1
+--- !u!1 &1937344935673362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4471497648488922}
+  - component: {fileID: 114261897729821206}
+  - component: {fileID: 114575702099839486}
+  - component: {fileID: 114300127026934172}
+  - component: {fileID: 114136178806960216}
+  - component: {fileID: 114208745175273274}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4471497648488922
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1937344935673362}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114136178806960216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1937344935673362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 233f3bdcf29e2f340bb7431fa88acd9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground: {fileID: 0}
+  gcc: {fileID: 0}
+  player: {fileID: 0}
+  playerCtrl: {fileID: 0}
+  boss: {fileID: 0}
+  attackRingPrefab: {fileID: 114373114926840684, guid: 71a6fc18193ea124ea65e64a4ff6ede9,
+    type: 2}
+  defaultMat: {fileID: 2100000, guid: afa7389d4d79b7145bba10ac6bc096bd, type: 2}
+  damageMat: {fileID: 2100000, guid: 68b953d5b501f1a4ba369d0949b25a18, type: 2}
+--- !u!114 &114208745175273274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1937344935673362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acec96977406e0b4ab713344faae558a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground: {fileID: 0}
+  gcc: {fileID: 0}
+  player: {fileID: 0}
+  playerCtrl: {fileID: 0}
+  boss: {fileID: 0}
+  damage: 20
+  projectile: {fileID: 114762175548465486, guid: 7f2154190c1b3984ea61b13dd2dd01da,
+    type: 2}
+  rejectableProjectile: {fileID: 114762175548465486, guid: b7b243f572c83bd44873a84b9bd4782b,
+    type: 2}
+  ringDistances:
+  - 0
+  - 0
+  - 0
+  spawnHeight: 12
+  target: {fileID: 0}
+  tilesAttack: {fileID: 0}
+--- !u!114 &114261897729821206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1937344935673362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d565ed1db8b0e34296505b8aa0fa5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  song: {fileID: 11400000, guid: b3c8505ab44f7954fbbf2d1957737dd5, type: 2}
+  boss: {fileID: 0}
+  ground: {fileID: 0}
+  player: {fileID: 0}
+  scorePanel: {fileID: 0}
+  camera: {fileID: 0}
+  noteToPlayInSeconds: 0
+  playing: 1
+  metronome: {fileID: 0}
+  notesInSeconds:
+  - notePosInSeconds: 0
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 1.1707317
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 2.3414633
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 3.512195
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 4.6829267
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 5.853658
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 7.0243897
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 8.195122
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 9.365853
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 10.536585
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 11.707316
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 12.878048
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 14.0487795
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 15.219511
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 16.390244
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 17.560976
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 18.731709
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 19.902441
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 21.073174
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  - notePosInSeconds: 22.243906
+    playerShouldPlay: 0
+    specialAttack: 0
+    noteFunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    removable: 0
+  notesInSecondsIndex: 0
+--- !u!114 &114300127026934172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1937344935673362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9cc4e797557664f95c002a23b32e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground: {fileID: 0}
+  gcc: {fileID: 0}
+  player: {fileID: 0}
+  playerCtrl: {fileID: 0}
+  boss: {fileID: 0}
+  attackRingPrefab: {fileID: 114373114926840684, guid: 71a6fc18193ea124ea65e64a4ff6ede9,
+    type: 2}
+  defaultMat: {fileID: 2100000, guid: afa7389d4d79b7145bba10ac6bc096bd, type: 2}
+  damageMat: {fileID: 2100000, guid: 68b953d5b501f1a4ba369d0949b25a18, type: 2}
+--- !u!114 &114575702099839486
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1937344935673362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdddd44bd375e4246ae986cf69949048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circle: {fileID: 4217613296378360, guid: e074eb7ab48a9bb4bb49500478dbd08d, type: 2}
+  player: {fileID: 0}
+  playerOuterCircle: {fileID: 0}
+  startScale: {x: 40, y: 40, z: 40}
+  endScale: {x: 7.8, y: 7.8, z: 7.8}
+  spawnHeight: 5.5001
+  enlargeVelocity: 100
