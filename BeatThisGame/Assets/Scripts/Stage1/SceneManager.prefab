@@ -21,10 +21,7 @@ GameObject:
   - component: {fileID: 4242467416472912}
   - component: {fileID: 114295526820291168}
   - component: {fileID: 114686707825163732}
-  - component: {fileID: 114812401546083090}
-  - component: {fileID: 114340554757682174}
   - component: {fileID: 114097829923571266}
-  - component: {fileID: 114333961116948976}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -65,7 +62,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1139629980812986}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d565ed1db8b0e34296505b8aa0fa5cb, type: 3}
   m_Name: 
@@ -77,6 +74,7 @@ MonoBehaviour:
   scorePanel: {fileID: 0}
   camera: {fileID: 0}
   noteToPlayInSeconds: 0
+  playing: 1
   metronome: {fileID: 0}
   notesInSeconds:
   - notePosInSeconds: 0
@@ -94,7 +92,7 @@ MonoBehaviour:
     noteFunction:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114340554757682174}
+        - m_Target: {fileID: 0}
           m_MethodName: StartAttack
           m_Mode: 4
           m_Arguments:
@@ -181,48 +179,6 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     removable: 0
   notesInSecondsIndex: 0
---- !u!114 &114333961116948976
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1139629980812986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c31b6cce35b7b4e88a422a82a3dff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Button:
-  - {fileID: 1177162650312232, guid: 9122c3e379af99745abd2c3addb8cf45, type: 2}
-  - {fileID: 1421707348211344, guid: e8b98517178273b4988f88c9dcd3581e, type: 2}
-  - {fileID: 1799259303868362, guid: 703dd3b082a4e8a46a361b87ba28fed8, type: 2}
-  - {fileID: 1627922421244770, guid: 324d8e33b89501b49a4f775e2e18e850, type: 2}
-  Boss:
-  - {fileID: 1122837499282796, guid: 33a7cb63e5237a14187db25b13825b34, type: 2}
-  - {fileID: 1411074902856224, guid: 41923270da40a104daf801091581f2b5, type: 2}
-  - {fileID: 1303122264963968, guid: 68cd5463f87904344adcea7adfe4e134, type: 2}
-  - {fileID: 1467381926355536, guid: c8e50038e503d2c439359d372260edd4, type: 2}
-  Cam: {fileID: 0}
---- !u!114 &114340554757682174
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1139629980812986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 233f3bdcf29e2f340bb7431fa88acd9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ground: {fileID: 0}
-  gcc: {fileID: 0}
-  player: {fileID: 0}
-  playerCtrl: {fileID: 0}
-  boss: {fileID: 0}
-  attackRingPrefab: {fileID: 114373114926840684, guid: 71a6fc18193ea124ea65e64a4ff6ede9,
-    type: 2}
-  defaultMat: {fileID: 2100000, guid: afa7389d4d79b7145bba10ac6bc096bd, type: 2}
-  damageMat: {fileID: 2100000, guid: 68b953d5b501f1a4ba369d0949b25a18, type: 2}
 --- !u!114 &114686707825163732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -241,23 +197,3 @@ MonoBehaviour:
   endScale: {x: 7.8, y: 7.8, z: 7.8}
   spawnHeight: 4.5
   enlargeVelocity: 100
---- !u!114 &114812401546083090
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1139629980812986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc9cc4e797557664f95c002a23b32e9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ground: {fileID: 0}
-  gcc: {fileID: 0}
-  player: {fileID: 0}
-  playerCtrl: {fileID: 0}
-  boss: {fileID: 0}
-  attackRingPrefab: {fileID: 114373114926840684, guid: 71a6fc18193ea124ea65e64a4ff6ede9,
-    type: 2}
-  defaultMat: {fileID: 2100000, guid: afa7389d4d79b7145bba10ac6bc096bd, type: 2}
-  damageMat: {fileID: 2100000, guid: 68b953d5b501f1a4ba369d0949b25a18, type: 2}

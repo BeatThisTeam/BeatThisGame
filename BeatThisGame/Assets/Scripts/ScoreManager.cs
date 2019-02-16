@@ -206,7 +206,7 @@ public class ScoreManager : MonoBehaviour {
         if (noteToHit < SongManager.Instance.SongPositionInSeconds - deltaAccuracy) {
 
             if (!hit) {
-                Debug.Log("MISS");
+                //Debug.Log("MISS");
             }
             
             nextNoteToHit(ScenePrototypeManager.Instance.notesInSecondsIndex);

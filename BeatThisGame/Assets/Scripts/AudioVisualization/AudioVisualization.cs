@@ -46,6 +46,7 @@ public class AudioVisualization : MonoBehaviour {
 
         audioSource = GetComponent <AudioSource> ();
         AudioProfile();
+        AudioProfile64();
 	}
 	
 	void Update () {
@@ -245,4 +246,13 @@ public class AudioVisualization : MonoBehaviour {
             freqBandHighest[i] = audioProfile;
         }
     }
+    
+    void AudioProfile64() {
+
+        for (int i = 0; i < 64; i++) {
+
+            freqBandHighest64[i] = audioProfile;
+        }
+    }
+
 }

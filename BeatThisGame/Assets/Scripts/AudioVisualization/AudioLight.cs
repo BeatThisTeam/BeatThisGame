@@ -22,14 +22,14 @@ public class AudioLight : MonoBehaviour {
             light.transform.position = this.transform.position;
             light.transform.parent = this.transform;
             light.name = "AudioLight" + i;
-            this.transform.eulerAngles = new Vector3(0, -(360/8) * i, 0);
-            light.transform.position = Vector3.forward * lightsCircleRadius + new Vector3(0,transform.position.y,0);
+            this.transform.eulerAngles = new Vector3(0, -(360 / 8) * i, 0);
+            light.transform.position = Vector3.forward * lightsCircleRadius + new Vector3(0, transform.position.y, 0);
             lights[i] = light;
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 
         if (param == Param.AudioBands) {
             for (int i = 0; i < 8; i++) {

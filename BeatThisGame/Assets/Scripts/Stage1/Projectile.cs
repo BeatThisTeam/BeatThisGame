@@ -99,30 +99,39 @@ public class Projectile : MonoBehaviour {
         distance = Vector3.Angle(endpos, spawnpos);
         float distanceRad = distance * Mathf.Deg2Rad;
         float TimeCounter = 0f;
-        float angle = 0f;
-        float speed = distanceRad / duration;
-
-        while (TimeCounter <= duration) {
+        float offsetAngle = 0f;
+        float speed = distanceRad / duration;      
+      
+        while (true) {
 
             if (direction == 0) { 
-                angle += speed* Time.deltaTime;
+                offsetAngle += speed * Time.deltaTime;
             }
 
             if (direction == 1){
-                angle -= speed* Time.deltaTime;
+                offsetAngle -= speed * Time.deltaTime;
             }
 
-            x = (spawnpos.x* Mathf.Cos(angle)) + (spawnpos.z* Mathf.Sin(angle));
-            z = (spawnpos.z* Mathf.Cos(angle)) - (spawnpos.x* Mathf.Sin(angle));
+            x = (spawnpos.x * Mathf.Cos(offsetAngle)) + (spawnpos.z * Mathf.Sin(offsetAngle));
+            z = (spawnpos.z * Mathf.Cos(offsetAngle)) - (spawnpos.x * Mathf.Sin(offsetAngle));
             Vector3 DesiredPosition = new Vector3(x, height, z);
             transform.position = DesiredPosition;
-            
+
             TimeCounter += Time.deltaTime;
+
             yield return null;
+
+            if (TimeCounter >= duration) {
+                Debug.Log(Vector3.Distance(transform.position, endpos));
+                //DestroyGameObject(); <--TO DO: farla funzionare
+                Destroy(this.gameObject);
+            }
         }
 
-        if (TimeCounter > duration) {
-            Destroy(this.gameObject);
-        }
+        
+
+        ////if (TimeCounter > duration) {
+        //Destroy(this.gameObject);
+        ////}
     }
 }

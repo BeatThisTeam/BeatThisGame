@@ -159,7 +159,7 @@ public class TilesAttack : MonoBehaviour {
             for (int j = 0; j < playerGround.rings[i].sections.Count; j++) {
 
                 playerGroundControl.ChangeColor(i, j, false);
-                playerGround.rings[i].sections[j].isTarget = false;
+                //playerGround.rings[i].sections[j].isTarget = false;
                 playerGround.rings[i].sections[j].hurts = false;
             }
         }

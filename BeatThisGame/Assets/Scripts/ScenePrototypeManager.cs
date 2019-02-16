@@ -54,6 +54,9 @@ public class ScenePrototypeManager : MonoBehaviour {
     }
 
     private void Awake() {
+
+        
+
         if (instance != null && instance != this) {
             Destroy(this.gameObject);
         } else {
@@ -65,6 +68,8 @@ public class ScenePrototypeManager : MonoBehaviour {
     }
 
     private void Start() {
+
+        Screen.fullScreen = true;
 
         playerCharContr.Setup();
         SongManager.Instance.SetSong(song);

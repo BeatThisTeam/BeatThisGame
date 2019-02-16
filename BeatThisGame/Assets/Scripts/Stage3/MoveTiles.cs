@@ -25,41 +25,26 @@ public class MoveTiles : MonoBehaviour {
 	
 	void Update () {
         //Test1
-        if (Input.GetKeyDown(KeyCode.A)) {
+        if (Input.GetKeyDown(KeyCode.R)) {
             int[] t = new int[3];
             t[0] = 0;
             t[1] = 2;
             t[2] = 4;
-            ChangeTilesHeight(t, 1, 2f);
-        }
-        //Test1.5
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            int[] t = new int[3];
-            t[0] = 3;
-            t[1] = 6;
-            t[2] = 8;
-            ChangeTilesHeight(t, 2, 2f);
-        }
-        //Test1.8
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            int[] t = new int[3];
-            t[0] = 0;
-            t[1] = 2;
-            t[2] = 4;
-            ChangeTilesHeight(t, 0, 2f);
+            ChangeTilesHeight(t, 1 ,1, 2f);
         }
 
-        //Test2
-        if (Input.GetKeyDown(KeyCode.S)) {
-            SwapRings(0, 1, 2f);
+        if (Input.GetKeyDown(KeyCode.T)) {
+            int[] t = new int[3];
+            t[0] = 0;
+            t[1] = 2;
+            t[2] = 4;
+            ChangeTilesHeight(t, 1, 0, 2f);
         }
     }
 
 
-    public void ChangeTilesHeight(int[] tiles, int heightIndex, float duration) {
-        StartCoroutine(HeightCoroutine(tiles, heightIndex, duration));
+    public void ChangeTilesHeight(int[] tiles, int ringIndex, int heightIndex, float duration) {
+        StartCoroutine(HeightCoroutine(tiles, ringIndex, heightIndex, duration));
     }
 
     public void SwapRings(int ringIndex1, int ringIndex2, float duration)
@@ -68,27 +53,20 @@ public class MoveTiles : MonoBehaviour {
     }
 
 
-    IEnumerator HeightCoroutine(int[] tiles, int heightIndex, float duration)
-    {
-        Debug.Log("bao1");
+    IEnumerator HeightCoroutine(int[] tiles, int ringIndex, int heightIndex, float duration) {
 
-        float TimeCounter = 0;
+        float tLerp = 0;
+        //float StartHeight = facce[tiles[0]].transform.position.y;
+        float StartHeight = ground.rings[ringIndex].sections[0].transform.position.y;
+        while (tLerp <= duration){
 
-        float speed = Mathf.Abs((Mathf.Abs(heights[heightIndex]) - Mathf.Abs(facce[tiles[0]].transform.position.y))) / duration;
-
-        while (TimeCounter <= duration)
-        {
-
-            for (int i = 0; i <= 2; i++)
-            {
-                float StartHeight = facce[tiles[i]].transform.position.y;
+            for (int i = 0; i < tiles.Length; i++){               
                 float EndHeight = heights[heightIndex];
-                float Smoothed = Mathf.Lerp(StartHeight, EndHeight, speed * Time.deltaTime);
-
-                facce[tiles[i]].transform.position = new Vector3(facce[tiles[i]].transform.position.x, Smoothed, facce[tiles[i]].transform.position.z);
+                float Smoothed = Mathf.Lerp(StartHeight, EndHeight, tLerp/duration);
+                ground.rings[ringIndex].sections[tiles[i]].transform.position = new Vector3(ground.rings[ringIndex].sections[tiles[i]].transform.position.x, Smoothed, ground.rings[ringIndex].sections[tiles[i]].transform.position.z);
             }
 
-            TimeCounter += Time.deltaTime;
+            tLerp += Time.deltaTime;
 
             yield return null;
         }
