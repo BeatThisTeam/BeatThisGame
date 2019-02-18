@@ -12,6 +12,8 @@ public class ChangeText : MonoBehaviour
     public GameObject goodText;
     [SerializeField]
     public GameObject perfectText;
+    [SerializeField]
+    public GameObject missText;
 
     void Start()
     {
@@ -30,7 +32,6 @@ public class ChangeText : MonoBehaviour
             txt.transform.position = transform.position;
             txt.transform.parent = transform.parent;
             txt.GetComponent<Text>().GetComponent<Animator>().SetTrigger("TextAnimation");
-            Debug.Log("ok fade out");
         }
         else if (acc == 2f)
         {
@@ -39,7 +40,6 @@ public class ChangeText : MonoBehaviour
             txt.transform.position = transform.position;
             txt.transform.parent = transform.parent;            
             txt.GetComponent<Text>().GetComponent<Animator>().SetTrigger("TextAnimation");
-            Debug.Log("good fade out");
         }
         else if (acc == 3f)
         {
@@ -48,32 +48,12 @@ public class ChangeText : MonoBehaviour
             txt.transform.position = transform.position;
             txt.transform.parent = transform.parent;
             txt.GetComponent<Text>().GetComponent<Animator>().SetTrigger("TextAnimation");
-            Debug.Log("perfect fade out");
+        } else if (acc == 4f) {
+            //PerfectText.SetActive(true);
+            GameObject txt = Instantiate(missText);
+            txt.transform.position = transform.position;
+            txt.transform.parent = transform.parent;
+            txt.GetComponent<Text>().GetComponent<Animator>().SetTrigger("TextAnimation");
         }
     }
-
-
-
-    //public IEnumerator FadeTextToFullAlpha(float t, Text i)
-    //{
-    //    i.color = new Color(i.color.r, i.color.g, i.color.b, 0);
-    //    while (i.color.a < 1.0f)
-    //    {
-    //        i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
-    //        yield return null;
-    //    }
-    //}
-
-    //public IEnumerator FadeTextToZeroAlpha(float t, Text i)
-    //{
-    //    i.color = new Color(i.color.r, i.color.g, i.color.b, 1);
-    //    i.GetComponent<Animator>().SetTrigger("TextAnimation");
-    //    while (i.color.a > 0.0f)
-    //    {
-    //        i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));           
-    //        yield return null;
-    //    }
-    //}
-    
-
 }

@@ -186,6 +186,8 @@ public class ScoreManager : MonoBehaviour {
 
     public void SpecialAttackMiss() {
 
+        specialAttackPower = 0;
+        specialAttackUI.UpdateBar(specialAttackPower);
         numNotesInSection = CalcNumNotesInSection(lastSpecialAttackIndex);
     }
 
@@ -206,6 +208,7 @@ public class ScoreManager : MonoBehaviour {
         if (noteToHit < SongManager.Instance.SongPositionInSeconds - deltaAccuracy) {
 
             if (!hit) {
+                changeText.UpdateText(4f);
                 //Debug.Log("MISS");
             }
             

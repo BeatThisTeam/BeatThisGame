@@ -9,16 +9,16 @@ public class Menu : MonoBehaviour {
     public GameObject[] Button;
     public GameObject PlayButton;
     public GameObject LevelButton;
-    public GameObject OptionsButton;
+    public GameObject creditsButton;
     public GameObject QuitButton;
     public GameObject title;
-
+    public GameObject backButton;
     public GameObject[] Boss;
     public GameObject Tutorial;
     public GameObject LV1blob;
     public GameObject LV2parents;
     public GameObject LV3boss;
-
+    public GameObject credits;
     public FollowCamUI Cam;
 
     private bool[] active;
@@ -34,7 +34,7 @@ public class Menu : MonoBehaviour {
         Button = new GameObject[4];
         Button[0] = PlayButton;
         Button[1] = LevelButton;
-        Button[2] = OptionsButton;
+        Button[2] = creditsButton;
         Button[3] = QuitButton;
 
         //    //active = new bool[4];
@@ -85,6 +85,10 @@ public class Menu : MonoBehaviour {
                 SceneManager.LoadScene(1);
             }
 
+            if (creditsButton.activeInHierarchy) {
+                credits.SetActive(true);
+            }
+
             if (QuitButton.activeInHierarchy) {
                 Application.Quit();
             }
@@ -92,6 +96,7 @@ public class Menu : MonoBehaviour {
             if (LevelButton.activeInHierarchy) {
                 Cam.SwitchRing(0.01f);
                 title.SetActive(false);
+                backButton.SetActive(true);
             }
 
             if (Tutorial.activeInHierarchy) {
@@ -107,14 +112,26 @@ public class Menu : MonoBehaviour {
             }            
         }
 
-        if (Input.GetButtonDown("Shield") && Ring == 1) {
-            Cam.SwitchRing(0.01f);
-            title.SetActive(true);
-            Tutorial.SetActive(false);
-            LV1blob.SetActive(false);
-            LV2parents.SetActive(false);
-            LV3boss.SetActive(false);
+        if ((Input.GetButtonDown("Shield") || Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Backspace)) && Ring == 1) {
+            BackToMainMenu();
+            if (credits.activeInHierarchy) {
+                credits.SetActive(false);
+            }
         }
+
+        if ((Input.GetButtonDown("Shield") || Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Backspace)) && credits.activeInHierarchy) {
+            credits.SetActive(false);
+        }
+    }
+
+    public void BackToMainMenu() {
+        Cam.SwitchRing(0.01f);
+        title.SetActive(true);
+        Tutorial.SetActive(false);
+        LV1blob.SetActive(false);
+        LV2parents.SetActive(false);
+        LV3boss.SetActive(false);
+        backButton.SetActive(false);
     }
 
     public IEnumerator ChangeButton(int FaceIndex)
@@ -127,10 +144,9 @@ public class Menu : MonoBehaviour {
             Button[((FaceIndex + 1) + 4) % 4].SetActive(false);
         }
         
-
+        
         Button[FaceIndex].SetActive(true);
         
-
         yield return null;
     }
 
