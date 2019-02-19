@@ -44,7 +44,7 @@ public class SliceAttack : MonoBehaviour
         Vector3 lookAtPos = _player.position - bossContr.transform.position;
         lookAtPos.y = 0;
         bossContr.transform.rotation = Quaternion.LookRotation(lookAtPos);
-        bossContr.transform.Rotate(0, 90, 0);
+        //bossContr.transform.Rotate(0, 90, 0);
         bossContr.StartSlam(duration);
 
         groundSections.rings[0].sections[faceIndex].isTarget = true;

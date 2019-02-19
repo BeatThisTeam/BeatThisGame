@@ -4,28 +4,41 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class FollowCamUI : MonoBehaviour {
-    public GroundSections[] CamRingUI;
+
+    public Menu menu;
+    public Transform[] mainMenuRing;
+    public Transform[] levelSelectRing;
+
+    private Transform[] currentRing;
 
     public Transform[] target;
+    public Transform curTarget;
 
+    public CanvasRotation[] buttonCanvas;
 
     public float speed;
     public float speed2;
 
 
-    public int FaceIndex = 0;
+    public int faceIndex = 0;
     private int sliceCount;
 
-    public int i = 0;
+    public int ringIndex = 0;
 
     private int section;
 
     private float horizAxisInput;
     private bool axisInUse = false;
 
+    private void Start() {
+
+        currentRing = mainMenuRing;
+        curTarget = target[0];
+    }
+
     private void Update(){
 
-        sliceCount = CamRingUI[i].rings[0].sections.Count;
+        sliceCount = currentRing.Length;
         Debug.Log("sliceCount " + sliceCount);
         horizAxisInput = Input.GetAxisRaw("Horizontal");
 
@@ -34,11 +47,13 @@ public class FollowCamUI : MonoBehaviour {
             axisInUse = true;
 
             if (horizAxisInput < 0) {
-                FaceIndex = ((FaceIndex - 1) + sliceCount) % sliceCount;
+                faceIndex = ((faceIndex - 1) + sliceCount) % sliceCount;
+                menu.changeIndex(-1);
             }
 
             if (horizAxisInput > 0) {
-                FaceIndex = ((FaceIndex + 1) + sliceCount) % sliceCount;
+                faceIndex = ((faceIndex + 1) + sliceCount) % sliceCount;
+                menu.changeIndex(1);
             }
         }
 
@@ -46,44 +61,48 @@ public class FollowCamUI : MonoBehaviour {
 
             axisInUse = false;
         }
-        
 
-        Vector3 DesiredPosition = CamRingUI[i].rings[0].sections[FaceIndex].tr.position;
+        buttonCanvas[ringIndex].RotateCanvas(faceIndex);
+
+        Vector3 DesiredPosition = currentRing[faceIndex].position;
         Vector3 SmoothedPosition = Vector3.Lerp(transform.position, DesiredPosition, speed * Time.deltaTime);
         transform.position = SmoothedPosition;
 
-        transform.LookAt(target[i]);
+        transform.LookAt(curTarget);
 
     }
 
     public void SwitchRing(float duration)
     {
-        if (i == 0)
-        {
-            i = 1;
-            FaceIndex = 0;
-        }
-        else
-        {
-            i = 0;
-            FaceIndex = 1;
+
+        ringIndex = (ringIndex + 1) % 2;
+
+        if(currentRing == mainMenuRing) {
+            currentRing = levelSelectRing;
+            curTarget = target[1];
+        } else {
+            currentRing = mainMenuRing;
+            curTarget = target[0];
         }
 
-        StartCoroutine(SwitchRingCoroutine(CamRingUI[i], duration, FaceIndex));
+        menu.ChangeRing();
+        StartCoroutine(SwitchRingCoroutine(duration, 0));
     }
 
-    IEnumerator SwitchRingCoroutine (GroundSections CamRingUI, float duration, int FaceIndex)
+    IEnumerator SwitchRingCoroutine (float duration, int FaceIndex)
     {
+        faceIndex = 0;
+        
         float tLerp = 0;
 
         while (tLerp <= duration)
         {
-            transform.position = Vector3.Lerp(transform.position, CamRingUI.rings[0].sections[FaceIndex].tr.position, tLerp / duration);
+            transform.position = Vector3.Lerp(transform.position, currentRing[0].position, tLerp / duration);
 
            Vector3 currentAngle = new Vector3
-                (Mathf.LerpAngle(transform.rotation.eulerAngles.x, CamRingUI.rings[0].sections[FaceIndex].tr.rotation.eulerAngles.x, tLerp),
-                Mathf.LerpAngle(transform.rotation.eulerAngles.y, CamRingUI.rings[0].sections[FaceIndex].tr.rotation.eulerAngles.y, tLerp ),
-                Mathf.LerpAngle(transform.rotation.eulerAngles.z, CamRingUI.rings[0].sections[FaceIndex].tr.rotation.eulerAngles.z, tLerp ));
+                (Mathf.LerpAngle(transform.rotation.eulerAngles.x, currentRing[0].rotation.eulerAngles.x, tLerp),
+                Mathf.LerpAngle(transform.rotation.eulerAngles.y, currentRing[0].eulerAngles.y, tLerp ),
+                Mathf.LerpAngle(transform.rotation.eulerAngles.z, currentRing[0].rotation.eulerAngles.z, tLerp ));
             
             transform.eulerAngles = currentAngle;
 

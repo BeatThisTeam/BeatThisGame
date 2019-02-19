@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 68b953d5b501f1a4ba369d0949b25a18, type: 2}
+  - {fileID: 2100000, guid: 1cd063d918c4f0449a5fb822c9f6c07d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,12 +113,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  numFired: 0
   player: {fileID: 0}
   playerRingPos: 0
   playerFacePos: 0
   att: {fileID: 0}
   rejectable: 1
   rejected: 0
+  rejectAccuracy: 0
+  radius: 0
+  duration: 0
+  height: 0
 --- !u!135 &135975921631760768
 SphereCollider:
   m_ObjectHideFlags: 1

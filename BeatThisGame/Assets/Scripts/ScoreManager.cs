@@ -51,6 +51,9 @@ public class ScoreManager : MonoBehaviour {
 
     public bool hit = false;
 
+    public int lastNoteIndex;
+    private bool lastNotePlayed = false;
+
     private void Awake() {
         if (instance != null && instance != this) {
             Destroy(this.gameObject);
@@ -207,11 +210,15 @@ public class ScoreManager : MonoBehaviour {
         
         if (noteToHit < SongManager.Instance.SongPositionInSeconds - deltaAccuracy) {
 
-            if (!hit) {
+            if (!hit && !lastNotePlayed) {
                 changeText.UpdateText(4f);
                 //Debug.Log("MISS");
             }
             
+            if(noteToHit >= lastNoteIndex) {
+                lastNotePlayed = true;
+            }
+
             nextNoteToHit(ScenePrototypeManager.Instance.notesInSecondsIndex);
 
             hit = false;

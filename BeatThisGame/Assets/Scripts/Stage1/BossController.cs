@@ -16,10 +16,27 @@ public class BossController : MonoBehaviour {
 
     private bool damageable = true;
 
+    private Vector3 lookAtPos;
+    public float rotationSpeed;
+    private bool canRotate = true;
+
     private void Awake() {
 
         tr = GetComponent<Transform>();
         bossAnim = GetComponent<Animator>();
+    }
+
+    private void Update() {
+        lookAtPos = player.position - transform.position;
+        lookAtPos.y = 0;
+        //transform.rotation = Quaternion.LookRotation(lookAtPos);
+    }
+
+    private void FixedUpdate() {
+
+        if (canRotate) {
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lookAtPos), rotationSpeed * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -29,7 +46,7 @@ public class BossController : MonoBehaviour {
                 ScenePrototypeManager.Instance.GetComponent<SpecialAttack>().BossHit();
                 ScoreManager.Instance.UpdateBossHealth();
                 SoundManager.Instance.PlayBossDamageSound();
-                StartCoroutine(PlayDamageAnimation(0.5f));
+                StartCoroutine(PlayDamageAnimation(0.2f));
             }
         }
 
@@ -37,7 +54,7 @@ public class BossController : MonoBehaviour {
             if (damageable && other.GetComponent<Projectile>().rejected) {
                 ScoreManager.Instance.UpdateBossHealth(other.GetComponent<Projectile>().rejectAccuracy);
                 SoundManager.Instance.PlayBossDamageSound();
-                StartCoroutine(PlayDamageAnimation(0.5f));
+                StartCoroutine(PlayDamageAnimation(0.2f));
             }            
         }
     }
@@ -80,6 +97,7 @@ public class BossController : MonoBehaviour {
 
     public void StartSlam(float duration) {
 
+        canRotate = false;
         bossAnim.SetFloat("slamTime", 0f);
         bossAnim.SetBool("return", false);
         bossAnim.SetBool("Start", false);
@@ -90,6 +108,7 @@ public class BossController : MonoBehaviour {
 
     public void StartReturn() {
 
+        canRotate = true;
         rejectPlayerComponent.SetActive(false);
         bossAnim.SetBool("slam", false);
         bossAnim.SetBool("return", true);

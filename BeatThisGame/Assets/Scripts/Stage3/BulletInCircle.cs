@@ -27,17 +27,16 @@ public class BulletInCircle : Attack {
             i = 0;
             PlayerFacePosNew = ((PlayerFacePos + 4) + sliceCount) % sliceCount;
         }
-        if (randomNumber < 0.5f){
+        if (randomNumber > 0.5f){
             i = 1;
             PlayerFacePosNew = ((PlayerFacePos + 5) + sliceCount) % sliceCount;
         }
         float height = target[i].position.y;
-        spawnpos = new
-        Vector3(ground.rings[PlayerRingPos].sections[PlayerFacePosNew].transform.position.x, height,
-        ground.rings[PlayerRingPos].sections[PlayerFacePosNew].transform.position.z);
+        spawnpos = new Vector3(ground.rings[PlayerRingPos].sections[PlayerFacePosNew].transform.position.x, height, ground.rings[PlayerRingPos].sections[PlayerFacePosNew].transform.position.z);
         Debug.Log(spawnpos);
         endpos = target[i].position;
-        float radius = Mathf.Abs(ground.rings[PlayerRingPos].sections[0].transform.position.z);
+        //float radius = Mathf.Abs(ground.rings[PlayerRingPos].sections[0].transform.position.z);
+        float radius = Mathf.Sqrt(Mathf.Pow(target[i].position.x, 2) + Mathf.Pow(target[i].position.z, 2));
         Projectile pr;
 
         pr = Instantiate(projectile, spawnpos, Quaternion.identity);
