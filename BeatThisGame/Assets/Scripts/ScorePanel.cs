@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class ScorePanel : MonoBehaviour {
 
+    public GameObject background;
+    public GameObject roundBackground;
     public GameObject stageClearedPanel;
     public GameObject stageFailedPanel;
     public GameObject deathPanel;
@@ -14,6 +16,9 @@ public class ScorePanel : MonoBehaviour {
     public TextMeshProUGUI gradeTxt;
 
     public void DisplayScore() {
+
+        background.SetActive(true);
+        roundBackground.SetActive(true);
 
         if (ScoreManager.Instance.stageCleared) {
             stageClearedPanel.SetActive(true);
@@ -33,6 +38,8 @@ public class ScorePanel : MonoBehaviour {
 
     public void DisplayDeathScore() {
 
+        background.SetActive(true);
+        roundBackground.SetActive(true);
         deathPanel.SetActive(true);
     }
 

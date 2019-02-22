@@ -43,7 +43,7 @@ public class ScoreManager : MonoBehaviour {
 
     private int lastSpecialAttackIndex;
 
-    private int hitCount = 0;
+    public int hitCount = 0;
     private float totAccuracy = 0;
     public float avgAccuracy = 0;
     public bool stageCleared = false;
@@ -67,6 +67,8 @@ public class ScoreManager : MonoBehaviour {
         numSpecialAttacks = CalcNumSpecialAttacks();
 
         currentBossHealth = maxBossHealth;
+
+        CalcNumHit();
 
         specialAttackMaxPower = maxBossHealth * specialAttackTotalDamage / numSpecialAttacks;
 
@@ -113,6 +115,14 @@ public class ScoreManager : MonoBehaviour {
         return counter;
     }
 
+    private void CalcNumHit() {
+        for (int i = 0; i < ScenePrototypeManager.Instance.notesInSeconds.Count; i++) {
+            if (ScenePrototypeManager.Instance.notesInSeconds[i].playerShouldPlay) {
+                hitCount++;
+            }
+        }
+    }
+
     public void HitNote(int facePos, int ringPos) {
         //Debug.Log("delta: " + Mathf.Abs(noteToHit - SongManager.Instance.SongPositionInSeconds));
         //Debug.Log("songpos: " + SongManager.Instance.SongPositionInSeconds);
@@ -143,8 +153,7 @@ public class ScoreManager : MonoBehaviour {
                 specialAttackPower += specialAttackMaxPower * perfectAccuracy / numNotesInSection;
                 changeText.UpdateText(3f);
             }
-            hit = true;
-            hitCount++;
+            hit = true;           
             totAccuracy += accuracy;
             //EventManager.TriggerEvent("note");
             specialAttackUI.UpdateBar(specialAttackPower);
@@ -167,14 +176,17 @@ public class ScoreManager : MonoBehaviour {
                 //Debug.Log("ok");
                 specialAttackAccuracy = okAccuracy;
                 accuracy = okAccuracy;
+                changeText.UpdateText(1f);
             } else if (diff <= deltaAccuracy / 2 && diff > deltaAccuracy / 6) {
                 //Debug.Log("good");
                 specialAttackAccuracy = goodAccuracy;
                 accuracy = goodAccuracy;
+                changeText.UpdateText(2f);
             } else if (diff <= deltaAccuracy / 6) {
                 //Debug.Log("perfect");
                 specialAttackAccuracy = perfectAccuracy;
                 accuracy = perfectAccuracy;
+                changeText.UpdateText(3f);
             }
 
             if (SongManager.Instance.SongPositionInSeconds > noteToHit) {
@@ -195,12 +207,12 @@ public class ScoreManager : MonoBehaviour {
     }
 
     public void nextNoteToHit(int index) {
-
+       
         float prevNoteToHit = noteToHit;
 
         for (int i = index; i < ScenePrototypeManager.Instance.notesInSeconds.Count; i++) {
             if (ScenePrototypeManager.Instance.notesInSeconds[i].playerShouldPlay) {
-                noteToHit = ScenePrototypeManager.Instance.notesInSeconds[i].notePosInSeconds;
+                noteToHit = ScenePrototypeManager.Instance.notesInSeconds[i].notePosInSeconds;                
                 return;
             }
         }
@@ -208,9 +220,9 @@ public class ScoreManager : MonoBehaviour {
 
     public void UpdateNoteToHit() {
         
-        if (noteToHit < SongManager.Instance.SongPositionInSeconds - deltaAccuracy) {
+        if (noteToHit < SongManager.Instance.SongPositionInSeconds - deltaAccuracy) {            
 
-            if (!hit && !lastNotePlayed) {
+            if (!lastNotePlayed) {
                 changeText.UpdateText(4f);
                 //Debug.Log("MISS");
             }

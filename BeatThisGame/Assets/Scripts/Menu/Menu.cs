@@ -92,35 +92,23 @@ public class Menu : MonoBehaviour {
 
             if (PlayButton.activeInHierarchy) {
                 SceneManager.LoadScene(1);
-            }
-
-            if (creditsButton.activeInHierarchy) {
+            }else if (creditsButton.activeInHierarchy) {
                 credits.SetActive(true);
-            }
-
-            if (QuitButton.activeInHierarchy) {
+            }else if (QuitButton.activeInHierarchy) {
                 Application.Quit();
-            }
-
-            if (LevelButton.activeInHierarchy) {
+            }else if (LevelButton.activeInHierarchy) {
                 index[0] = 0;
                 index[1] = 0;
                 Cam.SwitchRing(0.01f);
                 title.SetActive(false);
                 backButton.SetActive(true);
+            }else if (Tutorial.activeInHierarchy) {
+                SceneManager.LoadScene(1);
+            }else if (LV1blob.activeInHierarchy) {
+                SceneManager.LoadScene(2);
+            }else if (LV2parents.activeInHierarchy) {
+                SceneManager.LoadScene(3);
             }
-
-            //if (Tutorial.activeInHierarchy) {
-            //    SceneManager.LoadScene(1);
-            //}
-
-            //if (LV1blob.activeInHierarchy) {
-            //    SceneManager.LoadScene(2);
-            //}
-            
-            //if (LV2parents.activeInHierarchy) {
-            //    SceneManager.LoadScene(3);
-            //}            
         }
 
         if ((Input.GetButtonDown("Shield") || Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Backspace)) && ring == 1) {

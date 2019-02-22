@@ -2116,7 +2116,8 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114308027210396232, guid: 3159b673786cd1f44afbc8ef0fb72108, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 3159b673786cd1f44afbc8ef0fb72108, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &431651589 stripped
@@ -2172,20 +2173,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400056, guid: 68946edfe1a714337bef9d6a146ded45,
     type: 3}
   m_PrefabInternal: {fileID: 1364879483}
---- !u!114 &434271130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 434271128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38684f7c3ac13dd4cb0c6a853264acf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  damagedMaterial: {fileID: 2100000, guid: 68b953d5b501f1a4ba369d0949b25a18, type: 2}
-  rejectPlayerComponent: {fileID: 0}
 --- !u!136 &434271131
 CapsuleCollider:
   m_ObjectHideFlags: 0
