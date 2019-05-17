@@ -51,7 +51,7 @@ public class ScoreManager : MonoBehaviour {
 
     public bool hit = false;
 
-    public int lastNoteIndex;
+    public float lastNoteTime;
     private bool lastNotePlayed = false;
 
     private void Awake() {
@@ -220,14 +220,14 @@ public class ScoreManager : MonoBehaviour {
 
     public void UpdateNoteToHit() {
         
-        if (noteToHit < SongManager.Instance.SongPositionInSeconds - deltaAccuracy) {            
+        if (noteToHit < SongManager.Instance.SongPositionInSeconds - deltaAccuracy && ScenePrototypeManager.Instance.playing) {            
 
             if (!lastNotePlayed) {
                 changeText.UpdateText(4f);
                 //Debug.Log("MISS");
             }
             
-            if(noteToHit >= lastNoteIndex) {
+            if(noteToHit >= lastNoteTime) {
                 lastNotePlayed = true;
             }
 

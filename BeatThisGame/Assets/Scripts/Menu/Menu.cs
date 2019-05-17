@@ -101,6 +101,7 @@ public class Menu : MonoBehaviour {
                 index[1] = 0;
                 Cam.SwitchRing(0.01f);
                 title.SetActive(false);
+                LevelButton.SetActive(false);
                 backButton.SetActive(true);
             }else if (Tutorial.activeInHierarchy) {
                 SceneManager.LoadScene(1);

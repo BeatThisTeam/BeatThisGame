@@ -15,6 +15,36 @@ public class ScorePanel : MonoBehaviour {
     public TextMeshProUGUI accuracyTxt;
     public TextMeshProUGUI gradeTxt;
 
+    public Buttons activePanel;
+    private bool axisInUse = false;
+    private float vertAxisInput;
+
+    private void Update() {       
+
+        if (activePanel != null) {
+
+            vertAxisInput = Input.GetAxisRaw("Vertical");
+
+            if (vertAxisInput != 0 && !axisInUse) {
+
+                axisInUse = true;
+
+                if (vertAxisInput > 0) {                    
+                    activePanel.Up();
+                }else if(vertAxisInput < 0) {
+                    activePanel.Down();
+                }
+            }else if(vertAxisInput == 0) {
+                axisInUse = false;
+            }
+
+            if (Input.GetButtonDown("Submit")) {
+                Debug.Log("submint");
+                activePanel.ActivateButton();
+            }
+        }
+    }
+
     public void DisplayScore() {
 
         background.SetActive(true);
@@ -22,6 +52,7 @@ public class ScorePanel : MonoBehaviour {
 
         if (ScoreManager.Instance.stageCleared) {
             stageClearedPanel.SetActive(true);
+            activePanel = stageClearedPanel.GetComponent<Buttons>();
             if(accuracyTxt) {
                 accuracyTxt.text = ScoreManager.Instance.avgAccuracy.ToString("F2");
             }
@@ -31,6 +62,7 @@ public class ScorePanel : MonoBehaviour {
             
         } else {
             stageFailedPanel.SetActive(true);
+            activePanel = stageFailedPanel.GetComponent<Buttons>();
             accuracyTxt.text = "--";
             gradeTxt.text = "--";
         }
@@ -41,6 +73,7 @@ public class ScorePanel : MonoBehaviour {
         background.SetActive(true);
         roundBackground.SetActive(true);
         deathPanel.SetActive(true);
+        activePanel = deathPanel.GetComponent<Buttons>();
     }
 
     public void NextButton() {

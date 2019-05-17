@@ -60,66 +60,67 @@ public class PlayerController : MonoBehaviour {
 
         horizAxisInput = Input.GetAxisRaw("Horizontal");
         vertAxisInput = Input.GetAxisRaw("Vertical");
-        
-        if(horizAxisInput != 0 || vertAxisInput != 0) {
+        if (ScenePrototypeManager.Instance.playing) {
+            if (horizAxisInput != 0 || vertAxisInput != 0) {
 
-            if (!axisInUse) {
+                if (!axisInUse) {
 
-                axisInUse = true;
-                StartCoroutine(FadeIn(0.4f));
+                    axisInUse = true;
+                    StartCoroutine(FadeIn(0.4f));
 
-                if (horizAxisInput > 0) {
-                    ScoreManager.Instance.HitNote(faceIndex, ringIndex);
-                    SoundManager.Instance.PlayMoveSound();
-                    faceIndex = (faceIndex + 1) % ground.rings[ringIndex].sections.Count;
-                    dir = Direction.Right;
-                }
-
-                if(horizAxisInput < 0) {
-                    ScoreManager.Instance.HitNote(faceIndex, ringIndex);
-                    SoundManager.Instance.PlayMoveSound();
-                    faceIndex--;
-                    dir = Direction.Left;
-                    if (faceIndex < 0) {
-                        faceIndex = ground.rings[ringIndex].sections.Count - 1;
+                    if (horizAxisInput > 0) {
+                        ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+                        SoundManager.Instance.PlayMoveSound();
+                        faceIndex = (faceIndex + 1) % ground.rings[ringIndex].sections.Count;
+                        dir = Direction.Right;
                     }
-                }
 
-                if(vertAxisInput > 0 && enableVerticalMovement) {
-                    ScoreManager.Instance.HitNote(faceIndex, ringIndex);
-                    SoundManager.Instance.PlayMoveSound();
-                    ringIndex--;
-                    dir = Direction.Up;
-                    if (ringIndex < 0) {
-                        ringIndex = ground.rings.Count - 1;
+                    if (horizAxisInput < 0) {
+                        ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+                        SoundManager.Instance.PlayMoveSound();
+                        faceIndex--;
+                        dir = Direction.Left;
+                        if (faceIndex < 0) {
+                            faceIndex = ground.rings[ringIndex].sections.Count - 1;
+                        }
                     }
-                }
 
-                if(vertAxisInput < 0 && enableVerticalMovement) {
-                    ScoreManager.Instance.HitNote(faceIndex, ringIndex);
-                    SoundManager.Instance.PlayMoveSound();
-                    ringIndex = (ringIndex + 1) % ground.rings.Count;
-                    dir = Direction.Down;
+                    if (vertAxisInput > 0 && enableVerticalMovement) {
+                        ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+                        SoundManager.Instance.PlayMoveSound();
+                        ringIndex--;
+                        dir = Direction.Up;
+                        if (ringIndex < 0) {
+                            ringIndex = ground.rings.Count - 1;
+                        }
+                    }
+
+                    if (vertAxisInput < 0 && enableVerticalMovement) {
+                        ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+                        SoundManager.Instance.PlayMoveSound();
+                        ringIndex = (ringIndex + 1) % ground.rings.Count;
+                        dir = Direction.Down;
+                    }
                 }
             }
-        }
 
-        if (horizAxisInput == 0 && vertAxisInput == 0) {
+            if (horizAxisInput == 0 && vertAxisInput == 0) {
 
-            axisInUse = false;
-        }
+                axisInUse = false;
+            }
 
-        if (Input.GetButtonDown("Shield")) {
-            ScoreManager.Instance.HitNote(faceIndex, ringIndex);
-            SoundManager.Instance.PlayShieldSound();
-            PlayAttackAnimation();
-            shield.ActivateShield();
-        }
-       
-        tr.position = ground.rings[ringIndex].sections[faceIndex].tr.position;
-        Vector3 lookAtPos = Vector3.zero - tr.position;
-        lookAtPos.y = 0;
-        transform.rotation = Quaternion.LookRotation(lookAtPos);
+            if (Input.GetButtonDown("Shield")) {
+                ScoreManager.Instance.HitNote(faceIndex, ringIndex);
+                SoundManager.Instance.PlayShieldSound();
+                PlayAttackAnimation();
+                shield.ActivateShield();
+            }
+
+            tr.position = ground.rings[ringIndex].sections[faceIndex].tr.position;
+            Vector3 lookAtPos = Vector3.zero - tr.position;
+            lookAtPos.y = 0;
+            transform.rotation = Quaternion.LookRotation(lookAtPos);
+        }       
     }
 
     public void Damage(float damage) {
